@@ -1,8 +1,8 @@
-package Entity;
+package com.example.LeagueFantasy.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 
 import java.util.List;
@@ -15,8 +15,8 @@ public class Goalkeeper extends Player{
     private int cleanSheets;
 
     @OneToMany
-    @Column(name = "playersToTeam", nullable = false)
-    private List<PlayerToTeam> playersToTeam;
+    @JoinColumn(name = "keeperToTeam")
+    private List<PlayerToTeam> keeperToTeam;
 
     public Goalkeeper(String name, String team, String position, int gamesPlayed, EuropeanLeague europeanLeague, int saves, int cleanSheets) {
         super(name, team, position, gamesPlayed, europeanLeague);
@@ -44,11 +44,11 @@ public class Goalkeeper extends Player{
         this.cleanSheets = cleanSheets;
     }
 
-    public List<PlayerToTeam> getPlayersToTeam() {
-        return playersToTeam;
+    public List<PlayerToTeam> getKeeperToTeam() {
+        return keeperToTeam;
     }
 
-    public void setPlayersToTeam(List<PlayerToTeam> playersToTeam) {
-        this.playersToTeam = playersToTeam;
+    public void setKeeperToTeam(List<PlayerToTeam> playersToTeam) {
+        this.keeperToTeam = playersToTeam;
     }
 }

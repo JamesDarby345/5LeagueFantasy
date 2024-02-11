@@ -1,28 +1,28 @@
-package Entity;
+package com.example.LeagueFantasy.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
 @Entity
-public class Forward extends User{
+public class Forward extends Player {
     @Column(name = "goals", nullable = false)
     private int goals;
     @Column(name = "assists", nullable = false)
     private int assists;
 
     @OneToMany
-    @Column(name = "playersToTeam", nullable = false)
-    private List<PlayerToTeam> playersToTeam;
+    @JoinColumn(name = "forwardToTeam")
+    private List<PlayerToTeam> forwardToTeam;
 
-    public Forward(String username, String name, String email, String password, int goals, int assists) {
-        super(username, name, email, password);
+    public Forward(String name, String team, String position, int gamesPlayed, EuropeanLeague europeanLeague, int goals, int assists) {
+        super(name, team, position, gamesPlayed, europeanLeague);
         this.goals = goals;
         this.assists = assists;
     }
-
 
     public Forward() {
         super();
@@ -44,11 +44,11 @@ public class Forward extends User{
         this.assists = assists;
     }
 
-    public List<PlayerToTeam> getPlayersToTeam() {
-        return playersToTeam;
+    public List<PlayerToTeam> getForwardToTeam() {
+        return forwardToTeam;
     }
 
-    public void setPlayersToTeam(List<PlayerToTeam> playersToTeam) {
-        this.playersToTeam = playersToTeam;
+    public void setForwardToTeam(List<PlayerToTeam> playersToTeam) {
+        this.forwardToTeam = playersToTeam;
     }
 }

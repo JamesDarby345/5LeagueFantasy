@@ -1,12 +1,9 @@
-package Entity;
+package com.example.LeagueFantasy.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
-public class User {
+public class FantasyManager {
 
     @Id
     @Column(name = "username", nullable = false)
@@ -22,17 +19,17 @@ public class User {
     private String password;
 
     @ManyToOne
-    @Column(name = "league", nullable = false)
+    @JoinColumn(name = "league", nullable = false)
     private League league;
 
-    public User(String username, String name, String email, String password) {
+    public FantasyManager(String username, String name, String email, String password) {
         this.username = username;
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    public User() {
+    public FantasyManager() {
     }
 
     public String getUsername() {

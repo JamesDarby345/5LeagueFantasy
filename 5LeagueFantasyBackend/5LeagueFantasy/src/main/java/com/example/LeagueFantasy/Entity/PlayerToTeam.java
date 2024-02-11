@@ -1,4 +1,4 @@
-package Entity;
+package com.example.LeagueFantasy.Entity;
 
 import jakarta.persistence.*;
 
@@ -14,7 +14,7 @@ public class PlayerToTeam {
     private Date dateAdded;
 
     @ManyToOne
-    @Column(name = "userTeam", nullable = false)
+    @JoinColumn(name = "userTeam", nullable = false)
     private UserTeam userTeam;
 
     public PlayerToTeam(Date dateAdded) {

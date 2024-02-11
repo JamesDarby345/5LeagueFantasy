@@ -1,4 +1,4 @@
-package Entity;
+package com.example.LeagueFantasy.Entity;
 
 public enum EuropeanLeague {
     Bundesliga,

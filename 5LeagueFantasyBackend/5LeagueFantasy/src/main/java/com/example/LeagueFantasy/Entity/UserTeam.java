@@ -1,4 +1,4 @@
-package Entity;
+package com.example.LeagueFantasy.Entity;
 
 import jakarta.persistence.*;
 
@@ -20,8 +20,8 @@ public class UserTeam {
     private Boolean isActive;
 
     @ManyToOne
-    @Column(name = "user", nullable = false)
-    private User user;
+    @JoinColumn(name = "manager", nullable = false)
+    private FantasyManager manager;
 
     public UserTeam(String name, int points, Date weekStartDate, Boolean isActive) {
         this.name = name;
@@ -66,11 +66,11 @@ public class UserTeam {
         isActive = active;
     }
 
-    public User getUser() {
-        return user;
+    public FantasyManager getManager() {
+        return manager;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setManager(FantasyManager user) {
+        this.manager = user;
     }
 }
