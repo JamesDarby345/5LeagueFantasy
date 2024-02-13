@@ -8,8 +8,13 @@ public class League {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "name", nullable = false)
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "leagueOwner", nullable = false)
+    private FantasyManager leagueOwner;
 
     public League(String name) {
         this.name = name;

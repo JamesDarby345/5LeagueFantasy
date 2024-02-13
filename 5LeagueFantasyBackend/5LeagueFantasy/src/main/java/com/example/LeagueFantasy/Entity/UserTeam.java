@@ -21,7 +21,7 @@ public class UserTeam {
 
     @ManyToOne
     @JoinColumn(name = "manager", nullable = false)
-    private FantasyManager manager;
+    private FantasyManager fantasyManager;
 
     public UserTeam(String name, int points, Date weekStartDate, Boolean isActive) {
         this.name = name;
@@ -67,10 +67,10 @@ public class UserTeam {
     }
 
     public FantasyManager getManager() {
-        return manager;
+        return fantasyManager;
     }
 
     public void setManager(FantasyManager user) {
-        this.manager = user;
+        this.fantasyManager = user;
     }
 }

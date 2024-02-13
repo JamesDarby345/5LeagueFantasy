@@ -13,13 +13,14 @@ public class Forward extends Player {
     private int goals;
     @Column(name = "assists", nullable = false)
     private int assists;
-
+    @Column(name = "position", nullable = false)
+    private String position;
     @OneToMany
     @JoinColumn(name = "forwardToTeam")
     private List<PlayerToTeam> forwardToTeam;
 
     public Forward(String name, String team, String position, int gamesPlayed, EuropeanLeague europeanLeague, int goals, int assists) {
-        super(name, team, position, gamesPlayed, europeanLeague);
+        super(name, team, gamesPlayed, europeanLeague);
         this.goals = goals;
         this.assists = assists;
     }
@@ -42,6 +43,14 @@ public class Forward extends Player {
 
     public void setAssists(int assists) {
         this.assists = assists;
+    }
+
+    public String getPosition() {
+        return this.position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public List<PlayerToTeam> getForwardToTeam() {

@@ -12,17 +12,14 @@ public class Player {
     private String name;
     @Column(name = "team", nullable = false)
     private String team;
-    @Column(name = "position", nullable = false)
-    private String position;
     @Column(name = "gamesPlayed", nullable = false)
     private int gamesPlayed;
     @Column(name = "europeanLeague", nullable = false)
     private EuropeanLeague europeanLeague;
 
-    public Player(String name, String team, String position, int gamesPlayed, EuropeanLeague europeanLeague) {
+    public Player(String name, String team, int gamesPlayed, EuropeanLeague europeanLeague) {
         this.name = name;
         this.team = team;
-        this.position = position;
         this.gamesPlayed = gamesPlayed;
         this.europeanLeague = europeanLeague;
     }
@@ -46,15 +43,7 @@ public class Player {
     public void setTeam(String team) {
         this.team = team;
     }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
+    
     public int getGamesPlayed() {
         return gamesPlayed;
     }
