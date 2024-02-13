@@ -29,14 +29,15 @@ markdown_report = ""
 
 for state in states_of_interest:
     # Filter stories by the current state
-    state_stories = recent_updates[recent_updates['state'] == state][['name', 'owners', 'tasks']]
+    state_stories = recent_updates[recent_updates['state'] == state][['name', 'owners', 'description', 'tasks']]
     
     # If there are stories in the current state, format them into markdown
     if not state_stories.empty:
-        markdown_report += f"## {state} Stories\n"
+        markdown_report += f"# {state} Stories\n"
         for _, story in state_stories.iterrows():
-            markdown_report += f"- **Name**: {story['name']}\n"
+            markdown_report += f"### Name: {story['name']}\n"
             markdown_report += f"  - **Owner**: {story['owners']}\n"
+            markdown_report += f"  - **Description**: {story['description']}\n"
             markdown_report += f"  - **Tasks**:\n"
             if pd.notnull(story['tasks']):
                 for task in story['tasks'].split(';'):
