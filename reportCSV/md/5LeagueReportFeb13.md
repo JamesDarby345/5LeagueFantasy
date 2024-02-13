@@ -1,0 +1,138 @@
+## Met Definition of Done Stories
+- **Name**: Implement the data model
+  - **Owner**: chrisovalantis.vatos@mail.mcgill.ca;yassine.mimet@mail.mcgill.ca
+  - **Tasks**:
+    - [X] Set up frontend with react and typescript
+    - [X] Set up backend using spring initializer
+    - [X] Implement data model using JPA annotations
+- **Name**: Find the API's
+  - **Owner**: abhigyan.praveen@mail.mcgill.ca
+  - **Tasks**:
+    - No tasks specified
+- **Name**: Create the Repositories
+  - **Owner**: chrisovalantis.vatos@mail.mcgill.ca;yassine.mimet@mail.mcgill.ca
+  - **Tasks**:
+    - [X] Create repository layer for each table/entity in the database.
+    - [X] For each repository, focus on the main CRUD (Create, Read, Update, Delete) operations
+
+## In Progress Stories
+- **Name**: Query players by name
+  - **Owner**: jerry.hou-liu@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Backend: Create API that returns a list of players when queried with a player name
+    - [ ] Frontend: Create webpage that is able to display players that meet certain querying criteria
+    - [ ] Frontend: Add search box to the player display webpage that allows the user to use the query-by-name API
+    - [ ] Testing: Create Gherkin acceptance tests for query-by-name functionality
+- **Name**: Test Repository Layer
+  - **Owner**: rashya.anggaraksa@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Test League repo
+    - [ ] Test goalkeeper repo
+    - [ ] Test PlayerToTeam repo
+    - [ ] Test Forward repo
+    - [ ] Test UserTeam repo
+    - [ ] Test FantasyManager repo
+- **Name**: Delete Account
+  - **Owner**: tran.t.phan@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Implement backend logic that allows a user to completely remove account from system. Design and develop frontend UI with confirmation that allows user to trigger existing  api endpoint and delete a existing account.
+    - [ ] Deploy the account deletion feature to the production environment.
+    - [ ] Document the account deletion process
+    - [ ] Create API endpoint that allows complete account deletion.
+    - [ ] Write Gherkin acceptance tests for delete account functionality
+- **Name**: Login as User
+  - **Owner**: abhigyan.praveen@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Design and develop frontend UI that allows user to trigger api endpoint and login to their existing account
+    - [ ] Implement backend logic/endpoint to allow users to login
+    - [ ] Write Gherkin acceptance tests for login functionality
+- **Name**: Query players by position
+  - **Owner**: alikasanovitch@gmail.com
+  - **Tasks**:
+    - [ ] Testing: Create Gherkin acceptance tests for query-by-position functionalilty
+    - [ ] Backend: Implement API call that returns a list of players when queried with a certain position
+    - [ ] Frontend: Extend the UI that displays all the players that meet the query criteria
+- **Name**: Query players by goals scored
+  - **Owner**: wasifsomji@gmail.com
+  - **Tasks**:
+    - [ ] Design and develop frontend UI that allows user to trigger api endpoint and get/query the list of players
+    - [ ] Implement backend logic/endpoint that allows a user to get/query players by number of goals
+    - [ ] Write Gherkin acceptance tests for getting/querying players functionality
+- **Name**: Set points for players from game actions
+  - **Owner**: guessous.haroun12@gmail.com
+  - **Tasks**:
+    - No tasks specified
+- **Name**: Join a league by search
+  - **Owner**: yassine.mimet@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Implement backend logic/endpoint that allows a user to join a league by search
+    - [ ] Design and develop frontend UI that allows user to trigger api endpoint and allow the user to join a league by search
+    - [ ] Write Gherkin acceptance tests for join league by search
+- **Name**: Create Account
+  - **Owner**: chrisovalantis.vatos@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Write Gherkin acceptance tests for create account functionality
+    - [ ] Design and develop frontend UI that allows user to trigger api endpoint and create a new non-existing account
+    - [ ] Implement backend logic/endpoint that allows a user to create a new account with valid information
+
+## Sprint Backlog (Refined) Stories
+- **Name**: Edit account information
+  - **Owner**: tran.t.phan@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Design and develop frontend UI with an endpoint that allows user to trigger api endpoint and edit a password/username/email of an existing account. Create a  frontend UI confirmation dialog to prevent accidental account edit
+    - [ ] Write Gherkin acceptance tests for account edit functionality
+    - [ ] Document the account edit process
+    - [ ] Deploy the account edit feature to the production environment.
+    - [ ] Implement backend logic that allows a user to edit  password/username/email account in the system.
+- **Name**: Join a league by invitation
+  - **Owner**: yassine.mimet@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Write Gherkin acceptance tests for join league by invitation
+    - [ ] Implement backend logic/endpoint that allows a user to join a league by invitation
+    - [ ] Design and develop frontend UI that allows user to trigger api endpoint and allow the user to joina league by invitation
+- **Name**: Query players by assists
+  - **Owner**: alikasanovitch@gmail.com
+  - **Tasks**:
+    - [ ] Backend: Implement API call that returns a list of players when queried with a number of assists
+    - [ ] Testing: Create Gherkin acceptance tests for query-by-assists functionalilty
+    - [ ] Frontend: Extend the UI that displays all the players that meet the query criteria
+- **Name**: Query players by saves (gk only)
+  - **Owner**: alikasanovitch@gmail.com
+  - **Tasks**:
+    - [ ] Frontend: Extend the UI that displays all the goalkeepers that meet the query criteria
+    - [ ] Testing: Create Gherkin acceptance tests for query-by-saves functionalilty
+    - [ ] Backend: Implement API call that returns a list of players when queried with a number of saves
+- **Name**: Add Player To Team
+  - **Owner**: rashya.anggaraksa@mail.mcgill.ca
+  - **Tasks**:
+    - No tasks specified
+- **Name**: Remove Player From Team
+  - **Owner**: chrisovalantis.vatos@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Write Gherkin acceptance tests for the functionality of removing a player
+    - [ ] Implement backend logic/endpoint that allows a user to remove a player from their current team
+    - [ ] On the "My Team" page, add frontend functionality to trigger api endpoint and allow a user to delete a player from their team
+- **Name**: Query players by assists
+  - **Owner**: wasifsomji@gmail.com
+  - **Tasks**:
+    - [ ] Implement backend logic/endpoint that allows a user to get/query players by number of assists
+    - [ ] Design and develop frontend UI that allows user to trigger api endpoint and get/query the list of player(s)
+    - [ ] Write Gherkin acceptance tests for querying/getting players
+- **Name**: Leave a league
+  - **Owner**: yassine.mimet@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Write Gherkin acceptance tests for leave league
+    - [ ] Implement backend logic/endpoint that allows a user to leave a league
+    - [ ] Design and develop frontend UI that allows user to trigger api endpoint and allow the user to leave a league
+- **Name**: Query players by league
+  - **Owner**: jerry.hou-liu@mail.mcgill.ca
+  - **Tasks**:
+    - [ ] Frontend: Extend the query-by-name webpage to also support querying by league
+    -  add a drop-down that allows for filtering
+    - [ ] Testing: Create Gherkin acceptance tests for query-by-league functionality
+    - [ ] Backend: Extend the query-by-name API to also support query-by-league
+- **Name**: View League Leaderboard
+  - **Owner**: rashya.anggaraksa@mail.mcgill.ca
+  - **Tasks**:
+    - No tasks specified
+
