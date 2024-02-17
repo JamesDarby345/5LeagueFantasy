@@ -19,7 +19,7 @@ public class FantasyManager {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "league", nullable = false)
+    @JoinColumn(name = "league", nullable = true)
     private League league;
 
     public FantasyManager(String username, String name, String email, String password) {

@@ -1,0 +1,537 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-02-17T23:47:51.371Z",
+        "line": 3,
+        "name": "Successfully create a new account (Normal Flow)",
+        "description": "",
+        "id": "create-a-new-user-account;successfully-create-a-new-account-(normal-flow)",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 133315000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "no user with the username \"cvatos\" exists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"cvatos\"",
+                  "offset": 26
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.no_user_with_the_username_username_exists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 199000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I enter a valid username \"cvatos\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"cvatos\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_username_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 173000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I enter a valid name \"Chris Vatos\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Chris Vatos\"",
+                  "offset": 21
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_name_name(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 191000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I enter a valid email \"test@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"test@gmail.com\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_email_email(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 208000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I enter a valid password \"test1235678\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"test1235678\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_password_password(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 51365000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I click on the create account button",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.and_i_click_on_the_create_account_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23796000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user with username \"cvatos\" should be created",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"cvatos\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.the_user_with_username_username_should_be_created(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-02-17T23:47:51.673Z",
+        "line": 12,
+        "name": "Username already registered to an account (Alternate Flow)",
+        "description": "",
+        "id": "create-a-new-user-account;username-already-registered-to-an-account-(alternate-flow)",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 99959000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "a user with the username \"abhiprav\" exists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"abhiprav\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.a_user_with_the_username_username_exists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 213000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I enter a valid but existing username \"abhiprav\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"abhiprav\"",
+                  "offset": 38
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_an_existing_username_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 189000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I enter a valid name \"Abhi Praveen\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Abhi Praveen\"",
+                  "offset": 21
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_name_name(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 175000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I enter a valid email \"newEmail@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"newEmail@gmail.com\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_email_email(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 197000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I enter a valid password \"newPassword\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"newPassword\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_password_password(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5623000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I click on the create account button to create a new account with an existing username",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_click_on_the_create_account_button_to_create_a_new_account_with_an_existing_username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 67605000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the user with username \"abhiprav\" should not be created",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"abhiprav\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.the_user_with_username_username_should_not_be_created(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-02-17T23:47:51.867Z",
+        "line": 21,
+        "name": "Email already registered to an account (Alternate Flow)",
+        "description": "",
+        "id": "create-a-new-user-account;email-already-registered-to-an-account-(alternate-flow)",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11353000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "a user with the email \"tom@gmail.com\" exists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tom@gmail.com\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.a_user_with_the_email_email_exists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 965000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I enter a valid username \"tomJones\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tomJones\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_username_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 174000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I enter a valid name \"Tom Jones\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Tom Jones\"",
+                  "offset": 21
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_name_name(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 217000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I enter a valid but existing email \"tom@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tom@gmail.com\"",
+                  "offset": 35
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_an_existing_email_email(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 320000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I enter a valid password \"otherPassword\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"otherPassword\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_password_password(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8301000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "I click on the create account button to create a new account with an existing email",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_click_on_the_create_account_button_to_create_a_new_account_with_an_existing_email()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29401000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "the user with email \"tom@gmail.com\" should not be created",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"tom@gmail.com\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.the_user_with_email_email_should_not_be_created(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-02-17T23:47:51.934Z",
+        "line": 30,
+        "name": "Provided password less than 8 characters (Error Flow)",
+        "description": "",
+        "id": "create-a-new-user-account;provided-password-less-than-8-characters-(error-flow)",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3872000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "no user with the username \"jerrySoccer\" exists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"jerrySoccer\"",
+                  "offset": 26
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.no_user_with_the_username_username_exists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 177000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "I enter a valid username \"jerrySoccer\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"jerrySoccer\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_username_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 322000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "I enter a valid name \"Jerry Seinfeld\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Jerry Seinfeld\"",
+                  "offset": 21
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_name_name(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 412000,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "I enter a valid email \"jerry@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"jerry@gmail.com\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_email_email(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 238000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "I enter a valid password \"invalid\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"invalid\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_enter_a_valid_password_password(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6446000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "I click on the create account button to create a new account with an invalid password",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.i_click_on_the_create_account_button_to_create_a_new_account_with_an_invalid_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3716000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "the user with username \"jerrySoccer\" should not be created due to invalid information.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"jerrySoccer\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateAccountStepDefinitions.the_user_with_username_username_should_not_be_created_due_to_invalid_information(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Create a new user account",
+    "description": "",
+    "id": "create-a-new-user-account",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/create_account.feature",
+    "tags": []
+  }
+]
