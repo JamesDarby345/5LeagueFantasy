@@ -25,8 +25,8 @@ public class PlayerService {
 	public List<Player> getPlayersByName(String name) {
 		ArrayList<Player> players = new ArrayList<Player>();
 		System.out.println(name);
-		List<Forward> forwards = forwardRepo.findByName(name);
-		List<Goalkeeper> goalkeepers = goalkeeperRepo.findByName(name);
+		List<Forward> forwards = forwardRepo.findByNameContainingIgnoreCase(name);
+		List<Goalkeeper> goalkeepers = goalkeeperRepo.findByNameContainingIgnoreCase(name);
 		for (Forward f: forwards) {
 			players.add(f);
 		}

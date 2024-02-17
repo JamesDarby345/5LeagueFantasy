@@ -1,6 +1,7 @@
 package com.example.LeagueFantasy.repository;
 
 import org.springframework.data.repository.CrudRepository;
+
 import com.example.LeagueFantasy.Entity.EuropeanLeague;
 import com.example.LeagueFantasy.Entity.Goalkeeper;
 import com.example.LeagueFantasy.Entity.UserTeam;
@@ -15,4 +16,6 @@ public interface GoalkeeperRepository extends CrudRepository<Goalkeeper, Integer
     List<Goalkeeper> findByEuropeanLeague(EuropeanLeague europeanLeague);
     List<Goalkeeper> findAll();  
     
+    
+    List<Goalkeeper> findByNameContainingIgnoreCase(String name);
 }
