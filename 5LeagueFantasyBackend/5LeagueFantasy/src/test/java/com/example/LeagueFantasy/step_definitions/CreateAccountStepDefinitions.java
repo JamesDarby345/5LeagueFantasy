@@ -2,23 +2,19 @@ package com.example.LeagueFantasy.step_definitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import io.cucumber.spring.CucumberContextConfiguration;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
-
 import com.example.LeagueFantasy.Entity.FantasyManager;
 import com.example.LeagueFantasy.controller.FantasyManagerController;
 import com.example.LeagueFantasy.dto.FantasyManagerRequestDto;
 import com.example.LeagueFantasy.dto.FantasyManagerResponseDto;
 import com.example.LeagueFantasy.exception.FiveLeagueFantasyException;
 import com.example.LeagueFantasy.repository.FantasyManagerRepository;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
-@CucumberContextConfiguration
 @SpringBootTest
 public class CreateAccountStepDefinitions {
 

@@ -51,25 +51,17 @@ public class FantasyManagerController {
     @GetMapping("/managers/login/{username}/{password}")
     public ResponseEntity<FantasyManagerResponseDto> loginManager(@PathVariable String username, @PathVariable String password) {
         
-        FantasyManager retrievedUser = fantasyManagerService.getFantasyManagerByUsername(username);
+        FantasyManager retrievedUser = fantasyManagerService.loginFantasyManager(username, password);
 
-        if(retrievedUser == null) {
-            throw new FiveLeagueFantasyException("User with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
-        }
+        FantasyManagerResponseDto retrievedUserResponse = new FantasyManagerResponseDto(
+            retrievedUser.getUsername(),
+            retrievedUser.getName(),
+            retrievedUser.getEmail(),
+            retrievedUser.getPassword(),
+            retrievedUser.getLeague()
+        );
 
-        if(retrievedUser.getPassword().equals(password)) {
-            FantasyManagerResponseDto retrievedUserResponse = new FantasyManagerResponseDto(
-                retrievedUser.getUsername(),
-                retrievedUser.getName(),
-                retrievedUser.getEmail(),
-                retrievedUser.getPassword(),
-                retrievedUser.getLeague()
-            );
-
-            return new ResponseEntity<FantasyManagerResponseDto>(retrievedUserResponse, HttpStatus.OK);
-        } else {
-            throw new FiveLeagueFantasyException("Invalid password.", HttpStatus.UNAUTHORIZED);
-        }
+        return new ResponseEntity<FantasyManagerResponseDto>(retrievedUserResponse, HttpStatus.OK);
     }
 
     @GetMapping("/managers/username/{username}")

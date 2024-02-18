@@ -41,6 +41,20 @@ public class FantasyManagerService {
         fantasyManagerToCreate.setLeague(null);
         return fantasyManagerRepository.save(fantasyManagerToCreate);
     }    
+
+    @Transactional  
+    public FantasyManager loginFantasyManager(String username, String password) {
+        
+        FantasyManager fantasyManagerToLogin = fantasyManagerRepository.findByUsername(username);
+
+        if(fantasyManagerToLogin == null) {
+            throw new FiveLeagueFantasyException("User with username " + username + " does not exist." , HttpStatus.NOT_FOUND);
+        } else if(!fantasyManagerToLogin.getPassword().equals(password)) {
+            throw new FiveLeagueFantasyException("Incorrect password." , HttpStatus.UNAUTHORIZED);
+        }
+
+        return fantasyManagerToLogin;
+    }
     
     @Transactional
     public FantasyManager getFantasyManagerByUsername(String name) {
