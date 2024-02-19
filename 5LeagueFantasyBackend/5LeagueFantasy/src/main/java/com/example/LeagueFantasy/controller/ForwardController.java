@@ -45,7 +45,60 @@ public class ForwardController {
 
         return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
     }
+    @GetMapping("/forwards/goals/{goals}")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsByGoals(@PathVariable int goals) {
+        List<Forward> retrievedForwards = forwardService.getForwardsByGoals(goals);
+        List<ForwardResponseDto> responseDtoList = new ArrayList<>();
 
+        return getListResponseEntity(retrievedForwards, responseDtoList);
+    }
+
+    @GetMapping("/forwards/assists/{assists}")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsByAssists(@PathVariable int assists) {
+        List<Forward> retrievedForwards = forwardService.getForwardsByGoals(assists);
+        List<ForwardResponseDto> responseDtoList = new ArrayList<>();
+
+        return getListResponseEntity(retrievedForwards, responseDtoList);
+    }
+    @GetMapping("/forwards/sortedByDescendingGoals")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsSortedByDescendingGoals() {
+        List<Forward> retrievedForwards = forwardService.getForwardsByDescendingGoals();
+        if (retrievedForwards == null) {
+            retrievedForwards = new ArrayList<>();
+        }
+        List<ForwardResponseDto> descendingGoalsResponse = new ArrayList<>();
+        return getListResponseEntity(retrievedForwards, descendingGoalsResponse);
+    }
+
+    @GetMapping("/forwards/sortedByDescendingAssists")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsSortedByDescendingAssists() {
+        List<Forward> retrievedForwards = forwardService.getForwardsByDescendingAssists();
+        if (retrievedForwards == null) {
+            retrievedForwards = new ArrayList<>();
+        }
+        List<ForwardResponseDto> descendingAssistsResponse = new ArrayList<>();
+        return getListResponseEntity(retrievedForwards, descendingAssistsResponse);
+    }
+
+    @GetMapping("/forwards/sortedByAscendingGoals")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsSortedByAscendingGoals() {
+        List<Forward> retrievedForwards = forwardService.getForwardsByAscendingGoals();
+        if (retrievedForwards == null) {
+            retrievedForwards = new ArrayList<>();
+        }
+        List<ForwardResponseDto> ascendingGoalsResponse = new ArrayList<>();
+        return getListResponseEntity(retrievedForwards, ascendingGoalsResponse);
+    }
+
+    @GetMapping("/forwards/sortedByAscendingAssists")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsSortedByAscendingAssists() {
+        List<Forward> retrievedForwards = forwardService.getForwardsByAscendingAssists();
+        if (retrievedForwards == null) {
+            retrievedForwards = new ArrayList<>();
+        }
+        List<ForwardResponseDto> ascendingAssistsResponse = new ArrayList<>();
+        return getListResponseEntity(retrievedForwards, ascendingAssistsResponse);
+    }
     private ResponseEntity<List<ForwardResponseDto>> getListResponseEntity(List<Forward> retrievedForwards, List<ForwardResponseDto> retrievedForwardsResponse) {
         for(Forward forward: retrievedForwards) {
             ForwardResponseDto currentForwardResponse = new ForwardResponseDto(
@@ -62,5 +115,8 @@ public class ForwardController {
 
         return new ResponseEntity<>(retrievedForwardsResponse, HttpStatus.OK);
     }
+
+
+
 
 }
