@@ -20,6 +20,14 @@ public class ForwardController {
     @Autowired
     private ForwardService forwardService;
 
+    @GetMapping("/forwards/all")
+    public ResponseEntity<List<ForwardResponseDto>> getAllForwards(){
+        List<Forward> retrievedForwards = forwardService.getAllForwards();
+        List<ForwardResponseDto> retrievedForwardsResponse = new ArrayList<ForwardResponseDto>();
+
+        return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
+    }
+
     @GetMapping("/forwards/name/{name}")
     public ResponseEntity<List<ForwardResponseDto>> getForwardsByName(@PathVariable String name) {
 

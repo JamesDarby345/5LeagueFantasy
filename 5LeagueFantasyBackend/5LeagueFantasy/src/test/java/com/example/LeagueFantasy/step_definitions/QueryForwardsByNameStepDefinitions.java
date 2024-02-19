@@ -17,7 +17,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 @SpringBootTest
-public class QueryForwardByNameStepDefinition {
+public class QueryForwardsByNameStepDefinitions {
     @Autowired
     private ForwardController forwardController;
 
