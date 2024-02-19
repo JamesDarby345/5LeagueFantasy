@@ -2,7 +2,7 @@ package com.example.LeagueFantasy.dto;
 
 import com.example.LeagueFantasy.Entity.EuropeanLeague;
 
-public class KeeperResponseDto {
+public class KeepersResponseDto {
     private String name;
     private String team;
     private EuropeanLeague europeanLeague;
@@ -12,8 +12,9 @@ public class KeeperResponseDto {
     private int saves;
     private int cleanSheets;
 
-    public KeeperResponseDto(String name, String team, EuropeanLeague europeanLeague, String position, int gamesPlayed, int goals, int assists,
-     int saves, int cleanSheets) {
+    public KeepersResponseDto(String name, String team, EuropeanLeague europeanLeague, String position, int gamesPlayed,
+            int goals, int assists,
+            int saves, int cleanSheets) {
         this.name = name;
         this.team = team;
         this.europeanLeague = europeanLeague;
@@ -76,7 +77,7 @@ public class KeeperResponseDto {
         return saves;
     }
 
-    public int setSaves(int saves) {
+    public void setSaves(int saves) {
         this.saves = saves;
     }
 
@@ -84,7 +85,7 @@ public class KeeperResponseDto {
         return cleanSheets;
     }
 
-    public int setCleanSheets(int cleanSheets) {
+    public void setCleanSheets(int cleanSheets) {
         this.cleanSheets = cleanSheets;
     }
 }

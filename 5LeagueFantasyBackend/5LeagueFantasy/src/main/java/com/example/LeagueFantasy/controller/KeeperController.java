@@ -1,10 +1,10 @@
 package com.example.LeagueFantasy.controller;
 
 import com.example.LeagueFantasy.Entity.FantasyManager;
-import com.example.LeagueFantasy.Entity.Keeper;
+import com.example.LeagueFantasy.Entity.Goalkeeper;
 import com.example.LeagueFantasy.dto.FantasyManagerResponseDto;
-import com.example.LeagueFantasy.dto.KeeperResponseDto;
-import com.example.LeagueFantasy.service.keeperService;
+import com.example.LeagueFantasy.dto.KeepersResponseDto;
+import com.example.LeagueFantasy.service.KeeperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,22 +22,22 @@ public class KeeperController {
     private KeeperService keeperService;
 
     @GetMapping("/players/position/{position}")
-    public ResponseEntity<List<KeeperResponseDto>> getByPositionKeeper(@PathVariable String position) {
+    public ResponseEntity<List<KeepersResponseDto>> getByPositionKeeper(@PathVariable String position) {
 
-        List<Keeper> retrievedKeepers = keeperService.getByPositionKeeper(position);
-        List<KeeperResponseDto> retrievedKeepersResponse = new ArrayList<KeeperResponseDto>();
+        List<Goalkeeper> retrievedKeepers = keeperService.getKeeperByPosition(position);
+        List<KeepersResponseDto> retrievedKeepersResponse = new ArrayList<KeepersResponseDto>();
 
-        for(Keeper keeper: retrievedKeepers) {
-            KeeperResponseDto currentKeeperResponse = new KeeperResponseDto(
+        for (Goalkeeper keeper : retrievedKeepers) {
+            KeepersResponseDto currentKeeperResponse = new KeepersResponseDto(
                     keeper.getName(),
                     keeper.getTeam(),
                     keeper.getEuropeanLeague(),
                     keeper.getPosition(),
+                    keeper.getGamesPlayed(),
                     keeper.getGoals(),
                     keeper.getAssists(),
                     keeper.getSaves(),
-                    keeper.getCleanSheets(),
-            );
+                    keeper.getCleanSheets());
             retrievedKeepersResponse.add(currentKeeperResponse);
         }
 
