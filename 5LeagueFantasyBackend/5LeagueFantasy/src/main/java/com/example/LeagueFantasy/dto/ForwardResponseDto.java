@@ -10,13 +10,16 @@ public class ForwardResponseDto {
     private int goals;
     private int assists;
 
-    public ForwardResponseDto(String name, String team, EuropeanLeague europeanLeague, String position, int goals, int assists) {
+    private int gamesPlayed;
+
+    public ForwardResponseDto(String name, String team, EuropeanLeague europeanLeague, String position, int goals, int assists, int gamesPlayed) {
         this.name = name;
         this.team = team;
         this.europeanLeague = europeanLeague;
         this.position = position;
         this.goals = goals;
         this.assists = assists;
+        this.gamesPlayed = gamesPlayed;
     }
 
     public String getName() {

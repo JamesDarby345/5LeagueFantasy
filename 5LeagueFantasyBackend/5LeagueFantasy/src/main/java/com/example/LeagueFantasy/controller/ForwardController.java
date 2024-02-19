@@ -1,8 +1,6 @@
 package com.example.LeagueFantasy.controller;
 
-import com.example.LeagueFantasy.Entity.FantasyManager;
 import com.example.LeagueFantasy.Entity.Forward;
-import com.example.LeagueFantasy.dto.FantasyManagerResponseDto;
 import com.example.LeagueFantasy.dto.ForwardResponseDto;
 import com.example.LeagueFantasy.service.ForwardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +32,8 @@ public class ForwardController {
                     forward.getEuropeanLeague(),
                     forward.getPosition(),
                     forward.getGoals(),
-                    forward.getAssists()
+                    forward.getAssists(),
+                    forward.getGamesPlayed()
             );
             retrievedForwardsResponse.add(currentForwardResponse);
         }

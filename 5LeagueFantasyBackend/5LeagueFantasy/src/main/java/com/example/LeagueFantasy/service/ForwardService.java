@@ -17,6 +17,6 @@ public class ForwardService {
 
     public List<Forward> getForwardsByName(String name){
         if(name==null || name.isEmpty()) throw new FiveLeagueFantasyException("Name can't be null." , HttpStatus.BAD_REQUEST);
-        return forwardRepository.findByName(name);
+        return forwardRepository.findByNameContainingIgnoreCase(name);
     }
 }
