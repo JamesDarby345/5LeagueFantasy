@@ -21,7 +21,7 @@ public class KeeperController {
     @Autowired
     private KeeperService keeperService;
 
-    @GetMapping("/players/position/{position}")
+    @GetMapping("/players/{position}")
     public ResponseEntity<List<KeepersResponseDto>> getByPositionKeeper(@PathVariable String position) {
 
         List<Goalkeeper> retrievedKeepers = keeperService.getKeeperByPosition(position);

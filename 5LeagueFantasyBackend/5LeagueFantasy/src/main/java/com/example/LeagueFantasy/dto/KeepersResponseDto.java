@@ -88,4 +88,5 @@ public class KeepersResponseDto {
     public void setCleanSheets(int cleanSheets) {
         this.cleanSheets = cleanSheets;
     }
+
 }

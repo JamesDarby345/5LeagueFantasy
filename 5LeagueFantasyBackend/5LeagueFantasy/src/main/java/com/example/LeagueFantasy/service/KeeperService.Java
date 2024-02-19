@@ -15,8 +15,9 @@ public class KeeperService {
     @Autowired
     private GoalkeeperRepository keeperRepository;
 
-    public List<Forward> getKeeperByPosition(String position){
-        if(position==null || position.isEmpty()) throw new FiveLeagueFantasyException("Position can't be null." , HttpStatus.BAD_REQUEST);
+    public List<Goalkeeper> getKeeperByPosition(String position) {
+        if (position == null || position.isEmpty())
+            throw new FiveLeagueFantasyException("Position can't be null.", HttpStatus.BAD_REQUEST);
         return keeperRepository.findByPosition(position);
     }
 }

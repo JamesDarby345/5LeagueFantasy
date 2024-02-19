@@ -45,6 +45,10 @@ public class Goalkeeper extends Player {
         return position;
     }
 
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
     public int getGoals() {
         return goals;
     }
@@ -84,4 +88,5 @@ public class Goalkeeper extends Player {
     public void setKeeperToTeam(List<PlayerToTeam> playersToTeam) {
         this.keeperToTeam = playersToTeam;
     }
+
 }
