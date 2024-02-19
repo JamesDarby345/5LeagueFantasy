@@ -9,11 +9,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
+@SpringBootTest
 public class QueryKeeperByPositionStepDefinitions {
     @Autowired
     private KeeperController keeperController;
