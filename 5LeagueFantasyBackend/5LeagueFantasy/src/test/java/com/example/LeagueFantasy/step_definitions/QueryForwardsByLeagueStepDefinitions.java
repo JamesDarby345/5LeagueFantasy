@@ -18,7 +18,7 @@ import java.util.List;
 import static org.springframework.test.util.AssertionErrors.assertNotNull;
 
 @SpringBootTest
-public class QueryForwardsByLeagueStepDefinition {
+public class QueryForwardsByLeagueStepDefinitions {
     @Autowired
     private ForwardController forwardController;
 

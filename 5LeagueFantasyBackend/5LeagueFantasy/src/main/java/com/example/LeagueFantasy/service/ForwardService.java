@@ -18,6 +18,11 @@ public class ForwardService {
     private ForwardRepository forwardRepository;
 
     @Transactional
+    public List<Forward> getAllForwards(){
+        return forwardRepository.findAll();
+    }
+
+    @Transactional
     public List<Forward> getForwardsByName(String name){
         if(name==null || name.isEmpty()) throw new FiveLeagueFantasyException("Name can't be null." , HttpStatus.BAD_REQUEST);
         return forwardRepository.findByNameContainingIgnoreCase(name);
