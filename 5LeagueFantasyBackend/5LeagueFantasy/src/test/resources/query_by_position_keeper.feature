@@ -6,7 +6,7 @@ Feature: Query Goalkeepers by Position
 
     Scenario Outline: Querying for a specific goalkeeper in the system
         Given that there is a keeper "<keeper_name>" in the system
-        When I query "<query>"
+        When I query keeper "<query>"
         Then I am shown a list of all goalkeepers
 
         Examples:
