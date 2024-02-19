@@ -45,6 +45,32 @@ public class ForwardController {
 
         return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
     }
+    @GetMapping("/forwards/goals/{goals}")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsByGoals(@PathVariable int goals) {
+        List<Forward> retrievedForwards = forwardService.getForwardsByGoals(goals);
+        List<ForwardResponseDto> responseDtoList = new ArrayList<>();
+
+        return getListResponseEntity(retrievedForwards, responseDtoList);
+    }
+
+    @GetMapping("/forwards/assists/{assists}")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsByAssists(@PathVariable int assists) {
+        List<Forward> retrievedForwards = forwardService.getForwardsByGoals(assists);
+        List<ForwardResponseDto> responseDtoList = new ArrayList<>();
+
+        return getListResponseEntity(retrievedForwards, responseDtoList);
+    }
+    @GetMapping("/forwards/sortedByGoals")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsSortedByGoals() {
+        List<Forward> retrievedForwards = forwardService.getForwardsByDescendingGoals();
+        return getListResponseEntitySorted(retrievedForwards);
+    }
+
+    @GetMapping("/forwards/sortedByAssists")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsSortedByAssists() {
+        List<Forward> retrievedForwards = forwardService.getForwardsByDescendingAssists();
+        return getListResponseEntitySorted(retrievedForwards);
+    }
 
     private ResponseEntity<List<ForwardResponseDto>> getListResponseEntity(List<Forward> retrievedForwards, List<ForwardResponseDto> retrievedForwardsResponse) {
         for(Forward forward: retrievedForwards) {
@@ -62,5 +88,23 @@ public class ForwardController {
 
         return new ResponseEntity<>(retrievedForwardsResponse, HttpStatus.OK);
     }
+
+    private ResponseEntity<List<ForwardResponseDto>> getListResponseEntitySorted(List<Forward> retrievedForwards) {
+        List<ForwardResponseDto> retrievedForwardsResponse = new ArrayList<>();
+        for (Forward forward : retrievedForwards) {
+            retrievedForwardsResponse.add(new ForwardResponseDto(
+                    forward.getName(),
+                    forward.getTeam(),
+                    forward.getEuropeanLeague(),
+                    forward.getPosition(),
+                    forward.getGoals(),
+                    forward.getAssists(),
+                    forward.getGamesPlayed()
+            ));
+        }
+        return new ResponseEntity<>(retrievedForwardsResponse, HttpStatus.OK);
+    }
+
+
 
 }

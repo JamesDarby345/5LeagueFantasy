@@ -38,4 +38,26 @@ public class ForwardService {
             throw new IllegalArgumentException("Invalid or null EuropeanLeague value: " + europeanLeague, e);
         }
     }
+
+    @Transactional
+    public List<Forward> getForwardsByGoals(int goals) {
+        if (goals  < 0) throw new FiveLeagueFantasyException("Goals scored must be above 0.", HttpStatus.BAD_REQUEST);
+        return forwardRepository.findByGoals(goals);
+    }
+
+    @Transactional
+    public List<Forward> getForwardsByAssists(int assists) {
+        if (assists < 0) throw new FiveLeagueFantasyException("Assists bust me above 0.", HttpStatus.BAD_REQUEST);
+        return forwardRepository.findByAssists(assists);
+     }
+
+     @Transactional
+    public List<Forward> getForwardsByDescendingGoals() {
+        return forwardRepository.findAllByOrderByGoalsDesc();
+     }
+
+     @Transactional
+    public List<Forward> getForwardsByDescendingAssists() {
+        return forwardRepository.findAllByOrderByAssistsDesc();
+     }
 }

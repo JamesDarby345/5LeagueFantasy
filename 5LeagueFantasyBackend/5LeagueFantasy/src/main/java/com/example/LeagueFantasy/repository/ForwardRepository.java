@@ -14,5 +14,14 @@ public interface ForwardRepository extends CrudRepository<Forward, Integer> {
     List<Forward> findByTeam(String teamName);
     List<Forward> findByPosition(String position);
     List<Forward> findByEuropeanLeague(EuropeanLeague europeanLeague);
+
+    List<Forward> findByGoals(int goals);
+    List<Forward> findByAssists(int assists);
+
+    // Method to find all forwards ordered by goals descending
+    List<Forward> findAllByOrderByGoalsDesc();
+
+    // Method to find all forwards ordered by assists descending
+    List<Forward> findAllByOrderByAssistsDesc();
     List<Forward> findAll();  
 }
