@@ -47,7 +47,7 @@ public class ForwardService {
 
     @Transactional
     public List<Forward> getForwardsByAssists(int assists) {
-        if (assists < 0) throw new FiveLeagueFantasyException("Assists bust me above 0.", HttpStatus.BAD_REQUEST);
+        if (assists < 0) throw new FiveLeagueFantasyException("Assists must me above 0.", HttpStatus.BAD_REQUEST);
         return forwardRepository.findByAssists(assists);
      }
 
@@ -70,4 +70,5 @@ public class ForwardService {
     public List<Forward> getForwardsByAscendingAssists() {
         return forwardRepository.findAllByOrderByAssistsAsc();
      }
+
 }
