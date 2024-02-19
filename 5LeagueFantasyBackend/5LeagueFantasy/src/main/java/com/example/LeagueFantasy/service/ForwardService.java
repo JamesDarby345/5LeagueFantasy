@@ -60,4 +60,14 @@ public class ForwardService {
     public List<Forward> getForwardsByDescendingAssists() {
         return forwardRepository.findAllByOrderByAssistsDesc();
      }
+
+     @Transactional
+    public List<Forward> getForwardsByAscendingGoals() {
+        return forwardRepository.findAllByOrderByGoalsAsc();
+     }
+
+     @Transactional
+    public List<Forward> getForwardsByAscendingAssists() {
+        return forwardRepository.findAllByOrderByAssistsAsc();
+     }
 }

@@ -17,11 +17,11 @@ public interface ForwardRepository extends CrudRepository<Forward, Integer> {
 
     List<Forward> findByGoals(int goals);
     List<Forward> findByAssists(int assists);
-
-    // Method to find all forwards ordered by goals descending
     List<Forward> findAllByOrderByGoalsDesc();
 
-    // Method to find all forwards ordered by assists descending
     List<Forward> findAllByOrderByAssistsDesc();
+
+    List<Forward> findAllByOrderByGoalsAsc();
+    List<Forward> findAllByOrderByAssistsAsc();
     List<Forward> findAll();  
 }
