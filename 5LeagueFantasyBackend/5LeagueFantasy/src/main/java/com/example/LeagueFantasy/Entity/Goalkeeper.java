@@ -19,7 +19,8 @@ public class Goalkeeper extends Player{
     @JoinColumn(name = "keeperToTeam")
     private List<PlayerToTeam> keeperToTeam;
 
-    public Goalkeeper(String name, String team, String position, int gamesPlayed, EuropeanLeague europeanLeague, int saves, int cleanSheets) {
+    public Goalkeeper(String name, String team, String position, int gamesPlayed, EuropeanLeague europeanLeague, int goals, int assists, 
+    int saves, int cleanSheets) {
         super(name, team, gamesPlayed, europeanLeague);
         this.saves = saves;
         this.cleanSheets = cleanSheets;
@@ -27,6 +28,26 @@ public class Goalkeeper extends Player{
 
     public Goalkeeper() {
         super();
+    }
+
+    public Forward() {
+        super();
+    }
+
+    public int getGoals() {
+        return goals;
+    }
+
+    public void setGoals(int goals) {
+        this.goals = goals;
+    }
+
+    public int getAssists() {
+        return assists;
+    }
+
+    public void setAssists(int assists) {
+        this.assists = assists;
     }
 
     public int getSaves() {
