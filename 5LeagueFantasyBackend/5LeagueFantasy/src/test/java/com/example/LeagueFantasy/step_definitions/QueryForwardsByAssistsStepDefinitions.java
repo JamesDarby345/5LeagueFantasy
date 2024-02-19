@@ -71,8 +71,8 @@ public class QueryForwardsByAssistsStepDefinitions {
             queriedPlayersDescending = response.getBody();
       }
 
-      @Then("I am shown a list that has {string} ranked higher than {string}")
-      public void thenIAmShownAListWithCorrectOrder(String player1Name, String player2Name) {
+      @Then("I am shown a descending assists list that has {string} ranked higher than {string}")
+      public void thenIAmShownAListWithCorrectOrder3(String player1Name, String player2Name) {
             assertNotNull(queriedPlayersDescending, "The queried players list should not be null.");
             assertTrue(queriedPlayersDescending.size() >= 2, "The list must contain at least two players for comparison.");
 
@@ -98,8 +98,8 @@ public class QueryForwardsByAssistsStepDefinitions {
             queriedPlayersAscending = response.getBody();
       }
 
-      @Then("I am shown a list that has {string} ranked higher than {string}")
-      public void thenIAmShownAListWithCorrectOrder2(String player1Name, String player2Name) {
+      @Then("I am shown a ascending assists list that has {string} ranked higher than {string}")
+      public void thenIAmShownAListWithCorrectOrder4(String player1Name, String player2Name) {
             assertNotNull(queriedPlayersAscending, "The queried players list should not be null.");
             assertTrue(queriedPlayersAscending.size() >= 2, "The list must contain at least two players for comparison.");
 
@@ -116,11 +116,11 @@ public class QueryForwardsByAssistsStepDefinitions {
             assertTrue(player1Index != -1 && player2Index != -1, "Both players should be found in the list.");
 
             // Verify that player1 is ranked lower (has a higher index) than player2 in the list
-            assertTrue(player1Index > player2Index, player2Name + " should be ranked higher than " + player1Name);
+            assertTrue(player1Index < player2Index, player1Name + " should be ranked higher than " + player2Name);
       }
 
 
-      @Given("no player is in the system")
+      @Given("no player is in the system assists")
       public void noPlayerIsInTheSystem() {
             forwardRepository.deleteAll();
       }
@@ -131,7 +131,7 @@ public class QueryForwardsByAssistsStepDefinitions {
       }
 
 
-      @Then("I am shown a prompt indicating no results were found")
+      @Then("I am shown a prompt indicating no results for ascending assists were found")
       public void iAmShownAPromptIndicatingNoResultsWereFound() {
             assertNotNull(responseEntity, "The response entity should not be null.");
             // Assuming the controller returns an empty list for no results
