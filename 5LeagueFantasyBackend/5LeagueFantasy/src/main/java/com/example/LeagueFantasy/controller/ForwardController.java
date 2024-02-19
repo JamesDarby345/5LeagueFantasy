@@ -1,5 +1,6 @@
 package com.example.LeagueFantasy.controller;
 
+import com.example.LeagueFantasy.Entity.EuropeanLeague;
 import com.example.LeagueFantasy.Entity.Forward;
 import com.example.LeagueFantasy.dto.ForwardResponseDto;
 import com.example.LeagueFantasy.service.ForwardService;
@@ -25,6 +26,19 @@ public class ForwardController {
         List<Forward> retrievedForwards = forwardService.getForwardsByName(name);
         List<ForwardResponseDto> retrievedForwardsResponse = new ArrayList<ForwardResponseDto>();
 
+        return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
+    }
+
+    @GetMapping("/forwards/europeanLeague/{europeanLeague}")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardsByEuropeanLeague(@PathVariable String europeanLeague) {
+
+        List<Forward> retrievedForwards = forwardService.getForwardsByLeague((europeanLeague));
+        List<ForwardResponseDto> retrievedForwardsResponse = new ArrayList<>();
+
+        return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
+    }
+
+    private ResponseEntity<List<ForwardResponseDto>> getListResponseEntity(List<Forward> retrievedForwards, List<ForwardResponseDto> retrievedForwardsResponse) {
         for(Forward forward: retrievedForwards) {
             ForwardResponseDto currentForwardResponse = new ForwardResponseDto(
                     forward.getName(),
