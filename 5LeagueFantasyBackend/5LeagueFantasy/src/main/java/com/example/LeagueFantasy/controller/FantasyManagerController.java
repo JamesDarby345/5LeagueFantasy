@@ -61,7 +61,7 @@ public class FantasyManagerController {
                       playerInfo.player.name,
                       stt.team.name,
                       stt.games.position,
-                      stt.games.number,
+                      stt.games.appearences,
                       EuropeanLeague.fromString((stt.league.name)),
                       stt.goals.total,
                       stt.goals.assists);
