@@ -27,7 +27,7 @@ dependencies {
     testImplementation 'io.cucumber:cucumber-spring:6.10.4'
     testImplementation 'io.cucumber:cucumber-junit:6.10.4'
     runtimeOnly 'org.postgresql:postgresql'
-    runtimeOnly 'com.h2database:h2'
+//    runtimeOnly 'com.h2database:h2'
 }
 
 tasks.named('test') {
