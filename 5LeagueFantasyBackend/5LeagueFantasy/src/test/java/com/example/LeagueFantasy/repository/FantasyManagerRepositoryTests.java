@@ -36,11 +36,13 @@ public class FantasyManagerRepositoryTests {
 
     // Save and reload from repository
     fantasyManagerRepository.save(fantasyManager);
-    fantasyManager = fantasyManagerRepository.findByEmail(email);
+    fantasyManager = fantasyManagerRepository.findByUsername(username);
 
     // Assert correctness
     assertNotNull(fantasyManager);
     assertEquals(username, fantasyManager.getUsername());
     assertEquals(password, fantasyManager.getPassword());
+    assertEquals(email, fantasyManager.getEmail());
+    assertEquals(name, fantasyManager.getName());
   }
 }

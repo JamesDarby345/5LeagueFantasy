@@ -1,10 +1,6 @@
 package com.example.LeagueFantasy.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 @MappedSuperclass
 public class Player {
@@ -55,6 +51,14 @@ public class Player {
 
   public void setGamesPlayed(int gamesPlayed) {
     this.gamesPlayed = gamesPlayed;
+  }
+
+  public int getPlayerId() {
+    return this.id;
+  }
+
+  public void setPlayerId(int id) {
+    this.id = id;
   }
 
   public EuropeanLeague getEuropeanLeague() {

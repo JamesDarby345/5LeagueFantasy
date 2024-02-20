@@ -1,5 +1,6 @@
 package com.example.LeagueFantasy.repository;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.example.LeagueFantasy.entity.FantasyManager;
@@ -12,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class LeagueRepositoryTests {
+
   @Autowired private LeagueRepository leagueRepository;
 
   @Autowired private FantasyManagerRepository fantasyManagerRepository;
@@ -49,5 +51,7 @@ public class LeagueRepositoryTests {
 
     // Assert correctness
     assertNotNull(league);
+    assertEquals(name, league.getName());
+    assertEquals(fantasyManager, league.getLeagueOwner());
   }
 }
