@@ -2,10 +2,9 @@ package com.example.LeagueFantasy.repository;
 
 import com.example.LeagueFantasy.entity.FantasyManager;
 import com.example.LeagueFantasy.entity.UserTeam;
-import org.springframework.data.repository.CrudRepository;
-
 import java.sql.Date;
 import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
 public interface UserTeamRepository extends CrudRepository<UserTeam, Integer> {
 

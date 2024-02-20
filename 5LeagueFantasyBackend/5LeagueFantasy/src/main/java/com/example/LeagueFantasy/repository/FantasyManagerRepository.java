@@ -2,9 +2,8 @@ package com.example.LeagueFantasy.repository;
 
 import com.example.LeagueFantasy.entity.FantasyManager;
 import com.example.LeagueFantasy.entity.League;
-import org.springframework.data.repository.CrudRepository;
-
 import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
 public interface FantasyManagerRepository extends CrudRepository<FantasyManager, Integer> {
 

@@ -13,132 +13,146 @@ import org.springframework.stereotype.Service;
 @Service
 public class FantasyManagerService {
 
-    @Autowired
-    private FantasyManagerRepository fantasyManagerRepository;
+  @Autowired private FantasyManagerRepository fantasyManagerRepository;
 
-    @Autowired
-    private LeagueRepository leagueRepository;
+  @Autowired private LeagueRepository leagueRepository;
 
-    @Transactional
-    public FantasyManager createFantasyManager(FantasyManager fantasyManagerToCreate) {
+  @Transactional
+  public FantasyManager createFantasyManager(FantasyManager fantasyManagerToCreate) {
 
-        if (fantasyManagerRepository.findByEmail(fantasyManagerToCreate.getEmail()) != null) {
-            throw new FiveLeagueFantasyException("User with email address " + fantasyManagerToCreate.getEmail() + " already exists.", HttpStatus.CONFLICT);
-        } else if (fantasyManagerRepository.findByUsername(fantasyManagerToCreate.getUsername()) != null) {
-            throw new FiveLeagueFantasyException("User with username " + fantasyManagerToCreate.getUsername() + " already exists.", HttpStatus.CONFLICT);
-        } else if (fantasyManagerToCreate.getPassword() == "" || fantasyManagerToCreate.getPassword().length() < 8) {
-            throw new FiveLeagueFantasyException("Password must be at least 8 characters long.", HttpStatus.BAD_REQUEST);
-        } else if (fantasyManagerToCreate.getName() == "") {
-            throw new FiveLeagueFantasyException("Name can't be null.", HttpStatus.BAD_REQUEST);
-        } else if (fantasyManagerToCreate.getUsername() == "") {
-            throw new FiveLeagueFantasyException("Username can't be null.", HttpStatus.BAD_REQUEST);
-        } else if (fantasyManagerToCreate.getEmail() == "") {
-            throw new FiveLeagueFantasyException("Email can't be null", HttpStatus.BAD_REQUEST);
-        }
-
-        fantasyManagerToCreate.setLeague(null);
-        return fantasyManagerRepository.save(fantasyManagerToCreate);
+    if (fantasyManagerRepository.findByEmail(fantasyManagerToCreate.getEmail()) != null) {
+      throw new FiveLeagueFantasyException(
+          "User with email address " + fantasyManagerToCreate.getEmail() + " already exists.",
+          HttpStatus.CONFLICT);
+    } else if (fantasyManagerRepository.findByUsername(fantasyManagerToCreate.getUsername())
+        != null) {
+      throw new FiveLeagueFantasyException(
+          "User with username " + fantasyManagerToCreate.getUsername() + " already exists.",
+          HttpStatus.CONFLICT);
+    } else if (fantasyManagerToCreate.getPassword() == ""
+        || fantasyManagerToCreate.getPassword().length() < 8) {
+      throw new FiveLeagueFantasyException(
+          "Password must be at least 8 characters long.", HttpStatus.BAD_REQUEST);
+    } else if (fantasyManagerToCreate.getName() == "") {
+      throw new FiveLeagueFantasyException("Name can't be null.", HttpStatus.BAD_REQUEST);
+    } else if (fantasyManagerToCreate.getUsername() == "") {
+      throw new FiveLeagueFantasyException("Username can't be null.", HttpStatus.BAD_REQUEST);
+    } else if (fantasyManagerToCreate.getEmail() == "") {
+      throw new FiveLeagueFantasyException("Email can't be null", HttpStatus.BAD_REQUEST);
     }
 
-    @Transactional
-    public FantasyManager loginFantasyManager(String username, String password) {
+    fantasyManagerToCreate.setLeague(null);
+    return fantasyManagerRepository.save(fantasyManagerToCreate);
+  }
 
-        FantasyManager fantasyManagerToLogin = fantasyManagerRepository.findByUsername(username);
+  @Transactional
+  public FantasyManager loginFantasyManager(String username, String password) {
 
-        if (fantasyManagerToLogin == null) {
-            throw new FiveLeagueFantasyException("User with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
-        } else if (!fantasyManagerToLogin.getPassword().equals(password)) {
-            throw new FiveLeagueFantasyException("Incorrect password.", HttpStatus.UNAUTHORIZED);
-        }
+    FantasyManager fantasyManagerToLogin = fantasyManagerRepository.findByUsername(username);
 
-        return fantasyManagerToLogin;
+    if (fantasyManagerToLogin == null) {
+      throw new FiveLeagueFantasyException(
+          "User with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
+    } else if (!fantasyManagerToLogin.getPassword().equals(password)) {
+      throw new FiveLeagueFantasyException("Incorrect password.", HttpStatus.UNAUTHORIZED);
     }
 
-    @Transactional
-    public FantasyManager getFantasyManagerByUsername(String name) {
+    return fantasyManagerToLogin;
+  }
 
-        if (fantasyManagerRepository.findByUsername(name) == null) {
-            throw new FiveLeagueFantasyException("User with username " + name + " does not exist.", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public FantasyManager getFantasyManagerByUsername(String name) {
 
-        return fantasyManagerRepository.findByUsername(name);
+    if (fantasyManagerRepository.findByUsername(name) == null) {
+      throw new FiveLeagueFantasyException(
+          "User with username " + name + " does not exist.", HttpStatus.NOT_FOUND);
     }
 
-    @Transactional
-    public FantasyManager getFantasyManagerByEmail(String email) {
+    return fantasyManagerRepository.findByUsername(name);
+  }
 
-        if (fantasyManagerRepository.findByEmail(email) == null) {
-            throw new FiveLeagueFantasyException("User with email " + email + " does not exist.", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public FantasyManager getFantasyManagerByEmail(String email) {
 
-        return fantasyManagerRepository.findByEmail(email);
+    if (fantasyManagerRepository.findByEmail(email) == null) {
+      throw new FiveLeagueFantasyException(
+          "User with email " + email + " does not exist.", HttpStatus.NOT_FOUND);
     }
 
-    @Transactional
-    public List<FantasyManager> getFantasyManagersByName(String name) {
+    return fantasyManagerRepository.findByEmail(email);
+  }
 
-        if (fantasyManagerRepository.findByName(name) == null) {
-            throw new FiveLeagueFantasyException("User with name " + name + " does not exist.", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public List<FantasyManager> getFantasyManagersByName(String name) {
 
-        return fantasyManagerRepository.findByName(name);
+    if (fantasyManagerRepository.findByName(name) == null) {
+      throw new FiveLeagueFantasyException(
+          "User with name " + name + " does not exist.", HttpStatus.NOT_FOUND);
     }
 
-    @Transactional
-    public List<FantasyManager> getFantasyManagersByLeague(int leagueID) {
+    return fantasyManagerRepository.findByName(name);
+  }
 
-        if (fantasyManagerRepository.findByLeague(leagueRepository.findById(leagueID)) == null) {
-            throw new FiveLeagueFantasyException("No users belong to league " + leagueRepository.findById(leagueID).getName() + " .", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public List<FantasyManager> getFantasyManagersByLeague(int leagueID) {
 
-        return fantasyManagerRepository.findByLeague(leagueRepository.findById(leagueID));
+    if (fantasyManagerRepository.findByLeague(leagueRepository.findById(leagueID)) == null) {
+      throw new FiveLeagueFantasyException(
+          "No users belong to league " + leagueRepository.findById(leagueID).getName() + " .",
+          HttpStatus.NOT_FOUND);
     }
 
-    @Transactional
-    public List<FantasyManager> getFantasyManagersByLeague(String leagueName) {
+    return fantasyManagerRepository.findByLeague(leagueRepository.findById(leagueID));
+  }
 
-        if (fantasyManagerRepository.findByLeague(leagueRepository.findByName(leagueName)) == null) {
-            throw new FiveLeagueFantasyException("No users belong to league " + leagueRepository.findByName(leagueName).getName() + " .", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public List<FantasyManager> getFantasyManagersByLeague(String leagueName) {
 
-        return fantasyManagerRepository.findByLeague(leagueRepository.findByName(leagueName));
+    if (fantasyManagerRepository.findByLeague(leagueRepository.findByName(leagueName)) == null) {
+      throw new FiveLeagueFantasyException(
+          "No users belong to league " + leagueRepository.findByName(leagueName).getName() + " .",
+          HttpStatus.NOT_FOUND);
     }
 
-    @Transactional
-    public FantasyManager updateFantasyManagerName(String username, String newName) {
-        FantasyManager fantasyManagerToUpdate = fantasyManagerRepository.findByUsername(username);
+    return fantasyManagerRepository.findByLeague(leagueRepository.findByName(leagueName));
+  }
 
-        if (fantasyManagerToUpdate == null) {
-            throw new FiveLeagueFantasyException("Fantasy Manager with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public FantasyManager updateFantasyManagerName(String username, String newName) {
+    FantasyManager fantasyManagerToUpdate = fantasyManagerRepository.findByUsername(username);
 
-        fantasyManagerToUpdate.setName(newName);
-        return fantasyManagerRepository.save(fantasyManagerToUpdate);
+    if (fantasyManagerToUpdate == null) {
+      throw new FiveLeagueFantasyException(
+          "Fantasy Manager with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
     }
 
-    @Transactional
-    public FantasyManager updateFantasyManagerEmail(String username, String newEmail) {
-        FantasyManager fantasyManagerToUpdate = fantasyManagerRepository.findByUsername(username);
+    fantasyManagerToUpdate.setName(newName);
+    return fantasyManagerRepository.save(fantasyManagerToUpdate);
+  }
 
-        if (fantasyManagerToUpdate == null) {
-            throw new FiveLeagueFantasyException("Fantasy Manager with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public FantasyManager updateFantasyManagerEmail(String username, String newEmail) {
+    FantasyManager fantasyManagerToUpdate = fantasyManagerRepository.findByUsername(username);
 
-        fantasyManagerToUpdate.setEmail(newEmail);
-        return fantasyManagerRepository.save(fantasyManagerToUpdate);
+    if (fantasyManagerToUpdate == null) {
+      throw new FiveLeagueFantasyException(
+          "Fantasy Manager with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
     }
 
-    @Transactional
-    public FantasyManager updateFantasyManagerPassword(String username, String newPassword) {
-        FantasyManager fantasyManagerToUpdate = fantasyManagerRepository.findByUsername(username);
+    fantasyManagerToUpdate.setEmail(newEmail);
+    return fantasyManagerRepository.save(fantasyManagerToUpdate);
+  }
 
-        if (fantasyManagerToUpdate == null) {
-            throw new FiveLeagueFantasyException("Fantasy Manager with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
-        }
+  @Transactional
+  public FantasyManager updateFantasyManagerPassword(String username, String newPassword) {
+    FantasyManager fantasyManagerToUpdate = fantasyManagerRepository.findByUsername(username);
 
-        fantasyManagerToUpdate.setPassword(newPassword);
-        return fantasyManagerRepository.save(fantasyManagerToUpdate);
+    if (fantasyManagerToUpdate == null) {
+      throw new FiveLeagueFantasyException(
+          "Fantasy Manager with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
     }
 
-
+    fantasyManagerToUpdate.setPassword(newPassword);
+    return fantasyManagerRepository.save(fantasyManagerToUpdate);
+  }
 }

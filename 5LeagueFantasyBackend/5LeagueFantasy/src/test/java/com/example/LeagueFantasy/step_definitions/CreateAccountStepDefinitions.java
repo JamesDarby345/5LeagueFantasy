@@ -66,22 +66,18 @@ public class CreateAccountStepDefinitions {
 
   @Then("the user with username {string} should be created")
   public void the_user_with_username_username_should_be_created(String username) {
-    Assert.assertEquals(fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getUsername(), this.username);
-    Assert.assertEquals(fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getName(), this.name);
-    Assert.assertEquals(fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getEmail(), this.email);
-    Assert.assertEquals(fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getPassword(), this.password);
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByUsername(this.username).getBody().getUsername(),
+        this.username);
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByUsername(this.username).getBody().getName(),
+        this.name);
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByUsername(this.username).getBody().getEmail(),
+        this.email);
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByUsername(this.username).getBody().getPassword(),
+        this.password);
   }
 
   // Step Definition for Alternate Flow (Existing Username)
@@ -90,10 +86,8 @@ public class CreateAccountStepDefinitions {
   public void a_user_with_the_username_username_exists(String username) {
     FantasyManager existingUser = new FantasyManager(username, "name", "email", "password");
     fantasyManagerRepository.save(existingUser);
-    Assert.assertEquals(fantasyManagerController
-            .getManagerByUsername(username)
-            .getBody()
-            .getUsername(), username);
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByUsername(username).getBody().getUsername(), username);
   }
 
   @When("I enter a valid but existing username {string}")
@@ -114,22 +108,16 @@ public class CreateAccountStepDefinitions {
 
   @Then("the user with username {string} should not be created")
   public void the_user_with_username_username_should_not_be_created(String username) {
-    Assert.assertEquals(fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getUsername(), this.username);
-    Assert.assertEquals("name", fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getName());
-    Assert.assertEquals("email", fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getEmail());
-    Assert.assertEquals("password", fantasyManagerController
-            .getManagerByUsername(this.username)
-            .getBody()
-            .getPassword());
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByUsername(this.username).getBody().getUsername(),
+        this.username);
+    Assert.assertEquals(
+        "name", fantasyManagerController.getManagerByUsername(this.username).getBody().getName());
+    Assert.assertEquals(
+        "email", fantasyManagerController.getManagerByUsername(this.username).getBody().getEmail());
+    Assert.assertEquals(
+        "password",
+        fantasyManagerController.getManagerByUsername(this.username).getBody().getPassword());
   }
 
   // Step Definition for Alternate Flow (Existing Username)
@@ -138,7 +126,8 @@ public class CreateAccountStepDefinitions {
   public void a_user_with_the_email_email_exists(String email) {
     FantasyManager existingUser = new FantasyManager("username", "name", email, "password");
     fantasyManagerRepository.save(existingUser);
-    Assert.assertEquals(fantasyManagerController.getManagerByEmail(email).getBody().getEmail(), email);
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByEmail(email).getBody().getEmail(), email);
   }
 
   @And("I enter a valid but existing email {string}")
@@ -159,19 +148,14 @@ public class CreateAccountStepDefinitions {
 
   @Then("the user with email {string} should not be created")
   public void the_user_with_email_email_should_not_be_created(String email) {
-    Assert.assertEquals(fantasyManagerController
-            .getManagerByEmail(this.email)
-            .getBody()
-            .getEmail(), this.email);
-    Assert.assertEquals("username", fantasyManagerController
-            .getManagerByEmail(this.email)
-            .getBody()
-            .getUsername());
-    Assert.assertEquals("name", fantasyManagerController.getManagerByEmail(this.email).getBody().getName());
-    Assert.assertEquals("password", fantasyManagerController
-            .getManagerByEmail(this.email)
-            .getBody()
-            .getPassword());
+    Assert.assertEquals(
+        fantasyManagerController.getManagerByEmail(this.email).getBody().getEmail(), this.email);
+    Assert.assertEquals(
+        "username", fantasyManagerController.getManagerByEmail(this.email).getBody().getUsername());
+    Assert.assertEquals(
+        "name", fantasyManagerController.getManagerByEmail(this.email).getBody().getName());
+    Assert.assertEquals(
+        "password", fantasyManagerController.getManagerByEmail(this.email).getBody().getPassword());
   }
 
   // Step Definition for Error Flow (Invalid Password)

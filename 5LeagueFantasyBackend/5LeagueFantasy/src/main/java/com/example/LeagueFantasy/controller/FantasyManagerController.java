@@ -47,10 +47,13 @@ public class FantasyManagerController {
                   new Goalkeeper(
                       playerInfo.player.name,
                       stt.team.name,
-                      stt.games.number,
+                      stt.games.position,
+                      stt.games.appearences,
                       EuropeanLeague.fromString((stt.league.name)),
+                      stt.goals.total,
                       stt.goals.saves,
-                      stt.goals.conceded);
+                      stt.goals.conceded,
+                      stt.games.appearences);
               goalkeeperRepository.save(entityPlayer);
             } else {
               Forward entityPlayer =

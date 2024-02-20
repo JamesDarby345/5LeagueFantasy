@@ -7,15 +7,27 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ForwardRepository extends CrudRepository<Forward, Integer> {
 
-    Forward findById(int id);
+  Forward findById(int id);
 
-    List<Forward> findByName(String name);
+  List<Forward> findByNameContainingIgnoreCase(String name);
 
-    List<Forward> findByTeam(String teamName);
+  List<Forward> findByTeam(String teamName);
 
-    List<Forward> findByPosition(String position);
+  List<Forward> findByPosition(String position);
 
-    List<Forward> findByEuropeanLeague(EuropeanLeague europeanLeague);
+  List<Forward> findByEuropeanLeague(EuropeanLeague europeanLeague);
 
-    List<Forward> findAll();
+  List<Forward> findByGoals(int goals);
+
+  List<Forward> findByAssists(int assists);
+
+  List<Forward> findAllByOrderByGoalsDesc();
+
+  List<Forward> findAllByOrderByAssistsDesc();
+
+  List<Forward> findAllByOrderByGoalsAsc();
+
+  List<Forward> findAllByOrderByAssistsAsc();
+
+  List<Forward> findAll();
 }

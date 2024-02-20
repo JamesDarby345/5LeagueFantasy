@@ -99,7 +99,8 @@ public class LoginToAccountStepDefinitions {
   @Then("I am informed that username does not exist")
   public void i_am_informed_that_username_does_not_exist() {
     Assert.assertSame(fiveLeagueFantasyException.getStatus(), HttpStatus.NOT_FOUND);
-    Assert.assertEquals(fiveLeagueFantasyException
-            .getMessage(), "User with username " + this.username + " does not exist.");
+    Assert.assertEquals(
+        fiveLeagueFantasyException.getMessage(),
+        "User with username " + this.username + " does not exist.");
   }
 }

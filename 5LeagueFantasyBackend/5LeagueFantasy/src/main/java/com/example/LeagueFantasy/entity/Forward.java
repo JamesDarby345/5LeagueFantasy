@@ -8,56 +8,66 @@ import java.util.List;
 
 @Entity
 public class Forward extends Player {
-    @Column(name = "goals", nullable = false)
-    private int goals;
-    @Column(name = "assists", nullable = false)
-    private int assists;
-    @Column(name = "position", nullable = false)
-    private String position;
-    @OneToMany
-    @JoinColumn(name = "forwardToTeam")
-    private List<PlayerToTeam> forwardToTeam;
+  @Column(name = "goals", nullable = false)
+  private int goals;
 
-    public Forward(String name, String team, String position, int gamesPlayed, EuropeanLeague europeanLeague, int goals, int assists) {
-        super(name, team, gamesPlayed, europeanLeague);
-        this.goals = goals;
-        this.assists = assists;
-        this.position = position;
-    }
+  @Column(name = "assists", nullable = false)
+  private int assists;
 
-    public Forward() {
-        super();
-    }
+  @Column(name = "position", nullable = false)
+  private String position;
 
-    public int getGoals() {
-        return goals;
-    }
+  @OneToMany
+  @JoinColumn(name = "forwardToTeam")
+  private List<PlayerToTeam> forwardToTeam;
 
-    public void setGoals(int goals) {
-        this.goals = goals;
-    }
+  public Forward(
+      String name,
+      String team,
+      String position,
+      int gamesPlayed,
+      EuropeanLeague europeanLeague,
+      int goals,
+      int assists) {
+    super(name, team, gamesPlayed, europeanLeague);
+    this.goals = goals;
+    this.assists = assists;
+    this.position = position;
+  }
 
-    public int getAssists() {
-        return assists;
-    }
+  public Forward() {
+    super();
+  }
 
-    public void setAssists(int assists) {
-        this.assists = assists;
-    }
+  public int getGoals() {
+    return goals;
+  }
 
-    public String getPosition() {
-        return this.position;
-    }
+  public void setGoals(int goals) {
+    this.goals = goals;
+  }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
+  public int getAssists() {
+    return assists;
+  }
 
-    public List<PlayerToTeam> getForwardToTeam() {
-        return forwardToTeam;
-    }
+  public void setAssists(int assists) {
+    this.assists = assists;
+  }
 
-    public void setForwardToTeam(List<PlayerToTeam> playersToTeam) {
-        this.forwardToTeam = playersToTeam;
-    }
+  public String getPosition() {
+    return this.position;
+  }
+
+  public void setPosition(String position) {
+    this.position = position;
+  }
+
+  public List<PlayerToTeam> getForwardToTeam() {
+    return forwardToTeam;
+  }
+
+  public void setForwardToTeam(List<PlayerToTeam> playersToTeam) {
+    this.forwardToTeam = playersToTeam;
+  }
 }
