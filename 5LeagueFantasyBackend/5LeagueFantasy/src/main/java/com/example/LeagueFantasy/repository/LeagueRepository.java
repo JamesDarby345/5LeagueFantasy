@@ -1,14 +1,15 @@
 package com.example.LeagueFantasy.repository;
 
-import org.springframework.data.repository.CrudRepository;
-
-import com.example.LeagueFantasy.Entity.FantasyManager;
-import com.example.LeagueFantasy.Entity.League;
+import com.example.LeagueFantasy.entity.FantasyManager;
+import com.example.LeagueFantasy.entity.League;
 import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
 public interface LeagueRepository extends CrudRepository<League, Integer> {
 
-    League findById(int id);
-    League findByName(String name);
-    List<League> findByLeagueOwner(FantasyManager leagueOwner); 
+  League findById(int id);
+
+  League findByName(String name);
+
+  List<League> findByLeagueOwner(FantasyManager leagueOwner);
 }

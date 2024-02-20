@@ -1,21 +1,19 @@
 package com.example.LeagueFantasy.step_definitions;
 
-import com.example.LeagueFantasy.Entity.EuropeanLeague;
-import com.example.LeagueFantasy.Entity.Forward;
-import com.example.LeagueFantasy.Entity.Goalkeeper;
+import static org.springframework.test.util.AssertionErrors.assertTrue;
+
 import com.example.LeagueFantasy.controller.ForwardController;
 import com.example.LeagueFantasy.dto.ForwardResponseDto;
+import com.example.LeagueFantasy.entity.EuropeanLeague;
+import com.example.LeagueFantasy.entity.Forward;
 import com.example.LeagueFantasy.repository.ForwardRepository;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
-
-import java.util.List;
-
-import static org.springframework.test.util.AssertionErrors.assertTrue;
 
 @SpringBootTest
 public class QueryAllForwardsStepDefinitions {

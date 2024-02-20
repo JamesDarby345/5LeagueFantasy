@@ -3,14 +3,13 @@ package com.example.LeagueFantasy.repository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import com.example.LeagueFantasy.entity.EuropeanLeague;
+import com.example.LeagueFantasy.entity.Goalkeeper;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import com.example.LeagueFantasy.Entity.EuropeanLeague;
-import com.example.LeagueFantasy.Entity.Goalkeeper;
 
 @SpringBootTest
 public class GoalkeeperRepositoryTests {

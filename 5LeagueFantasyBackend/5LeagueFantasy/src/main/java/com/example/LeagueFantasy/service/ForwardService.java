@@ -1,15 +1,14 @@
 package com.example.LeagueFantasy.service;
 
-import com.example.LeagueFantasy.Entity.EuropeanLeague;
-import com.example.LeagueFantasy.Entity.Forward;
+import com.example.LeagueFantasy.entity.EuropeanLeague;
+import com.example.LeagueFantasy.entity.Forward;
 import com.example.LeagueFantasy.exception.FiveLeagueFantasyException;
 import com.example.LeagueFantasy.repository.ForwardRepository;
 import jakarta.transaction.Transactional;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ForwardService {
