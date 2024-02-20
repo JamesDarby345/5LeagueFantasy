@@ -53,6 +53,8 @@ public class LeagueRepositoryTests {
 
         // Assert correctness
         assertNotNull(league);
+        assertEquals(name, league.getName());
+        assertEquals(fantasyManager, league.getLeagueOwner());
     }
     
 }

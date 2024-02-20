@@ -52,6 +52,14 @@ public class Player {
         this.gamesPlayed = gamesPlayed;
     }
 
+    public int getPlayerId() {
+        return this.id;
+    }
+
+    public void setPlayerId(int id) {
+        this.id = id;
+    }
+
     public EuropeanLeague getEuropeanLeague() {
         return europeanLeague;
     }

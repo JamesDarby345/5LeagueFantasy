@@ -45,10 +45,17 @@ public class ForwardRepositoryTests {
 
         // Save to repository and get ID
         forwardRepository.save(forward);
-        //get by ID
+        int id = forward.getPlayerId();
+        forward = forwardRepository.findById(id);
 
         // Assert correctness
-        //assertNotNull(forward);
+        assertNotNull(forward);
+        assertEquals(name, forward.getName());
+        assertEquals(position, forward.getPosition());
+        assertEquals(gamesPlayed, forward.getGamesPlayed());
+        assertEquals(europeanLeague, forward.getEuropeanLeague());
+        assertEquals(goals, forward.getGoals());
+        assertEquals(assists, forward.getAssists());
     }
     
 }
