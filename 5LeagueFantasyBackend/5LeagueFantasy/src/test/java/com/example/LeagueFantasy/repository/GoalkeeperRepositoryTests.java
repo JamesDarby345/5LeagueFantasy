@@ -7,10 +7,12 @@ import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.LeagueFantasy.Entity.EuropeanLeague;
 import com.example.LeagueFantasy.Entity.Goalkeeper;
 
+@SpringBootTest
 public class GoalkeeperRepositoryTests {
     @Autowired
     private GoalkeeperRepository goalkeeperRepository;
