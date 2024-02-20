@@ -1,16 +1,14 @@
 package com.example.LeagueFantasy.repository;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import com.example.LeagueFantasy.entity.FantasyManager;
+import com.example.LeagueFantasy.entity.League;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import com.example.LeagueFantasy.Entity.FantasyManager;
-import com.example.LeagueFantasy.Entity.League;
 
 @SpringBootTest
 public class LeagueRepositoryTests {
@@ -22,13 +20,13 @@ public class LeagueRepositoryTests {
 
     @BeforeEach
     @AfterEach
-    public void clearDatabase(){
+    public void clearDatabase() {
         leagueRepository.deleteAll();
         fantasyManagerRepository.deleteAll();
     }
 
     @Test
-    public void testPersistAndLoadLeague(){
+    public void testPersistAndLoadLeague() {
         // Create account
         FantasyManager fantasyManager = new FantasyManager();
         String username = "manager_man";
@@ -54,5 +52,5 @@ public class LeagueRepositoryTests {
         // Assert correctness
         assertNotNull(league);
     }
-    
+
 }

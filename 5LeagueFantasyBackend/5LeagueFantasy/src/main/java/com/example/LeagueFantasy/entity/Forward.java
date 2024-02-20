@@ -1,10 +1,9 @@
-package com.example.LeagueFantasy.Entity;
+package com.example.LeagueFantasy.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-
 import java.util.List;
 
 @Entity
@@ -23,6 +22,7 @@ public class Forward extends Player {
         super(name, team, gamesPlayed, europeanLeague);
         this.goals = goals;
         this.assists = assists;
+        this.position = position;
     }
 
     public Forward() {
