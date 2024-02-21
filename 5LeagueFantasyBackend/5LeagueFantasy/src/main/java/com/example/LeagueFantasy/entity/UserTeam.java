@@ -73,6 +73,14 @@ public class UserTeam {
     isActive = active;
   }
 
+  public int getUserTeamId() {
+    return this.id;
+  }
+
+  public void setUserTeamId(int id) {
+    this.id = id;
+  }
+
   public FantasyManager getManager() {
     return fantasyManager;
   }
