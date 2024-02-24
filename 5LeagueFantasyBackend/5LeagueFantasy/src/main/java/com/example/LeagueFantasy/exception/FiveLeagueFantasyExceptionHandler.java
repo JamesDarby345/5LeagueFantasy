@@ -10,34 +10,35 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestControllerAdvice
 public class FiveLeagueFantasyExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(FiveLeagueFantasyException.class)
-    @ResponseBody
-    public ResponseEntity<Object> handleFiveLeagueFantasyException(FiveLeagueFantasyException exception) {
-      ErrorResponse error = new ErrorResponse();
-      error.setMessage(exception.getMessage());
-      error.setStatus(exception.getStatus());
-		  return new ResponseEntity<>(error, exception.getStatus());
-	}
+  @ExceptionHandler(FiveLeagueFantasyException.class)
+  @ResponseBody
+  public ResponseEntity<Object> handleFiveLeagueFantasyException(
+      FiveLeagueFantasyException exception) {
+    ErrorResponse error = new ErrorResponse();
+    error.setMessage(exception.getMessage());
+    error.setStatus(exception.getStatus());
+    return new ResponseEntity<>(error, exception.getStatus());
+  }
 
   public class ErrorResponse {
-    
+
     private String message;
     private HttpStatus status;
-    
+
     public String getMessage() {
-        return message;
+      return message;
     }
-    
+
     public void setMessage(String message) {
-        this.message = message;
+      this.message = message;
     }
-    
+
     public HttpStatus getStatus() {
-        return status;
+      return status;
     }
-    
+
     public void setStatus(HttpStatus status) {
-        this.status = status;
+      this.status = status;
     }
-}
+  }
 }
