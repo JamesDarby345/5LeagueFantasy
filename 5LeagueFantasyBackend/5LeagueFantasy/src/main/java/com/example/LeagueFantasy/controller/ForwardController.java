@@ -38,8 +38,18 @@ public class ForwardController {
         return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
     }
 
-    private ResponseEntity<List<ForwardResponseDto>> getListResponseEntity(List<Forward> retrievedForwards, List<ForwardResponseDto> retrievedForwardsResponse) {
-        for(Forward forward: retrievedForwards) {
+    @GetMapping("/forwards/position/{position}")
+    public ResponseEntity<List<ForwardResponseDto>> getForwardByPosition(@PathVariable String position) {
+
+        List<Forward> retrievedForwards = forwardService.getForwardByPosition((position));
+        List<ForwardResponseDto> retrievedForwardsResponse = new ArrayList<>();
+
+        return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
+    }
+
+    private ResponseEntity<List<ForwardResponseDto>> getListResponseEntity(List<Forward> retrievedForwards,
+            List<ForwardResponseDto> retrievedForwardsResponse) {
+        for (Forward forward : retrievedForwards) {
             ForwardResponseDto currentForwardResponse = new ForwardResponseDto(
                     forward.getName(),
                     forward.getTeam(),
@@ -47,8 +57,7 @@ public class ForwardController {
                     forward.getPosition(),
                     forward.getGoals(),
                     forward.getAssists(),
-                    forward.getGamesPlayed()
-            );
+                    forward.getGamesPlayed());
             retrievedForwardsResponse.add(currentForwardResponse);
         }
 

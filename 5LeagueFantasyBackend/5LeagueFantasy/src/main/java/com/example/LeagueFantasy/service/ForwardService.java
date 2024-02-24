@@ -18,8 +18,9 @@ public class ForwardService {
     private ForwardRepository forwardRepository;
 
     @Transactional
-    public List<Forward> getForwardsByName(String name){
-        if(name==null || name.isEmpty()) throw new FiveLeagueFantasyException("Name can't be null." , HttpStatus.BAD_REQUEST);
+    public List<Forward> getForwardsByName(String name) {
+        if (name == null || name.isEmpty())
+            throw new FiveLeagueFantasyException("Name can't be null.", HttpStatus.BAD_REQUEST);
         return forwardRepository.findByNameContainingIgnoreCase(name);
     }
 
@@ -33,4 +34,12 @@ public class ForwardService {
             throw new IllegalArgumentException("Invalid or null EuropeanLeague value: " + europeanLeague, e);
         }
     }
+
+    @Transactional
+    public List<Forward> getForwardByPosition(String position) {
+        if (position == null || position.isEmpty())
+            throw new FiveLeagueFantasyException("Position can't be null.", HttpStatus.BAD_REQUEST);
+        return forwardRepository.findByPosition(position);
+    }
+
 }

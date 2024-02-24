@@ -10,9 +10,14 @@ import java.util.List;
 public interface ForwardRepository extends CrudRepository<Forward, Integer> {
 
     Forward findById(int id);
+
     List<Forward> findByNameContainingIgnoreCase(String name);
+
     List<Forward> findByTeam(String teamName);
+
     List<Forward> findByPosition(String position);
+
     List<Forward> findByEuropeanLeague(EuropeanLeague europeanLeague);
-    List<Forward> findAll();  
+
+    List<Forward> findAll();
 }
