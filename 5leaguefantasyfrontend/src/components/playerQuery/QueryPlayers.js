@@ -25,6 +25,7 @@ function QueryPlayers() {
   const [searchType, setSearchType] = useState(st.BY_NAME);
   const [playerType, setPlayerType] = useState(apis.PlayerTypes.FORWARD);
   const [playerName, setPlayerName] = useState("");
+  const [position, setPosition] = useState("");
   const [playersData, setPlayersData] = useState([]);
   const [playersDataHasChanged, setPlayersDataHasChanged] = useState(false);
   const [leagueToSearchFor, setLeagueToSearchFor] = useState("Bundesliga");
@@ -46,6 +47,9 @@ function QueryPlayers() {
     setLeagueToSearchFor(e.target.value);
   }
 
+  const handlePositionChange = (e) => {
+    setPosition(e.target.value);
+  }
 
   const handleSearchClicked = async () => {
     let receivedPlayers = [];
@@ -56,8 +60,14 @@ function QueryPlayers() {
         receivedPlayers = await apis.searchAllForwards();
       } else if (searchType == st.BY_LEAGUE) {
         receivedPlayers = await apis.searchForwardsByEuropeanLeague(leagueToSearchFor);
+      } else if (searchType == st.BY_POSITION) {
+        receivedPlayers = await apis.searchForwardsByPosition(position);
       }
           
+    } else {
+      if (searchType == st.BY_POSITION) {
+        receivedPlayers = await apis.searchKeepersByPosition(position);
+      }
     }
     
     setPlayersData(receivedPlayers);
@@ -70,33 +80,31 @@ function QueryPlayers() {
           <MDBCardBody>
             
             <h1>Search For Players</h1>
-
-            <div>Search options: </div>
             <form>
               <input type="radio" class="btn-check" name="playerType" id="type1" onChange={handlePlayerTypeChange} checked={playerType == apis.PlayerTypes.FORWARD}  value={apis.PlayerTypes.FORWARD}/>
-              <label className="btn btn-secondary" htmlFor="type1">Forward</label>
+              <label className="btn btn-secondary searchOpts" htmlFor="type1">Forward 🏃‍♂️</label>
               <input type="radio" class="btn-check" name="playerType" id="type2" onChange={handlePlayerTypeChange} checked={playerType == apis.PlayerTypes.GOALKEEPER} value={apis.PlayerTypes.GOALKEEPER} />
-              <label className="btn btn-secondary" htmlFor="type2">Goalkeeper</label>
+              <label className="btn btn-secondary searchOpts" htmlFor="type2">Goalkeeper 🥅</label>
             </form>
             <form>
-              <div className="form-check form-check-inline">
+              <div className="form-check form-check-inline searchOpts">
                 <input className="form-check-input" type="radio" name="searchType" id="search1" value={st.BY_NAME}
                   checked={searchType == st.BY_NAME} onChange={handleSearchTypeChange} />
                 <label className="form-check-label" htmlFor="search1">Name</label>
               </div>
 
-              <div className="form-check form-check-inline">
+              <div className="form-check form-check-inline searchOpts">
                 <input className="form-check-input" type="radio" name="searchType" id="search2" value={st.BY_LEAGUE}
                   checked={searchType == st.BY_LEAGUE} onChange={handleSearchTypeChange} />
                 <label className="form-check-label" htmlFor="search2">League</label>
               </div>
 
-              <div className="form-check form-check-inline">
+              <div className="form-check form-check-inline searchOpts">
                 <input className="form-check-input" type="radio" name="searchType" id="search3" value={st.BY_POSITION}
                   checked={searchType == st.BY_POSITION} onChange={handleSearchTypeChange} />
                 <label className="form-check-label" htmlFor="search3">Position</label>
               </div>
-              <div className="form-check form-check-inline">
+              <div className="form-check form-check-inline searchOpts">
                 <input className="form-check-input" type="radio" name="searchType" id="search4" value={st.ALL}
                   checked={searchType == st.ALL} onChange={handleSearchTypeChange} />
                 <label className="form-check-label" htmlFor="search4">All</label>
@@ -121,19 +129,15 @@ function QueryPlayers() {
 
                 {
                   searchType == st.BY_LEAGUE &&
-                  <div className="byLeagueSearch">
-                    <form>
-                      <div className="form-group">
-                        <select className="form-control" id="searchByLeague" value={leagueToSearchFor} onChange={handleLeagueChange}>
-                          <option value="Bundesliga">Bundesliga</option>
-                          <option value="Ligue1">Ligue 1</option>
-                          <option value="LaLiga">La Liga</option>
-                          <option value="SerieA">Serie A</option>
-                          <option value="PremierLeague">Premier League</option>
-                        </select>
-                      </div>
-                    </form>
-                  </div>
+                  
+                  <select className="leagueSelect" id="searchByLeague" value={leagueToSearchFor} onChange={handleLeagueChange}>
+                    <option value="Bundesliga">Bundesliga</option>
+                    <option value="Ligue1">Ligue 1</option>
+                    <option value="LaLiga">La Liga</option>
+                    <option value="SerieA">Serie A</option>
+                    <option value="PremierLeague">Premier League</option>
+                  </select>
+
                 }
 
                 {
@@ -141,12 +145,16 @@ function QueryPlayers() {
                   <div className="byPositionSearch">
                     <form>
                       <div className="form-group">
-                        <select className="form-control" id="searchByPosition">
-                          <option>Goalkeeper</option>
-                          <option>Forward</option>
-                        </select>
+                        <input type="search" className="form-control" id="searchByPosition" placeholder="Input position here" value={position} onChange={handlePositionChange}></input>
                       </div>
                     </form>
+                  </div>
+                }
+
+                {
+                  searchType == st.ALL &&
+                  <div>
+                    Searching for all {playerType == apis.PlayerTypes.FORWARD ? "forwards" : "goalkeepers"}. 🧐
                   </div>
                 }
               </MDBCol>
@@ -179,6 +187,14 @@ function QueryPlayers() {
           `
             .resultsPanel {
               margin-top: 10px;
+            }
+            .leagueSelect{
+              width: 100%;
+              height: 100%;
+              
+            }
+            .searchOpts {
+              margin: 5px 3px;
             }
           `
         }

@@ -1,7 +1,7 @@
 package com.example.LeagueFantasy.step_definitions;
 
-import com.example.LeagueFantasy.Entity.EuropeanLeague;
-import com.example.LeagueFantasy.Entity.Forward;
+import com.example.LeagueFantasy.entity.EuropeanLeague;
+import com.example.LeagueFantasy.entity.Forward;
 import com.example.LeagueFantasy.controller.ForwardController;
 import com.example.LeagueFantasy.dto.ForwardResponseDto;
 import com.example.LeagueFantasy.repository.ForwardRepository;

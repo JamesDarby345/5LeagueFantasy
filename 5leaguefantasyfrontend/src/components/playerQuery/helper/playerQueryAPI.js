@@ -33,6 +33,30 @@ export async function searchForwardsByEuropeanLeague(league) {
     }
 }
 
+export async function searchForwardsByPosition(position) {
+    try {
+        const response = await API.get(`/forwards/position/${position}`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
+export async function searchKeepersByPosition(position) {
+    try {
+        const response = await API.get(`/players/${position}`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.GOALKEEPER);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
 export async function searchAllForwards() {
     try {
         const response = await API.get(`/forwards/all`);
