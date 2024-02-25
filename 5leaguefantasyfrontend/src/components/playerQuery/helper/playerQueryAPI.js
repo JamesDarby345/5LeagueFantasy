@@ -9,16 +9,55 @@ const API = axios.create({
     }
 });
 
-
-export async function searchByName(playerName) {
+export async function searchForwardsByName(playerName) {
     try {
         const response = await API.get(`/forwards/name/${playerName}`);
-        console.log(response);
-        return response;
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
     } catch (e) {
         console.log(e);
         return [];
     }
 }
 
-    
+export async function searchForwardsByEuropeanLeague(league) {
+    try {
+        const response = await API.get(`/forwards/europeanLeague/${league}`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
+export async function searchAllForwards() {
+    try {
+        const response = await API.get(`/forwards/all`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
+function dataToPlayerConverter(data, playerType) {
+    return {
+        name: data.name,
+        position: data.position,
+        team: data.team,
+        goals: data.goals,
+        assists: data.assists,
+        europeanLeague: data.europeanLeague,
+        playerType: playerType
+    }
+}
+
+export const PlayerTypes = {
+    FORWARD: 0,
+    GOALKEEPER: 1
+}

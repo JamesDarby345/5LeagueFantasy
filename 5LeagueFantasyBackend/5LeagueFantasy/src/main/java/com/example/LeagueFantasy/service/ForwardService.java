@@ -17,13 +17,14 @@ public class ForwardService {
     private ForwardRepository forwardRepository;
 
     @Transactional
-    public List<Forward> getAllForwards(){
+    public List<Forward> getAllForwards() {
         return forwardRepository.findAll();
     }
 
     @Transactional
-    public List<Forward> getForwardsByName(String name){
-        if(name==null || name.isEmpty()) throw new FiveLeagueFantasyException("Name can't be null." , HttpStatus.BAD_REQUEST);
+    public List<Forward> getForwardsByName(String name) {
+        if (name == null || name.isEmpty())
+            throw new FiveLeagueFantasyException("Name can't be null.", HttpStatus.BAD_REQUEST);
         return forwardRepository.findByNameContainingIgnoreCase(name);
     }
 
@@ -40,34 +41,43 @@ public class ForwardService {
 
     @Transactional
     public List<Forward> getForwardsByGoals(int goals) {
-        if (goals  < 0) throw new FiveLeagueFantasyException("Goals scored must be above 0.", HttpStatus.BAD_REQUEST);
+        if (goals < 0)
+            throw new FiveLeagueFantasyException("Goals scored must be above 0.", HttpStatus.BAD_REQUEST);
         return forwardRepository.findByGoals(goals);
     }
 
     @Transactional
     public List<Forward> getForwardsByAssists(int assists) {
-        if (assists < 0) throw new FiveLeagueFantasyException("Assists must me above 0.", HttpStatus.BAD_REQUEST);
+        if (assists < 0)
+            throw new FiveLeagueFantasyException("Assists must me above 0.", HttpStatus.BAD_REQUEST);
         return forwardRepository.findByAssists(assists);
-     }
+    }
 
-     @Transactional
+    @Transactional
     public List<Forward> getForwardsByDescendingGoals() {
         return forwardRepository.findAllByOrderByGoalsDesc();
-     }
+    }
 
-     @Transactional
+    @Transactional
     public List<Forward> getForwardsByDescendingAssists() {
         return forwardRepository.findAllByOrderByAssistsDesc();
-     }
+    }
 
-     @Transactional
+    @Transactional
     public List<Forward> getForwardsByAscendingGoals() {
         return forwardRepository.findAllByOrderByGoalsAsc();
-     }
+    }
 
-     @Transactional
+    @Transactional
     public List<Forward> getForwardsByAscendingAssists() {
         return forwardRepository.findAllByOrderByAssistsAsc();
-     }
+    }
+
+    @Transactional
+    public List<Forward> getForwardByPosition(String position) {
+        if (position == null || position.isEmpty())
+            throw new FiveLeagueFantasyException("Position can't be null.", HttpStatus.BAD_REQUEST);
+        return forwardRepository.findByPosition(position);
+    }
 
 }
