@@ -22,6 +22,8 @@ function QueryPlayers() {
     ALL: 4
   }
 
+  const PAGE_SIZE = 10;
+
   const [searchType, setSearchType] = useState(st.BY_NAME);
   const [playerType, setPlayerType] = useState(apis.PlayerTypes.FORWARD);
   const [playerName, setPlayerName] = useState("");
@@ -29,10 +31,10 @@ function QueryPlayers() {
   const [playersData, setPlayersData] = useState([]);
   const [playersDataHasChanged, setPlayersDataHasChanged] = useState(false);
   const [leagueToSearchFor, setLeagueToSearchFor] = useState("Bundesliga");
+  const [page, setPage] = useState(1);
   const handleSearchTypeChange = (e) => {
     
     setSearchType(e.target.value);
-    console.log(searchType)
   }
 
   const handlePlayerNameChange = (e) => {
@@ -49,6 +51,33 @@ function QueryPlayers() {
 
   const handlePositionChange = (e) => {
     setPosition(e.target.value);
+  }
+
+  const handlePageChange = (e) => {
+    setPage(e.target.value);
+  }
+
+  const handlePageUp = () => {
+    if (page < getTotalPageCount()) {
+      setPage(page + 1);
+    }
+  }
+
+
+  const handlePageDown = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  }
+
+  const renderPageList = () => {
+    const arr = [];
+    for (let i = 1; i <= getTotalPageCount(); ++i) {
+      arr.push(
+        <option value={i}>{i}</option>
+      )
+    }
+    return arr;
   }
 
   const handleSearchClicked = async () => {
@@ -69,10 +98,23 @@ function QueryPlayers() {
         receivedPlayers = await apis.searchKeepersByPosition(position);
       }
     }
-    
+    setPage(1);
     setPlayersData(receivedPlayers);
     setPlayersDataHasChanged(true);
   }
+
+  const getTotalPageCount = () => {
+    return Math.ceil(playersData.length / PAGE_SIZE);
+  }
+
+  const getNumItemsOnPage = () => {
+    if (page < getTotalPageCount()) {
+      return Math.min(playersData.length, PAGE_SIZE);
+    } else {
+      return playersData.length.toString().slice(-1);
+    }
+  }
+
   return (
     <div>
       <MDBContainer className="Container">
@@ -112,7 +154,7 @@ function QueryPlayers() {
 
             </form>
             <MDBRow>
-              <MDBCol className="col-md-10">
+              <MDBCol className="col-md-11">
                 {
                   searchType == st.BY_NAME &&
                 
@@ -158,7 +200,7 @@ function QueryPlayers() {
                   </div>
                 }
               </MDBCol>
-              <MDBCol className="col-md-2">
+              <MDBCol className="col-md-1">
                 <MDBBtn type="button" onClick={handleSearchClicked}>Search</MDBBtn>
               </MDBCol>
             </MDBRow>
@@ -175,9 +217,36 @@ function QueryPlayers() {
                   <div>No players found. Please try again with different search criteria.</div>
                }
                {
+                playersData.length > 0 &&
+                <MDBRow>
+                  <MDBCol className="col-md-8">Showing {getNumItemsOnPage()} out of {playersData.length} players</MDBCol>
+                  <MDBCol className="col-md-4 paginationControl">
+                  <MDBBtn floating size="sm" onClick={handlePageDown}>
+                    <MDBIcon icon="caret-left" />
+                  </MDBBtn>
+                    Page
+                  
+                  
+                  <select className="pageSelect" id="pageSelector" value={page} onChange={handlePageChange}>
+                    {renderPageList()}
+                  </select>
+                    of {getTotalPageCount()}
+                    <MDBBtn floating size="sm" onClick={handlePageUp}>
+                      <MDBIcon icon="caret-right" />
+                    </MDBBtn>
+                    </MDBCol>
+                </MDBRow>
+
+               }
+               {
                 playersData.map((item, i) => {
-                  return <PlayerCard props={item} key={i}/>
-                })
+                  let min = (page - 1) * PAGE_SIZE;
+                  let max = min + PAGE_SIZE;
+                  if (i >= min && i <= max) {
+                    return <PlayerCard props={item} key={i}/>
+                  } 
+                  
+                  })
                }
             </MDBCardBody>
         </MDBCard>
@@ -195,6 +264,12 @@ function QueryPlayers() {
             }
             .searchOpts {
               margin: 5px 3px;
+            }
+
+            .paginationControl {
+              display: flex;
+              justify-content: flex-end;
+              gap: 7px;
             }
           `
         }
