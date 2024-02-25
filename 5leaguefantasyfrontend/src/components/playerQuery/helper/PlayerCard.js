@@ -20,18 +20,18 @@ function PlayerCard(props) {
             </div>
             </div>
             
-            <div className="vr"></div>
+            
             <div>
                 {player.europeanLeague}
             </div>
-            <div className="vr"></div>
+            
             <div>{player.team}</div>
-            <div className="vr"></div>
+            
             <div className="statsDisplay">
                 <div>Goals</div>
                 <div>{player.goals}</div>
             </div>
-            <div className="vr"></div>
+            
             <div className="statsDisplay"> 
                 <div>Assists</div>
                 <div>{player.assists}</div>
@@ -47,9 +47,9 @@ function PlayerCard(props) {
                 border-width: 1px;
                 border-radius: 10px;
                 box-shadow: 0 3px 5px rgb(0,0,0,0.3);
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
+                display: grid;
+                grid-template-columns: minmax(10em, 1fr) 1fr 1fr 0.5fr 0.5fr;
+                justify-items: start;
                 align-items: center;
                 background-color: rgb(250, 250, 250);
             }
