@@ -12,11 +12,13 @@ import {
 } from 'mdb-react-ui-kit';
 import axios from 'axios';
 
+import { useNavigate } from 'react-router-dom';
+
 function Login() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (error !== '') {
       alert(error);
@@ -37,8 +39,11 @@ function Login() {
     e.preventDefault(); // Prevent default form submission behavior
   
     try {
-      const response = await API.get('/managers/login/' + email + '/' + password);
+      const response = await API.get('/managers/login/' + username + '/' + password);
       console.log(response.data);
+      localStorage.setItem("userData", JSON.stringify(response.data));
+      
+      navigate("/queryPlayers");
       // Here, you could redirect the user to another page or save the login info (e.g., token) as needed
     } catch (error) {
       if (error.response) {
@@ -73,7 +78,7 @@ function Login() {
               </div>
               <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Sign into your account</h5>
               <form onSubmit={handleLogin}>
-                <MDBInput wrapperClass='mb-4' label='Email' id='formControlLg' type='email' size="lg" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <MDBInput wrapperClass='mb-4' label='Username' id='formControlLg' type='text' size="lg" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <MDBBtn className="mb-4 px-5" color='' size='lg' type="submit">Login</MDBBtn>
               </form>
