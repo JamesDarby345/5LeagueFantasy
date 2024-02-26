@@ -8,10 +8,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class ForwardController {
 
@@ -22,7 +24,6 @@ public class ForwardController {
     public ResponseEntity<List<ForwardResponseDto>> getAllForwards() {
         List<Forward> retrievedForwards = forwardService.getAllForwards();
         List<ForwardResponseDto> retrievedForwardsResponse = new ArrayList<ForwardResponseDto>();
-
         return getListResponseEntity(retrievedForwards, retrievedForwardsResponse);
     }
 
@@ -99,21 +100,6 @@ public class ForwardController {
         }
         List<ForwardResponseDto> ascendingAssistsResponse = new ArrayList<>();
         return getListResponseEntity(retrievedForwards, ascendingAssistsResponse);
-    }
-
-  private ResponseEntity<List<ForwardResponseDto>> getListResponseEntity(
-      List<Forward> retrievedForwards, List<ForwardResponseDto> retrievedForwardsResponse) {
-    for (Forward forward : retrievedForwards) {
-      ForwardResponseDto currentForwardResponse =
-          new ForwardResponseDto(
-              forward.getName(),
-              forward.getTeam(),
-              forward.getEuropeanLeague(),
-              forward.getPosition(),
-              forward.getGoals(),
-              forward.getAssists(),
-              forward.getGamesPlayed());
-      retrievedForwardsResponse.add(currentForwardResponse);
     }
 
     @GetMapping("/forwards/position/{position}")
