@@ -28,13 +28,22 @@ function PlayerCard(props) {
             <div>{player.team}</div>
             
             <div className="statsDisplay">
-                <div>Goals</div>
-                <div>{player.goals}</div>
-            </div>
-            
-            <div className="statsDisplay"> 
-                <div>Assists</div>
-                <div>{player.assists}</div>
+                <div>
+                    <div>Goals</div>
+                    <div>{player.goals}</div>
+                </div>
+                <div>
+                    <div>Assists</div>
+                    <div>{player.assists}</div>
+                </div>
+                {
+                    player.playerType == PlayerTypes.GOALKEEPER &&
+                    <div> 
+                    <div>Clean Sheets</div>
+                    <div>{player.cleanSheets}</div>
+                    </div>
+                }
+                
             </div>
         </div>
         <style>
@@ -48,23 +57,26 @@ function PlayerCard(props) {
                 border-radius: 10px;
                 box-shadow: 0 3px 5px rgb(0,0,0,0.3);
                 display: grid;
-                grid-template-columns: minmax(10em, 1fr) 1fr 1fr 0.5fr 0.5fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 justify-items: start;
                 align-items: center;
-                background-color: rgb(250, 250, 250);
+                background-color: rgb(256, 256, 256);
             }
             .playerCard:hover {
                 transition-duration: 0.1s;
-                background-color: rgb(256, 256, 256);
+                background-color: rgb(244, 244, 244);
             }
             .statsDisplay {
                 font-weight: bold;
                 text-align: center;
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
             }
             .playerName {
                 font-size: 1.2em;
                 font-weight: bold;
-
+                
             }
             `}
         </style>

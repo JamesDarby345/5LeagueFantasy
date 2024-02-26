@@ -76,6 +76,7 @@ function dataToPlayerConverter(data, playerType) {
         team: data.team,
         goals: data.goals,
         assists: data.assists,
+        cleanSheets: data?.cleanSheets || 0,
         europeanLeague: data.europeanLeague,
         playerType: playerType
     }
