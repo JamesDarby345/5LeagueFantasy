@@ -69,6 +69,54 @@ export async function searchAllForwards() {
     }
 }
 
+export async function searchAllForwardsGoalsAsc() {
+    try {
+        const response = await API.get(`/forwards/sortedByAscendingGoals`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
+export async function searchAllForwardsGoalsDesc() {
+    try {
+        const response = await API.get(`/forwards/sortedByDescendingGoals`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
+export async function searchAllForwardsAssistsAsc() {
+    try {
+        const response = await API.get(`/forwards/sortedByAscendingAssists`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
+export async function searchAllForwardsAssistsDesc() {
+    try {
+        const response = await API.get(`/forwards/sortedByDescendingAssists`);
+        return response.data.map((entry) => {
+            return dataToPlayerConverter(entry, PlayerTypes.FORWARD);
+        });
+    } catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
 function dataToPlayerConverter(data, playerType) {
     return {
         name: data.name,

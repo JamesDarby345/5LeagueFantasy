@@ -22,6 +22,13 @@ function QueryPlayers() {
     ALL: 4
   }
 
+  const sortingMethods = {
+    NONE: 0,
+    GOALS_ASC: 1,
+    GOALS_DESC: 2,
+    ASST_ASC: 3,
+    ASST_DESC: 4
+  }
   const PAGE_SIZE = 10;
 
   const [searchType, setSearchType] = useState(st.BY_NAME);
@@ -32,6 +39,11 @@ function QueryPlayers() {
   const [playersDataHasChanged, setPlayersDataHasChanged] = useState(false);
   const [leagueToSearchFor, setLeagueToSearchFor] = useState("Bundesliga");
   const [page, setPage] = useState(1);
+  const [sortingMethod, setSortingMethod] = useState(sortingMethods.NONE);
+
+  useEffect(() => {
+    setPlayersData([]);
+  }, [searchType, playerType, playerName])
   const handleSearchTypeChange = (e) => {
     
     setSearchType(e.target.value);
@@ -55,6 +67,28 @@ function QueryPlayers() {
 
   const handlePageChange = (e) => {
     setPage(e.target.value);
+  }
+
+  const handleSortingMethodChange = async (e) => {
+    setSortingMethod(e.target.value);
+    const newSort = e.target.value;
+    let receivedPlayers = [];
+    if (searchType == st.ALL && playerType == apis.PlayerTypes.FORWARD) {
+      if (newSort == sortingMethods.NONE) {
+        receivedPlayers = await apis.searchAllForwards();
+      } else if (newSort == sortingMethods.GOALS_ASC) {
+        receivedPlayers = await apis.searchAllForwardsGoalsAsc();
+      } else if (newSort == sortingMethods.GOALS_DESC) {
+        receivedPlayers = await apis.searchAllForwardsGoalsDesc();
+      } else if (newSort == sortingMethods.ASST_ASC) {
+        receivedPlayers = await apis.searchAllForwardsAssistsAsc();
+      } else if (newSort == sortingMethods.ASST_DESC) {
+        receivedPlayers = await apis.searchAllForwardsAssistsDesc();
+      }
+    }
+
+    setPage(1);
+    setPlayersData(receivedPlayers);
   }
 
   const handlePageUp = () => {
@@ -101,6 +135,7 @@ function QueryPlayers() {
     setPage(1);
     setPlayersData(receivedPlayers);
     setPlayersDataHasChanged(true);
+    setSortingMethod(sortingMethods.NONE);
   }
 
   const getTotalPageCount = () => {
@@ -236,7 +271,21 @@ function QueryPlayers() {
                     </MDBBtn>
                     </MDBCol>
                 </MDBRow>
-
+               }
+               {
+                playersData.length > 0 && searchType == st.ALL &&
+                <div className="sortingMethodsControl">
+                  <div>
+                    Sort by:
+                  </div>
+                <select className="sortSelect" id="sortMethodsDropdown" value={sortingMethod} onChange={handleSortingMethodChange}>
+                    <option value={sortingMethods.NONE}>None</option>
+                    <option value={sortingMethods.GOALS_ASC}>Goals (Ascending)</option>
+                    <option value={sortingMethods.GOALS_DESC}>Goals (Descending)</option>
+                    <option value={sortingMethods.ASST_ASC}>Assists (Ascending)</option>
+                    <option value={sortingMethods.ASST_DESC}>Assists (Descending)</option>
+                  </select>
+                </div>
                }
                {
                 playersData.map((item, i) => {
@@ -269,6 +318,10 @@ function QueryPlayers() {
             .paginationControl {
               display: flex;
               justify-content: flex-end;
+              gap: 7px;
+            }
+            .sortingMethodsControl {
+              display: flex;
               gap: 7px;
             }
           `
