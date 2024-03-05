@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import {MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBNavbarLink, MDBNavbarNav} from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom';
+
 import * as apis from './helper/playerQueryAPI';
 import {
   MDBBtn,
@@ -14,6 +17,26 @@ import {
 import PlayerCard from './helper/PlayerCard';
 
 function QueryPlayers() {
+  const [formData, setFormData] = useState(() => {
+    const storedData = localStorage.getItem("userData");
+    return storedData ? JSON.parse(storedData) : null;
+  });
+
+  const [error, setError] = useState('');
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!formData) {
+        setError('Unauthorized access. Default data cannot be used.');
+        navigate('/'); // Change '/login' to your actual login route
+    }
+  }, [formData, navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("userData"); // Clear userData from localStorage
+    navigate('/'); // Redirect to login page or home page after logout
+  };
 
   const st = {
     BY_NAME: 1,
@@ -151,7 +174,25 @@ function QueryPlayers() {
   }
 
   return (
+    <>
+                <MDBNavbar expand='lg' light bgColor='dark'>
+                <MDBContainer fluid>
+                <MDBNavbarBrand href='/' style={{ color: "#fff", fontWeight: "bold", fontSize: "24px" }}>
+                        <MDBIcon fas icon="futbol" style={{ marginRight: "10px" }} />
+                        5 League Fantasy
+                    </MDBNavbarBrand>
+                    <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
+                        <MDBNavbarItem>
+                            <MDBNavbarLink href='#!' onClick={handleLogout}>
+                                <MDBIcon fas icon="sign-out-alt" className="me-2" />
+                                Logout
+                            </MDBNavbarLink>
+                        </MDBNavbarItem>
+                    </MDBNavbarNav>
+                </MDBContainer>
+            </MDBNavbar>
     <div>
+      
       <MDBContainer className="Container">
         <MDBCard>
           <MDBCardBody>
@@ -328,6 +369,7 @@ function QueryPlayers() {
         }
       </style>
     </div>
+    </>
   )
 }
 

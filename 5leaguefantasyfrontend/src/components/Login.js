@@ -34,6 +34,7 @@ function Login() {
       // Include other headers as needed, like Authorization for JWT
     },
   });
+  
 
   const handleLogin = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -42,8 +43,8 @@ function Login() {
       const response = await API.get('/managers/login/' + username + '/' + password);
       console.log(response.data);
       localStorage.setItem("userData", JSON.stringify(response.data));
-      
-      navigate("/queryPlayers");
+      navigate("/account") // use as reference to make landing page AKA home page
+      // navigate("/queryPlayers");
       // Here, you could redirect the user to another page or save the login info (e.g., token) as needed
     } catch (error) {
       if (error.response) {
