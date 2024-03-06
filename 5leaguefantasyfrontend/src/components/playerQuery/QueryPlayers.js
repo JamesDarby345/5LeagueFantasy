@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBNavbarLink, MDBNavbarNav} from 'mdb-react-ui-kit';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBNavbarLink, MDBNavbarNav } from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
-
+import NaviagtionBar from '../NaviagationBar';
 import * as apis from './helper/playerQueryAPI';
 import {
   MDBBtn,
@@ -28,15 +28,10 @@ function QueryPlayers() {
 
   useEffect(() => {
     if (!formData) {
-        setError('Unauthorized access. Default data cannot be used.');
-        navigate('/'); // Change '/login' to your actual login route
+      setError('Unauthorized access. Default data cannot be used.');
+      navigate('/'); // Change '/login' to your actual login route
     }
   }, [formData, navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("userData"); // Clear userData from localStorage
-    navigate('/'); // Redirect to login page or home page after logout
-  };
 
   const st = {
     BY_NAME: 1,
@@ -68,7 +63,7 @@ function QueryPlayers() {
     setPlayersData([]);
   }, [searchType, playerType, playerName])
   const handleSearchTypeChange = (e) => {
-    
+
     setSearchType(e.target.value);
   }
 
@@ -149,7 +144,7 @@ function QueryPlayers() {
       } else if (searchType == st.BY_POSITION) {
         receivedPlayers = await apis.searchForwardsByPosition(position);
       }
-          
+
     } else {
       if (searchType == st.BY_POSITION) {
         receivedPlayers = await apis.searchKeepersByPosition(position);
@@ -174,152 +169,136 @@ function QueryPlayers() {
   }
 
   return (
-    <>
-                <MDBNavbar expand='lg' light bgColor='dark'>
-                <MDBContainer fluid>
-                <MDBNavbarBrand href='/' style={{ color: "#fff", fontWeight: "bold", fontSize: "24px" }}>
-                        <MDBIcon fas icon="futbol" style={{ marginRight: "10px" }} />
-                        5 League Fantasy
-                    </MDBNavbarBrand>
-                    <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
-                        <MDBNavbarItem>
-                            <MDBNavbarLink href='#!' onClick={handleLogout}>
-                                <MDBIcon fas icon="sign-out-alt" className="me-2" />
-                                Logout
-                            </MDBNavbarLink>
-                        </MDBNavbarItem>
-                    </MDBNavbarNav>
-                </MDBContainer>
-            </MDBNavbar>
-    <div>
-      
-      <MDBContainer className="Container">
-        <MDBCard>
-          <MDBCardBody>
-            
-            <h1>Search For Players</h1>
-            <form>
-              <input type="radio" class="btn-check" name="playerType" id="type1" onChange={handlePlayerTypeChange} checked={playerType == apis.PlayerTypes.FORWARD}  value={apis.PlayerTypes.FORWARD}/>
-              <label className="btn btn-secondary searchOpts" htmlFor="type1">Forward 🏃‍♂️</label>
-              <input type="radio" class="btn-check" name="playerType" id="type2" onChange={handlePlayerTypeChange} checked={playerType == apis.PlayerTypes.GOALKEEPER} value={apis.PlayerTypes.GOALKEEPER} />
-              <label className="btn btn-secondary searchOpts" htmlFor="type2">Goalkeeper 🥅</label>
-            </form>
-            <form>
-              <div className="form-check form-check-inline searchOpts">
-                <input className="form-check-input" type="radio" name="searchType" id="search1" value={st.BY_NAME}
-                  checked={searchType == st.BY_NAME} onChange={handleSearchTypeChange} />
-                <label className="form-check-label" htmlFor="search1">Name</label>
-              </div>
+    <NaviagtionBar>
+      <div>
 
-              <div className="form-check form-check-inline searchOpts">
-                <input className="form-check-input" type="radio" name="searchType" id="search2" value={st.BY_LEAGUE}
-                  checked={searchType == st.BY_LEAGUE} onChange={handleSearchTypeChange} />
-                <label className="form-check-label" htmlFor="search2">League</label>
-              </div>
-
-              <div className="form-check form-check-inline searchOpts">
-                <input className="form-check-input" type="radio" name="searchType" id="search3" value={st.BY_POSITION}
-                  checked={searchType == st.BY_POSITION} onChange={handleSearchTypeChange} />
-                <label className="form-check-label" htmlFor="search3">Position</label>
-              </div>
-              <div className="form-check form-check-inline searchOpts">
-                <input className="form-check-input" type="radio" name="searchType" id="search4" value={st.ALL}
-                  checked={searchType == st.ALL} onChange={handleSearchTypeChange} />
-                <label className="form-check-label" htmlFor="search4">All</label>
-              </div>
-
-            </form>
-            <MDBRow>
-              <MDBCol className="col-md-11">
-                {
-                  searchType == st.BY_NAME &&
-                
-                  <div className="byNameSearchBox">
-                    <form>
-                      <div className="form-group">
-                        <input type="search" className="form-control" id="searchByName" placeholder="Input name here" value={playerName} onChange={handlePlayerNameChange}></input>
-                      </div>
-                    </form>
-                    
-                  </div>
-                    
-                }
-
-                {
-                  searchType == st.BY_LEAGUE &&
-                  
-                  <select className="leagueSelect" id="searchByLeague" value={leagueToSearchFor} onChange={handleLeagueChange}>
-                    <option value="Bundesliga">Bundesliga</option>
-                    <option value="Ligue1">Ligue 1</option>
-                    <option value="LaLiga">La Liga</option>
-                    <option value="SerieA">Serie A</option>
-                    <option value="PremierLeague">Premier League</option>
-                  </select>
-
-                }
-
-                {
-                  searchType == st.BY_POSITION &&
-                  <div className="byPositionSearch">
-                    <form>
-                      <div className="form-group">
-                        <input type="search" className="form-control" id="searchByPosition" placeholder="Input position here" value={position} onChange={handlePositionChange}></input>
-                      </div>
-                    </form>
-                  </div>
-                }
-
-                {
-                  searchType == st.ALL &&
-                  <div>
-                    Searching for all {playerType == apis.PlayerTypes.FORWARD ? "forwards" : "goalkeepers"}. 🧐
-                  </div>
-                }
-              </MDBCol>
-              <MDBCol className="col-md-1">
-                <MDBBtn type="button" onClick={handleSearchClicked}>Search</MDBBtn>
-              </MDBCol>
-            </MDBRow>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBContainer>
-      <MDBContainer className="resultsPanel">
-        <MDBCard>
+        <MDBContainer className="Container">
+          <MDBCard>
             <MDBCardBody>
-               {!playersData.length && !playersDataHasChanged &&
-                  <div>Click "Search" and players will appear here.</div>
-               }
-               {!playersData.length && playersDataHasChanged &&
-                  <div>No players found. Please try again with different search criteria.</div>
-               }
-               {
+
+              <h1>Search For Players</h1>
+              <form>
+                <input type="radio" class="btn-check" name="playerType" id="type1" onChange={handlePlayerTypeChange} checked={playerType == apis.PlayerTypes.FORWARD} value={apis.PlayerTypes.FORWARD} />
+                <label className="btn btn-secondary searchOpts" htmlFor="type1">Forward 🏃‍♂️</label>
+                <input type="radio" class="btn-check" name="playerType" id="type2" onChange={handlePlayerTypeChange} checked={playerType == apis.PlayerTypes.GOALKEEPER} value={apis.PlayerTypes.GOALKEEPER} />
+                <label className="btn btn-secondary searchOpts" htmlFor="type2">Goalkeeper 🥅</label>
+              </form>
+              <form>
+                <div className="form-check form-check-inline searchOpts">
+                  <input className="form-check-input" type="radio" name="searchType" id="search1" value={st.BY_NAME}
+                    checked={searchType == st.BY_NAME} onChange={handleSearchTypeChange} />
+                  <label className="form-check-label" htmlFor="search1">Name</label>
+                </div>
+
+                <div className="form-check form-check-inline searchOpts">
+                  <input className="form-check-input" type="radio" name="searchType" id="search2" value={st.BY_LEAGUE}
+                    checked={searchType == st.BY_LEAGUE} onChange={handleSearchTypeChange} />
+                  <label className="form-check-label" htmlFor="search2">League</label>
+                </div>
+
+                <div className="form-check form-check-inline searchOpts">
+                  <input className="form-check-input" type="radio" name="searchType" id="search3" value={st.BY_POSITION}
+                    checked={searchType == st.BY_POSITION} onChange={handleSearchTypeChange} />
+                  <label className="form-check-label" htmlFor="search3">Position</label>
+                </div>
+                <div className="form-check form-check-inline searchOpts">
+                  <input className="form-check-input" type="radio" name="searchType" id="search4" value={st.ALL}
+                    checked={searchType == st.ALL} onChange={handleSearchTypeChange} />
+                  <label className="form-check-label" htmlFor="search4">All</label>
+                </div>
+
+              </form>
+              <MDBRow>
+                <MDBCol className="col-md-11">
+                  {
+                    searchType == st.BY_NAME &&
+
+                    <div className="byNameSearchBox">
+                      <form>
+                        <div className="form-group">
+                          <input type="search" className="form-control" id="searchByName" placeholder="Input name here" value={playerName} onChange={handlePlayerNameChange}></input>
+                        </div>
+                      </form>
+
+                    </div>
+
+                  }
+
+                  {
+                    searchType == st.BY_LEAGUE &&
+
+                    <select className="leagueSelect" id="searchByLeague" value={leagueToSearchFor} onChange={handleLeagueChange}>
+                      <option value="Bundesliga">Bundesliga</option>
+                      <option value="Ligue1">Ligue 1</option>
+                      <option value="LaLiga">La Liga</option>
+                      <option value="SerieA">Serie A</option>
+                      <option value="PremierLeague">Premier League</option>
+                    </select>
+
+                  }
+
+                  {
+                    searchType == st.BY_POSITION &&
+                    <div className="byPositionSearch">
+                      <form>
+                        <div className="form-group">
+                          <input type="search" className="form-control" id="searchByPosition" placeholder="Input position here" value={position} onChange={handlePositionChange}></input>
+                        </div>
+                      </form>
+                    </div>
+                  }
+
+                  {
+                    searchType == st.ALL &&
+                    <div>
+                      Searching for all {playerType == apis.PlayerTypes.FORWARD ? "forwards" : "goalkeepers"}. 🧐
+                    </div>
+                  }
+                </MDBCol>
+                <MDBCol className="col-md-1">
+                  <MDBBtn type="button" onClick={handleSearchClicked}>Search</MDBBtn>
+                </MDBCol>
+              </MDBRow>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBContainer>
+        <MDBContainer className="resultsPanel">
+          <MDBCard>
+            <MDBCardBody>
+              {!playersData.length && !playersDataHasChanged &&
+                <div>Click "Search" and players will appear here.</div>
+              }
+              {!playersData.length && playersDataHasChanged &&
+                <div>No players found. Please try again with different search criteria.</div>
+              }
+              {
                 playersData.length > 0 &&
                 <MDBRow>
                   <MDBCol className="col-md-8">Showing {getNumItemsOnPage()} out of {playersData.length} players</MDBCol>
                   <MDBCol className="col-md-4 paginationControl">
-                  <MDBBtn floating size="sm" onClick={handlePageDown}>
-                    <MDBIcon icon="caret-left" />
-                  </MDBBtn>
+                    <MDBBtn floating size="sm" onClick={handlePageDown}>
+                      <MDBIcon icon="caret-left" />
+                    </MDBBtn>
                     Page
-                  
-                  
-                  <select className="pageSelect" id="pageSelector" value={page} onChange={handlePageChange}>
-                    {renderPageList()}
-                  </select>
+
+
+                    <select className="pageSelect" id="pageSelector" value={page} onChange={handlePageChange}>
+                      {renderPageList()}
+                    </select>
                     of {getTotalPageCount()}
                     <MDBBtn floating size="sm" onClick={handlePageUp}>
                       <MDBIcon icon="caret-right" />
                     </MDBBtn>
-                    </MDBCol>
+                  </MDBCol>
                 </MDBRow>
-               }
-               {
+              }
+              {
                 playersData.length > 0 && searchType == st.ALL &&
                 <div className="sortingMethodsControl">
                   <div>
                     Sort by:
                   </div>
-                <select className="sortSelect" id="sortMethodsDropdown" value={sortingMethod} onChange={handleSortingMethodChange}>
+                  <select className="sortSelect" id="sortMethodsDropdown" value={sortingMethod} onChange={handleSortingMethodChange}>
                     <option value={sortingMethods.NONE}>None</option>
                     <option value={sortingMethods.GOALS_ASC}>Goals (Ascending)</option>
                     <option value={sortingMethods.GOALS_DESC}>Goals (Descending)</option>
@@ -327,23 +306,23 @@ function QueryPlayers() {
                     <option value={sortingMethods.ASST_DESC}>Assists (Descending)</option>
                   </select>
                 </div>
-               }
-               {
+              }
+              {
                 playersData.map((item, i) => {
                   let min = (page - 1) * PAGE_SIZE;
                   let max = min + PAGE_SIZE;
                   if (i >= min && i <= max) {
-                    return <PlayerCard props={item} key={i}/>
-                  } 
-                  
-                  })
-               }
+                    return <PlayerCard props={item} key={i} />
+                  }
+
+                })
+              }
             </MDBCardBody>
-        </MDBCard>
-      </MDBContainer>
-      <style>
-        {
-          `
+          </MDBCard>
+        </MDBContainer>
+        <style>
+          {
+            `
             .resultsPanel {
               margin-top: 10px;
             }
@@ -366,10 +345,10 @@ function QueryPlayers() {
               gap: 7px;
             }
           `
-        }
-      </style>
-    </div>
-    </>
+          }
+        </style>
+      </div>
+    </NaviagtionBar>
   )
 }
 

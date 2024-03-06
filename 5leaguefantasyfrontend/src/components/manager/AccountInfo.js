@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBNavbarLink, MDBNavbarNav, MDBIcon } from 'mdb-react-ui-kit';
-import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router-dom for navigation
+import NaviagtionBar from '../NaviagationBar';
+import { useNavigate } from 'react-router-dom';
 
 function AccountInfo() {
     const [isEditing, setIsEditing] = useState(false);
@@ -43,32 +44,7 @@ function AccountInfo() {
 
 
     return (
-        <>
-            <MDBNavbar expand='lg' light bgColor='dark'>
-                <MDBContainer fluid>
-                    <MDBNavbarBrand href='/' style={{ color: "#fff", fontWeight: "bold", fontSize: "24px" }}>
-                        <MDBIcon fas icon="futbol" style={{ marginRight: "10px" }} />
-                        5 League Fantasy
-                    </MDBNavbarBrand>
-                    <MDBNavbarItem>
-                        <MDBNavbarLink active aria-current='page' href='#!' style={{ color: "#fff"}} onClick={navigate('/queryPlayers')
-                        }>
-                            Query Players
-                        </MDBNavbarLink>
-                    </MDBNavbarItem>
-                    <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
-                        <MDBNavbarItem>
-
-                            <MDBNavbarLink href='#!' onClick={handleLogout}>
-                                <MDBIcon fas icon="sign-out-alt" className="me-2" />
-                                Logout
-                            </MDBNavbarLink>
-
-                        </MDBNavbarItem>
-                    </MDBNavbarNav>
-                </MDBContainer>
-            </MDBNavbar>
-
+        <NaviagtionBar>
             <MDBContainer className="my-5">
                 <MDBCard>
                     <MDBCardBody>
@@ -105,7 +81,7 @@ function AccountInfo() {
                     </MDBCardBody>
                 </MDBCard>
             </MDBContainer>
-        </>
+        </NaviagtionBar>
     );
 }
 
