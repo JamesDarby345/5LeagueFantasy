@@ -6,6 +6,7 @@ import com.example.LeagueFantasy.entity.EuropeanLeague;
 import com.example.LeagueFantasy.entity.FantasyManager;
 import com.example.LeagueFantasy.entity.Forward;
 import com.example.LeagueFantasy.entity.Goalkeeper;
+import com.example.LeagueFantasy.exception.FiveLeagueFantasyException;
 import com.example.LeagueFantasy.repository.ForwardRepository;
 import com.example.LeagueFantasy.repository.GoalkeeperRepository;
 import com.example.LeagueFantasy.service.FantasyManagerService;
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-// @CrossOrigin()  FILL ONCE CONNNECTED TO FRONTEND
+@CrossOrigin(origins = "http://localhost:3000")
 public class FantasyManagerController {
 
   @Autowired ForwardRepository forwardRepository;
@@ -86,17 +87,22 @@ public class FantasyManagerController {
             fantasyManagerRequest.getEmail(),
             fantasyManagerRequest.getPassword());
 
-    FantasyManager createdUser = fantasyManagerService.createFantasyManager(userToCreate);
+    try {
+      FantasyManager createdUser = fantasyManagerService.createFantasyManager(userToCreate);
+      FantasyManagerResponseDto createdUserResponse =
+              new FantasyManagerResponseDto(
+                      createdUser.getUsername(),
+                      createdUser.getName(),
+                      createdUser.getEmail(),
+                      createdUser.getPassword(),
+                      createdUser.getLeague());
 
-    FantasyManagerResponseDto createdUserResponse =
-        new FantasyManagerResponseDto(
-            createdUser.getUsername(),
-            createdUser.getName(),
-            createdUser.getEmail(),
-            createdUser.getPassword(),
-            createdUser.getLeague());
-
-    return new ResponseEntity<FantasyManagerResponseDto>(createdUserResponse, HttpStatus.CREATED);
+      return new ResponseEntity<>(createdUserResponse, HttpStatus.CREATED);
+      }
+    catch (FiveLeagueFantasyException exception) {
+      exception.printStackTrace();
+      return new ResponseEntity <> (null, HttpStatus.BAD_REQUEST);
+    }
   }
 
   @CrossOrigin(origins = "http://localhost:3000")

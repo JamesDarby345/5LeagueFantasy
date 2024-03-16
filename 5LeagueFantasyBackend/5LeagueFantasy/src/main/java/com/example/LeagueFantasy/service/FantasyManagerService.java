@@ -18,7 +18,7 @@ public class FantasyManagerService {
   @Autowired private LeagueRepository leagueRepository;
 
   @Transactional
-  public FantasyManager createFantasyManager(FantasyManager fantasyManagerToCreate) {
+  public FantasyManager createFantasyManager(FantasyManager fantasyManagerToCreate) throws  FiveLeagueFantasyException{
 
     if (fantasyManagerRepository.findByEmail(fantasyManagerToCreate.getEmail()) != null) {
       throw new FiveLeagueFantasyException(

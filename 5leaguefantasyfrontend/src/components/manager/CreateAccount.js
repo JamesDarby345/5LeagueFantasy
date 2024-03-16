@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { MDBBtn, MDBContainer, MDBCard, MDBCardBody } from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function CreateAccount() {
     const [formData, setFormData] = useState({
+        username: '',
         name: '',
         email: '',
         password: '',
@@ -20,14 +22,35 @@ function CreateAccount() {
         }));
     };
 
+    const API = axios.create({
+        baseURL: 'http://localhost:8080', // Replace with your actual backend base URL
+        // You can add more default settings here
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3000'
+          // Include other headers as needed, like Authorization for JWT
+        },
+      });
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         // Placeholder for actual account creation logic, such as calling an API
         try {
-            console.log('Form Data:', formData); // Replace with actual sign-up logic
-            navigate('/account-created'); // Redirect to a success page or login page
+            const response = await API.post('/managers/newManager', formData);
+            // console.log('Form Data:', formData); // Replace with actual sign-up logic
+            if (response.status >= 200 && response.status < 300) {
+                // Navigate to login upon successful creation
+                navigate('/login');
+              } else {
+                // Handle any specific cases for unsuccessful request
+                // For example, you can set an error message to display to the user
+                setError('An error occurred during account creation. Please try again.');
+                // Optionally refresh the page or handle the error in a specific way
+                // window.location.reload(); // Use with caution
+              }
+            // navigate('/account-created'); // Redirect to a success page or login page
         } catch (error) {
-            setError('An error occurred during account creation. Please try again.'); // Set your actual error message here
+            console.error('Request failed', error);
         }
     };
 
@@ -36,6 +59,10 @@ function CreateAccount() {
             <MDBCard>
                 <MDBCardBody>
                     <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="username" className="form-label">Username</label>
+                            <input type="text" id="username" name="username" value={formData.username} onChange={handleChange} className="form-control" required />
+                        </div>
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
                             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="form-control" required />
