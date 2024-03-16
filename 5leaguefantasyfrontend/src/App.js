@@ -6,6 +6,7 @@ import AccountInfo from './components/manager/AccountInfo';
 import CreateAccount from './components/manager/CreateAccount';
 import HomePage from './components/HomePage';
 import LeagueInfo from './components/league/LeagueInfo';
+import CreateLeague from './components/league/CreateLeague';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 function App() {
   return (
