@@ -28,6 +28,9 @@ const NaviagtionBar = ({ children }) => {
                         <MDBNavbarLink active aria-current='query' href='/queryPlayers' style={{ color: "#fff" }}>
                             Query Players
                         </MDBNavbarLink>
+                        <MDBNavbarLink active aria-current='league' href='/league' style={{ color: "#fff" }}>
+                            League
+                        </MDBNavbarLink>
                     </MDBNavbarNav>
                     {/* Right-aligned Logout button */}
                     <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
