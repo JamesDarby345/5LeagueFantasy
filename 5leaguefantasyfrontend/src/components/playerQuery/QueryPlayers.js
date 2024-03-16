@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBNavbarLink, MDBNavbarNav } from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
-import NaviagtionBar from '../NaviagationBar';
-import * as apis from './helper/playerQueryAPI';
+import NaviagtionBar from '../NavigationBar';
+import * as apis from './helper/PlayerQueryAPI';
 import {
   MDBBtn,
   MDBContainer,

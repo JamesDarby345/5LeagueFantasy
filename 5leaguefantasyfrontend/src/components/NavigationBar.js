@@ -11,6 +11,7 @@ const NaviagtionBar = ({ children }) => {
         // Redirect to login page
         navigate('/login');
     };
+    const isAuthenticated = localStorage.getItem("userData");
     return (
         <>
             <MDBNavbar expand='lg' light bgColor='dark'>
@@ -31,10 +32,17 @@ const NaviagtionBar = ({ children }) => {
                     {/* Right-aligned Logout button */}
                     <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
                         <MDBNavbarItem>
-                            <MDBNavbarLink href='#!' onClick={handleLogout}>
-                                <MDBIcon fas icon="sign-out-alt" className="me-2" />
-                                Logout
-                            </MDBNavbarLink>
+                            {isAuthenticated ? (
+                                // If user is authenticated, show logout option
+                                <MDBNavbarItem>
+                                    <MDBNavbarLink href='#' onClick={handleLogout}>Logout</MDBNavbarLink>
+                                </MDBNavbarItem>
+                            ) : (
+                                // If user is not authenticated, show login option
+                                <MDBNavbarItem>
+                                    <MDBNavbarLink href='/login'>Login</MDBNavbarLink>
+                                </MDBNavbarItem>
+                            )}
                         </MDBNavbarItem>
                     </MDBNavbarNav>
                 </MDBContainer>

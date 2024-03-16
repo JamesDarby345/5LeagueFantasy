@@ -1,5 +1,5 @@
 import React from "react";
-import { PlayerTypes } from "./playerQueryAPI";
+import { PlayerTypes } from "./PlayerQueryAPI";
 
 function PlayerCard(props) {
     let player = props.props;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBNavbarLink, MDBNavbarNav, MDBIcon } from 'mdb-react-ui-kit';
-import NaviagtionBar from '../NaviagationBar';
+import NaviagtionBar from '../NavigationBar';
 import { useNavigate } from 'react-router-dom';
 
 function AccountInfo() {
@@ -23,11 +23,6 @@ function AccountInfo() {
             navigate('/'); // Change '/login' to your actual login route
         }
     }, [formData, navigate]);
-
-    const handleLogout = () => {
-        localStorage.removeItem("userData"); // Clear userData from localStorage
-        navigate('/'); // Redirect to login page or home page after logout
-    };
 
     const handleEdit = () => setIsEditing(true);
 
