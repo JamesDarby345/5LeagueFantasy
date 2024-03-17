@@ -3,14 +3,14 @@ package com.example.LeagueFantasy.dto;
 public class LeagueResponseDto {
       private int id;
       private String name;
-      private int leagueOwnerId;
-      private String leagueOwnerName;
+      private String leagueOwnerUsername;
+      private String message;
 
-      public LeagueResponseDto(int id, String name, int leagueOwnerId, String leagueOwnerName) {
+      public LeagueResponseDto(int id, String name, String leagueOwnerUsername, String message) {
             this.id = id;
             this.name = name;
-            this.leagueOwnerId = leagueOwnerId;
-            this.leagueOwnerName = leagueOwnerName;
+            this.leagueOwnerUsername = leagueOwnerUsername;
+            this.message = message;
       }
 
       // Getters and Setters
@@ -30,19 +30,15 @@ public class LeagueResponseDto {
             this.name = name;
       }
 
-      public int getLeagueOwnerId() {
-            return leagueOwnerId;
-      }
-
-      public void setLeagueOwnerId(int leagueOwnerId) {
-            this.leagueOwnerId = leagueOwnerId;
-      }
-
       public String getLeagueOwnerName() {
-            return leagueOwnerName;
+            return leagueOwnerUsername;
       }
 
       public void setLeagueOwnerName(String leagueOwnerName) {
-            this.leagueOwnerName = leagueOwnerName;
+            this.leagueOwnerUsername = leagueOwnerUsername;
+      }
+
+      public String getMessage() {
+            return message;
       }
 }

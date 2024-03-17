@@ -12,4 +12,6 @@ public interface LeagueRepository extends CrudRepository<League, Integer> {
   League findByName(String name);
 
   List<League> findByLeagueOwner(FantasyManager leagueOwner);
+
+      boolean existsByName(String name);
 }
