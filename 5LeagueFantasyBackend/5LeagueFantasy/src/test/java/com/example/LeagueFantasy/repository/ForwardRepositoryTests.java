@@ -2,7 +2,7 @@ package com.example.LeagueFantasy.repository;
 
 import com.example.LeagueFantasy.entity.EuropeanLeague;
 import com.example.LeagueFantasy.entity.Forward;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.sql.Date;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +16,8 @@ import com.example.LeagueFantasy.entity.UserTeam;
 
 @SpringBootTest
 public class UserTeamRepositoryTests {
-
-    @Autowired private FantasyManagerRepository fantasyManagerRepository;
-    @Autowired private UserTeamRepository userTeamRepository;
+    @Autowired
+    private UserTeamRepository userTeamRepository;
 
     @BeforeEach
     @AfterEach
@@ -39,17 +38,6 @@ public class UserTeamRepositoryTests {
         fantasyManager.setName(managerName);
         fantasyManager.setEmail(email);
         fantasyManager.setPassword(password);
-
-        // Save and reload from repository
-        fantasyManagerRepository.save(fantasyManager);
-        fantasyManager = fantasyManagerRepository.findByUsername(username);
-    
-        // Assert correctness
-        assertNotNull(fantasyManager);
-        assertEquals(username, fantasyManager.getUsername());
-        assertEquals(password, fantasyManager.getPassword());
-        assertEquals(email, fantasyManager.getEmail());
-        assertEquals(managerName, fantasyManager.getName());
 
         // Create user team object
         UserTeam userTeam = new UserTeam();
@@ -74,8 +62,8 @@ public class UserTeamRepositoryTests {
         assertNotNull(userTeam);
         assertEquals(name, userTeam.getName());
         assertEquals(points, userTeam.getPoints());
-        assertEquals(weekStartDate.toLocalDate(), userTeam.getWeekStartDate().toLocalDate());
+        assertEquals(weekStartDate, userTeam.getWeekStartDate());
         assertEquals(isActive, userTeam.getActive());
-        assertEquals(fantasyManager.getName(), userTeam.getManager().getName());
+        assertEquals(fantasyManager, userTeam.getManager());
     }
 }

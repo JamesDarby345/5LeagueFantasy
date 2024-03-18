@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.example.LeagueFantasy.entity.EuropeanLeague;
 import com.example.LeagueFantasy.entity.Goalkeeper;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,6 @@ public class GoalkeeperRepositoryTests {
 
         goalkeeper.setName(name);
         goalkeeper.setTeam(team);
-        goalkeeper.setPosition(position);
         goalkeeper.setGamesPlayed(gamesPlayed);
         goalkeeper.setEuropeanLeague(europeanLeague);
         goalkeeper.setSaves(saves);
