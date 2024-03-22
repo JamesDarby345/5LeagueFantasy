@@ -12,8 +12,6 @@ public interface UserTeamRepository extends CrudRepository<UserTeam, Integer> {
 
   List<UserTeam> findByName(String name);
 
-  List<UserTeam> findByWeekStartDate(Date weekStartDate);
-
   List<UserTeam> findByFantasyManager(FantasyManager manager);
 
   List<UserTeam> findAll();
