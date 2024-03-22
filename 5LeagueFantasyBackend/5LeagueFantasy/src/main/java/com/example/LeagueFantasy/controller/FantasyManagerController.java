@@ -32,78 +32,70 @@ public class FantasyManagerController {
   @Autowired GoalkeeperRepository goalkeeperRepository;
   @Autowired private FantasyManagerService fantasyManagerService;
 
-  @GetMapping("/")
-  public ResponseEntity<String> loadPlayers() {
-    List<DataLoader.Root> roots = DataLoader.loadData();
-    for (DataLoader.Root root : roots) {
-      if (root == null) {
-        return ResponseEntity.status(503).body("Internal Server Error");
-      }
+  // @GetMapping("/")
+  // public ResponseEntity<String> loadPlayers() {
+  //   List<DataLoader.Root> roots = DataLoader.loadData();
+  //   for (DataLoader.Root root : roots) {
+  //     if (root == null) {
+  //       return ResponseEntity.status(503).body("Internal Server Error");
+  //     }
 
-      for (DataLoader.PlayerInfo playerInfo : root.response) {
-        for (DataLoader.Statistic stt : playerInfo.statistics) {
-          if (stt.games.position != null
-              && EuropeanLeague.fromString((stt.league.name)) != EuropeanLeague.UNKNOWN) {
-            if (stt.games.position.equals("Goalkeeper")) {
-              Goalkeeper entityPlayer =
-                  new Goalkeeper(
-                      playerInfo.player.name,
-                      stt.team.name,
-                      stt.games.position,
-                      stt.games.appearences,
-                      EuropeanLeague.fromString((stt.league.name)),
-                      stt.goals.total,
-                      stt.goals.saves,
-                      stt.goals.conceded,
-                      stt.games.appearences);
-              goalkeeperRepository.save(entityPlayer);
-            } else {
-              Forward entityPlayer =
-                  new Forward(
-                      playerInfo.player.name,
-                      stt.team.name,
-                      stt.games.position,
-                      stt.games.appearences,
-                      EuropeanLeague.fromString((stt.league.name)),
-                      stt.goals.total,
-                      stt.goals.assists);
-              forwardRepository.save(entityPlayer);
-            }
-          }
-        }
-      }
-    }
-    return ResponseEntity.status(200).body("All good");
-  }
+  //     for (DataLoader.PlayerInfo playerInfo : root.response) {
+  //       for (DataLoader.Statistic stt : playerInfo.statistics) {
+  //         if (stt.games.position != null
+  //             && EuropeanLeague.fromString((stt.league.name)) != EuropeanLeague.UNKNOWN) {
+  //           if (stt.games.position.equals("Goalkeeper")) {
+  //             Goalkeeper entityPlayer =
+  //                 new Goalkeeper(
+  //                     playerInfo.player.name,
+  //                     stt.team.name,
+  //                     stt.games.position,
+  //                     stt.games.appearences,
+  //                     EuropeanLeague.fromString((stt.league.name)),
+  //                     stt.goals.total,
+  //                     stt.goals.saves,
+  //                     stt.goals.conceded,
+  //                     stt.games.appearences);
+  //             goalkeeperRepository.save(entityPlayer);
+  //           } else {
+  //             Forward entityPlayer =
+  //                 new Forward(
+  //                     playerInfo.player.name,
+  //                     stt.team.name,
+  //                     stt.games.position,
+  //                     stt.games.appearences,
+  //                     EuropeanLeague.fromString((stt.league.name)),
+  //                     stt.goals.total,
+  //                     stt.goals.assists);
+  //             forwardRepository.save(entityPlayer);
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return ResponseEntity.status(200).body("All good");
+  // }
 
   @PostMapping("/managers/newManager")
-  public ResponseEntity<FantasyManagerResponseDto> createManager(
-      @RequestBody FantasyManagerRequestDto fantasyManagerRequest) {
-
-    FantasyManager userToCreate =
-        new FantasyManager(
-            fantasyManagerRequest.getUsername(),
-            fantasyManagerRequest.getName(),
-            fantasyManagerRequest.getEmail(),
-            fantasyManagerRequest.getPassword());
-
-    try {
-      FantasyManager createdUser = fantasyManagerService.createFantasyManager(userToCreate);
-      FantasyManagerResponseDto createdUserResponse =
-              new FantasyManagerResponseDto(
-                      createdUser.getUsername(),
-                      createdUser.getName(),
-                      createdUser.getEmail(),
-                      createdUser.getPassword(),
-                      createdUser.getLeague());
-
-      return new ResponseEntity<>(createdUserResponse, HttpStatus.CREATED);
-      }
-    catch (FiveLeagueFantasyException exception) {
-      exception.printStackTrace();
-      return new ResponseEntity <> (null, HttpStatus.BAD_REQUEST);
+    public ResponseEntity<FantasyManagerResponseDto> createManager(@RequestBody FantasyManagerRequestDto fantasyManagerRequest) {
+        
+        FantasyManager userToCreate = new FantasyManager(
+            fantasyManagerRequest.getUsername(), 
+            fantasyManagerRequest.getName(), 
+            fantasyManagerRequest.getEmail(), 
+            fantasyManagerRequest.getPassword()
+        );
+        FantasyManager createdUser= fantasyManagerService.createFantasyManager(userToCreate);
+        FantasyManagerResponseDto createdUserResponse = new FantasyManagerResponseDto(
+            createdUser.getUsername(),
+            createdUser.getName(),
+            createdUser.getEmail(),
+            createdUser.getPassword(),
+            createdUser.getLeague()
+        );
+        return new ResponseEntity<FantasyManagerResponseDto>(createdUserResponse, HttpStatus.CREATED);
     }
-  }
+
 
   @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/managers/login/{username}/{password}")

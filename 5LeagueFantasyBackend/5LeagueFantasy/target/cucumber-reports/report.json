@@ -3,17 +3,28 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-02-18T00:49:33.698Z",
+        "start_timestamp": "2024-03-22T02:13:10.998Z",
         "line": 3,
         "name": "Successfully create a new account (Normal Flow)",
         "description": "",
         "id": "create-a-new-user-account;successfully-create-a-new-account-(normal-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 26013000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 148766000,
+              "duration": 175475000,
               "status": "passed"
             },
             "line": 4,
@@ -31,7 +42,7 @@
           },
           {
             "result": {
-              "duration": 302000,
+              "duration": 531000,
               "status": "passed"
             },
             "line": 5,
@@ -49,7 +60,7 @@
           },
           {
             "result": {
-              "duration": 334000,
+              "duration": 141000,
               "status": "passed"
             },
             "line": 6,
@@ -67,7 +78,7 @@
           },
           {
             "result": {
-              "duration": 243000,
+              "duration": 263000,
               "status": "passed"
             },
             "line": 7,
@@ -85,7 +96,7 @@
           },
           {
             "result": {
-              "duration": 192000,
+              "duration": 260000,
               "status": "passed"
             },
             "line": 8,
@@ -103,7 +114,7 @@
           },
           {
             "result": {
-              "duration": 61701000,
+              "duration": 62690000,
               "status": "passed"
             },
             "line": 9,
@@ -115,7 +126,7 @@
           },
           {
             "result": {
-              "duration": 26612000,
+              "duration": 25421000,
               "status": "passed"
             },
             "line": 10,
@@ -134,17 +145,28 @@
         ]
       },
       {
-        "start_timestamp": "2024-02-18T00:49:34.011Z",
+        "start_timestamp": "2024-03-22T02:13:11.378Z",
         "line": 12,
         "name": "Username already registered to an account (Alternate Flow)",
         "description": "",
         "id": "create-a-new-user-account;username-already-registered-to-an-account-(alternate-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 10491000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 22103000,
+              "duration": 21872000,
               "status": "passed"
             },
             "line": 13,
@@ -162,7 +184,7 @@
           },
           {
             "result": {
-              "duration": 221000,
+              "duration": 272000,
               "status": "passed"
             },
             "line": 14,
@@ -180,7 +202,7 @@
           },
           {
             "result": {
-              "duration": 217000,
+              "duration": 243000,
               "status": "passed"
             },
             "line": 15,
@@ -198,7 +220,7 @@
           },
           {
             "result": {
-              "duration": 312000,
+              "duration": 267000,
               "status": "passed"
             },
             "line": 16,
@@ -216,7 +238,7 @@
           },
           {
             "result": {
-              "duration": 208000,
+              "duration": 152000,
               "status": "passed"
             },
             "line": 17,
@@ -234,7 +256,7 @@
           },
           {
             "result": {
-              "duration": 7843000,
+              "duration": 13595000,
               "status": "passed"
             },
             "line": 18,
@@ -246,7 +268,7 @@
           },
           {
             "result": {
-              "duration": 230141000,
+              "duration": 22822000,
               "status": "passed"
             },
             "line": 19,
@@ -265,17 +287,28 @@
         ]
       },
       {
-        "start_timestamp": "2024-02-18T00:49:34.294Z",
+        "start_timestamp": "2024-03-22T02:13:11.482Z",
         "line": 21,
         "name": "Email already registered to an account (Alternate Flow)",
         "description": "",
         "id": "create-a-new-user-account;email-already-registered-to-an-account-(alternate-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 10859000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 58577000,
+              "duration": 12023000,
               "status": "passed"
             },
             "line": 22,
@@ -293,7 +326,7 @@
           },
           {
             "result": {
-              "duration": 743000,
+              "duration": 294000,
               "status": "passed"
             },
             "line": 23,
@@ -311,7 +344,7 @@
           },
           {
             "result": {
-              "duration": 172000,
+              "duration": 210000,
               "status": "passed"
             },
             "line": 24,
@@ -329,7 +362,7 @@
           },
           {
             "result": {
-              "duration": 377000,
+              "duration": 182000,
               "status": "passed"
             },
             "line": 25,
@@ -347,7 +380,7 @@
           },
           {
             "result": {
-              "duration": 272000,
+              "duration": 202000,
               "status": "passed"
             },
             "line": 26,
@@ -365,7 +398,7 @@
           },
           {
             "result": {
-              "duration": 5713000,
+              "duration": 4218000,
               "status": "passed"
             },
             "line": 27,
@@ -377,7 +410,7 @@
           },
           {
             "result": {
-              "duration": 32122000,
+              "duration": 21689000,
               "status": "passed"
             },
             "line": 28,
@@ -396,17 +429,28 @@
         ]
       },
       {
-        "start_timestamp": "2024-02-18T00:49:34.415Z",
+        "start_timestamp": "2024-03-22T02:13:11.558Z",
         "line": 30,
         "name": "Provided password less than 8 characters (Error Flow)",
         "description": "",
         "id": "create-a-new-user-account;provided-password-less-than-8-characters-(error-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 7723000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 7565000,
+              "duration": 3781000,
               "status": "passed"
             },
             "line": 31,
@@ -424,7 +468,7 @@
           },
           {
             "result": {
-              "duration": 193000,
+              "duration": 185000,
               "status": "passed"
             },
             "line": 32,
@@ -442,7 +486,7 @@
           },
           {
             "result": {
-              "duration": 155000,
+              "duration": 226000,
               "status": "passed"
             },
             "line": 33,
@@ -460,7 +504,7 @@
           },
           {
             "result": {
-              "duration": 164000,
+              "duration": 304000,
               "status": "passed"
             },
             "line": 34,
@@ -478,7 +522,7 @@
           },
           {
             "result": {
-              "duration": 151000,
+              "duration": 200000,
               "status": "passed"
             },
             "line": 35,
@@ -496,7 +540,7 @@
           },
           {
             "result": {
-              "duration": 16012000,
+              "duration": 5807000,
               "status": "passed"
             },
             "line": 36,
@@ -508,7 +552,7 @@
           },
           {
             "result": {
-              "duration": 4391000,
+              "duration": 4508000,
               "status": "passed"
             },
             "line": 37,
@@ -535,20 +579,312 @@
     "tags": []
   },
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "start_timestamp": "2024-02-18T00:49:34.462Z",
-        "line": 3,
-        "name": "Successful login (Normal Flow)",
+        "start_timestamp": "2024-03-22T02:13:11.613Z",
+        "line": 6,
+        "name": "The user successfully creates a new league",
         "description": "",
-        "id": "login-to-existing-account;successful-login-(normal-flow)",
+        "id": "create-a-new-league;the-user-successfully-creates-a-new-league",
+        "after": [
+          {
+            "result": {
+              "duration": 14801000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 13008000,
+              "duration": 5367000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the user is authenticated and on the Create League page",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_is_authenticated_and_on_the_create_league_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 232000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user enters \"Summer Championship\" as the league name",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Summer Championship\"",
+                  "offset": 16
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_enters_as_the_league_name(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 24963000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user submits the league creation form",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_submits_the_league_creation_form()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 249000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user should receive a confirmation message \"League created successfully.\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"League created successfully.\"",
+                  "offset": 47
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_should_receive_a_confirmation_message(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:11.682Z",
+        "line": 13,
+        "name": "Attempting to create a league with a name that already exists",
+        "description": "",
+        "id": "create-a-new-league;attempting-to-create-a-league-with-a-name-that-already-exists",
+        "after": [
+          {
+            "result": {
+              "duration": 14544000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3502000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "the user is authenticated and on the Create League page",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_is_authenticated_and_on_the_create_league_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 223000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the user enters \"Summer Championship\" as the league name",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Summer Championship\"",
+                  "offset": 16
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_enters_as_the_league_name(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 8794000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the league name \"Summer Championship\" already exists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Summer Championship\"",
+                  "offset": 16
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_league_name_already_exists(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6517000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the user submits the league creation form",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_submits_the_league_creation_form()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 282000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the user should see an error message \"League name already exists, please choose another name.\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"League name already exists, please choose another name.\"",
+                  "offset": 37
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.the_user_should_see_an_error_message(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:11.739Z",
+        "line": 21,
+        "name": "Prevent a user from joining multiple leagues",
+        "description": "",
+        "id": "create-a-new-league;prevent-a-user-from-joining-multiple-leagues",
+        "after": [
+          {
+            "result": {
+              "duration": 14703000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 20467000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "a user \"JohnDoe\" is already a member of \"Professional Europa League\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JohnDoe\"",
+                  "offset": 7
+                },
+                {
+                  "val": "\"Professional Europa League\"",
+                  "offset": 40
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.a_user_is_already_a_member_of(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 42418000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "a user \"JohnDoe\" tries to create a new league \"Professional Chess League\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JohnDoe\"",
+                  "offset": 7
+                },
+                {
+                  "val": "\"Professional Chess League\"",
+                  "offset": 46
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.a_user_tries_to_create_a_new_league(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 163000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "\"JohnDoe\" should see an error message saying \"You are already in a league.\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"JohnDoe\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"You are already in a league.\"",
+                  "offset": 45
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.user_should_see_an_error_message_saying(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Create a new league",
+    "description": "",
+    "id": "create-a-new-league",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/create_league.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:11.836Z",
+        "line": 3,
+        "name": "Successful login (Normal Flow)",
+        "description": "",
+        "id": "login-to-existing-account;successful-login-(normal-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 8739000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4766000,
               "status": "passed"
             },
             "line": 4,
@@ -570,7 +906,7 @@
           },
           {
             "result": {
-              "duration": 141000,
+              "duration": 180000,
               "status": "passed"
             },
             "line": 5,
@@ -588,7 +924,7 @@
           },
           {
             "result": {
-              "duration": 146000,
+              "duration": 243000,
               "status": "passed"
             },
             "line": 6,
@@ -606,7 +942,7 @@
           },
           {
             "result": {
-              "duration": 3041000,
+              "duration": 3570000,
               "status": "passed"
             },
             "line": 7,
@@ -618,7 +954,7 @@
           },
           {
             "result": {
-              "duration": 169000,
+              "duration": 159000,
               "status": "passed"
             },
             "line": 8,
@@ -631,17 +967,28 @@
         ]
       },
       {
-        "start_timestamp": "2024-02-18T00:49:34.494Z",
+        "start_timestamp": "2024-03-22T02:13:11.875Z",
         "line": 10,
         "name": "Unsuccessful login due to incorrect password (Alternate Flow)",
         "description": "",
         "id": "login-to-existing-account;unsuccessful-login-due-to-incorrect-password-(alternate-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 8674000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 3858000,
+              "duration": 3487000,
               "status": "passed"
             },
             "line": 11,
@@ -663,7 +1010,7 @@
           },
           {
             "result": {
-              "duration": 229000,
+              "duration": 161000,
               "status": "passed"
             },
             "line": 12,
@@ -681,7 +1028,7 @@
           },
           {
             "result": {
-              "duration": 159000,
+              "duration": 148000,
               "status": "passed"
             },
             "line": 13,
@@ -699,7 +1046,7 @@
           },
           {
             "result": {
-              "duration": 5444000,
+              "duration": 2942000,
               "status": "passed"
             },
             "line": 14,
@@ -711,7 +1058,7 @@
           },
           {
             "result": {
-              "duration": 211000,
+              "duration": 215000,
               "status": "passed"
             },
             "line": 15,
@@ -724,17 +1071,28 @@
         ]
       },
       {
-        "start_timestamp": "2024-02-18T00:49:34.519Z",
+        "start_timestamp": "2024-03-22T02:13:11.909Z",
         "line": 17,
         "name": "Non-existing username unsuccessful login (Error Flow)",
         "description": "",
         "id": "login-to-existing-account;non-existing-username-unsuccessful-login-(error-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 6641000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 438000,
+              "duration": 528000,
               "status": "passed"
             },
             "line": 18,
@@ -752,7 +1110,7 @@
           },
           {
             "result": {
-              "duration": 157000,
+              "duration": 179000,
               "status": "passed"
             },
             "line": 19,
@@ -770,7 +1128,7 @@
           },
           {
             "result": {
-              "duration": 10137000,
+              "duration": 284000,
               "status": "passed"
             },
             "line": 20,
@@ -788,7 +1146,7 @@
           },
           {
             "result": {
-              "duration": 9691000,
+              "duration": 3131000,
               "status": "passed"
             },
             "line": 21,
@@ -800,7 +1158,7 @@
           },
           {
             "result": {
-              "duration": 575000,
+              "duration": 383000,
               "status": "passed"
             },
             "line": 22,
@@ -818,6 +1176,1485 @@
     "id": "login-to-existing-account",
     "keyword": "Feature",
     "uri": "file:src/test/resources/login_to_existing_account.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:11.939Z",
+        "line": 9,
+        "name": "Querying for a specific forward in the system",
+        "description": "",
+        "id": "query-all-forwards;querying-for-a-specific-forward-in-the-system;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 5625000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 8206000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that there is a forward \"Cristiano Ronaldo\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Cristiano Ronaldo\"",
+                  "offset": 24
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.givenKeeperExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 16284000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I query all forward",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.whenIQueryAllForwards()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1476000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am shown a list of all forwards that includes \"Cristiano Ronaldo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Cristiano Ronaldo\"",
+                  "offset": 48
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.thenIShownListOfForwards(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:11.990Z",
+        "line": 10,
+        "name": "Querying for a specific forward in the system",
+        "description": "",
+        "id": "query-all-forwards;querying-for-a-specific-forward-in-the-system;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 5483000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3386000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that there is a forward \"Lionel Messi\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Lionel Messi\"",
+                  "offset": 24
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.givenKeeperExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3423000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I query all forward",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.whenIQueryAllForwards()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 168000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am shown a list of all forwards that includes \"Lionel Messi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Lionel Messi\"",
+                  "offset": 48
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.thenIShownListOfForwards(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.019Z",
+        "line": 11,
+        "name": "Querying for a specific forward in the system",
+        "description": "",
+        "id": "query-all-forwards;querying-for-a-specific-forward-in-the-system;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 5894000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3144000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that there is a forward \"Robert Lewandowski\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Robert Lewandowski\"",
+                  "offset": 24
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.givenKeeperExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5064000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I query all forward",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.whenIQueryAllForwards()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 232000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am shown a list of all forwards that includes \"Robert Lewandowski\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Robert Lewandowski\"",
+                  "offset": 48
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryAllForwardsStepDefinitions.thenIShownListOfForwards(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Query all forwards",
+    "description": "",
+    "id": "query-all-forwards",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/query_all_forwards.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:12.050Z",
+        "line": 7,
+        "name": "Exact player position",
+        "description": "",
+        "id": "query-players-by-position;exact-player-position",
+        "after": [
+          {
+            "result": {
+              "duration": 5409000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6052000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "that there is a position \"Midfielder\" in the system containing players",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Midfielder\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.givenPositionContainsPlayer(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5017000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I query players by position \"Midfielder\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Midfielder\"",
+                  "offset": 28
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.whenISelectPosition(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 858000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I am shown a list of players in that position that includes \"Ngolo Kante\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Ngolo Kante\"",
+                  "offset": 60
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.thenListIncludesPlayer(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.087Z",
+        "line": 12,
+        "name": "No matches",
+        "description": "",
+        "id": "query-players-by-position;no-matches",
+        "after": [
+          {
+            "result": {
+              "duration": 6167000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5408000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "that there are no players in the system playing as \"Defender\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Defender\"",
+                  "offset": 51
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.givenPositionDoesntContainPlayer(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3995000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I query players by position \"Defender\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Defender\"",
+                  "offset": 28
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.whenISelectPosition(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 119000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I am prompted that no results were found",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.thenListDoesntIncludesPlayer()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.125Z",
+        "line": 17,
+        "name": "Position not found",
+        "description": "",
+        "id": "query-players-by-position;position-not-found",
+        "after": [
+          {
+            "result": {
+              "duration": 6519000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6073000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "that there is no \"Goalpost\" position in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Goalpost\"",
+                  "offset": 17
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.givenPositionDoesNotExist(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3272000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I query players by position \"Goalpost\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Goalpost\"",
+                  "offset": 28
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.whenISelectPosition(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 148000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I am shown a no position found error",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardByPositionStepDefinitions.thenErrorNoPosition()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Query Players by Position",
+    "description": "    In order to accurately find players for team selection\n    As a user of the League Fantasy system\n    I want to be able to search for players by their specific position or a partial match of their position",
+    "id": "query-players-by-position",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/query_by_position_forward.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:12.159Z",
+        "line": 14,
+        "name": "Querying for a specific goalkeeper in the system",
+        "description": "",
+        "id": "query-goalkeepers-by-position;querying-for-a-specific-goalkeeper-in-the-system;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 9145000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4893000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "that there is a keeper \"Lev Yashine\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Lev Yashine\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.givenKeeperExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3530000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I query keeper \"Goalkeeper\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Goalkeeper\"",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.whenQuery(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 111000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I am shown a list of all goalkeepers",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.thenListIncludesAllGoalkeepers()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.194Z",
+        "line": 15,
+        "name": "Querying for a specific goalkeeper in the system",
+        "description": "",
+        "id": "query-goalkeepers-by-position;querying-for-a-specific-goalkeeper-in-the-system;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 6079000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3783000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "that there is a keeper \"Mike Maignan\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Mike Maignan\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.givenKeeperExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2649000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I query keeper \"Goalkeeper\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Goalkeeper\"",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.whenQuery(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 133000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I am shown a list of all goalkeepers",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.thenListIncludesAllGoalkeepers()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.223Z",
+        "line": 16,
+        "name": "Querying for a specific goalkeeper in the system",
+        "description": "",
+        "id": "query-goalkeepers-by-position;querying-for-a-specific-goalkeeper-in-the-system;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 6029000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 14385000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "that there is a keeper \"Kepa Arrizabalaga\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Kepa Arrizabalaga\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.givenKeeperExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3082000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I query keeper \"Goalkeeper\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Goalkeeper\"",
+                  "offset": 15
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.whenQuery(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 132000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I am shown a list of all goalkeepers",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryKeeperByPositionStepDefinitions.thenListIncludesAllGoalkeepers()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Query Goalkeepers by Position",
+    "description": "    In order to find goalkeepers for team selection\n    As a user of the League Fantasy system\n    I want to be able to search for goalkeepers by their position",
+    "id": "query-goalkeepers-by-position",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/query_by_position_keeper.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:12.263Z",
+        "line": 2,
+        "name": "Display all forwards in league",
+        "description": "",
+        "id": "query-forwards-by-league;display-all-forwards-in-league",
+        "after": [
+          {
+            "result": {
+              "duration": 6062000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5525000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that there is a league \"PremierLeague\" containing players",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"PremierLeague\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByLeagueStepDefinitions.givenLeagueContainsPlayers(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6335000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I select the \"PremierLeague\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"PremierLeague\"",
+                  "offset": 13
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByLeagueStepDefinitions.whenISelectLeague(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1005000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am shown a list of all players in the league that includes \"Haaland\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Haaland\"",
+                  "offset": 61
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByLeagueStepDefinitions.thenListIncludesPlayer(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Query forwards by league",
+    "description": "",
+    "id": "query-forwards-by-league",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/query_forward_by_european_league.feature",
+    "tags": []
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:12.298Z",
+        "line": 5,
+        "name": "Sort Players by Descending Order of Goals",
+        "description": "",
+        "id": "sort-forwards-by-goals;sort-players-by-descending-order-of-goals",
+        "after": [
+          {
+            "result": {
+              "duration": 5881000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5218000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "there exists in the system players \"John Doe\" with 5 goals and \"Jane Smith\" with 4 goals",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 35
+                },
+                {
+                  "val": "5",
+                  "offset": 51
+                },
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 63
+                },
+                {
+                  "val": "4",
+                  "offset": 81
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.GivenPlayerExists(java.lang.String,int,java.lang.String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7427000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I sort players by descending order of goals",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.whenISortPlayersByDescendingGoals()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4858000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am shown a descending goals list that has \"John Doe\" ranked higher than \"Jane Smith\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 44
+                },
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 74
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.thenIAmShownAListWithCorrectOrder(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.342Z",
+        "line": 10,
+        "name": "Sort Players By Ascending Order of Goals",
+        "description": "",
+        "id": "sort-forwards-by-goals;sort-players-by-ascending-order-of-goals",
+        "after": [
+          {
+            "result": {
+              "duration": 6028000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5523000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "there exists in the system players \"John Doe\" with 5 goals and \"Jane Smith\" with 4 goals",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 35
+                },
+                {
+                  "val": "5",
+                  "offset": 51
+                },
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 63
+                },
+                {
+                  "val": "4",
+                  "offset": 81
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.GivenPlayerExists(java.lang.String,int,java.lang.String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5641000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I sort players by ascending order of goals",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.whenISortPlayersByAscendingGoals()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 466000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I am shown a ascending goals list that has \"Jane Smith\" ranked higher than \"John Doe\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 43
+                },
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 75
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.thenIAmShownAListWithCorrectOrder2(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.375Z",
+        "line": 15,
+        "name": "No players in the system",
+        "description": "",
+        "id": "sort-forwards-by-goals;no-players-in-the-system",
+        "after": [
+          {
+            "result": {
+              "duration": 6400000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 29435000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "no player is in the system goals",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.noPlayerIsInTheSystem()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2486000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I query by ascending order of goals",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.iQueryByAscendingOrderOfGoals()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 129000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I am shown a prompt indicating no results for ascending goals were found",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByGoalsStepDefinitions.iAmShownAPromptIndicatingNoResultsWereFound()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Sort forwards by goals",
+    "description": "",
+    "id": "sort-forwards-by-goals",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/query_forward_by_goals.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:12.429Z",
+        "line": 3,
+        "name": "Exact player name",
+        "description": "",
+        "id": "query-forward-by-name;exact-player-name",
+        "after": [
+          {
+            "result": {
+              "duration": 5284000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3067000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "that there is a player named \"Lionel Messi\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Lionel Messi\"",
+                  "offset": 29
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.givenPlayerExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10070000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I query \"Lionel Messi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Lionel Messi\"",
+                  "offset": 8
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.whenIQuery(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 829000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am shown a list of players that includes \"Lionel Messi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Lionel Messi\"",
+                  "offset": 43
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.thenListIncludesPlayer(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.465Z",
+        "line": 8,
+        "name": "Partial match",
+        "description": "",
+        "id": "query-forward-by-name;partial-match",
+        "after": [
+          {
+            "result": {
+              "duration": 5659000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3964000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "that there are players named \"Harry Kane\" and \"Harry Maguire\" in the system",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Harry Kane\"",
+                  "offset": 29
+                },
+                {
+                  "val": "\"Harry Maguire\"",
+                  "offset": 46
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.givenPlayersExist(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3442000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I query \"Harry\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Harry\"",
+                  "offset": 8
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.whenIQuery(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 738000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I am shown a list of players that includes \"Harry Kane\" and \"Harry Maguire\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Harry Kane\"",
+                  "offset": 43
+                },
+                {
+                  "val": "\"Harry Maguire\"",
+                  "offset": 60
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.thenListIncludesPlayers(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.495Z",
+        "line": 13,
+        "name": "Player not found",
+        "description": "",
+        "id": "query-forward-by-name;player-not-found",
+        "after": [
+          {
+            "result": {
+              "duration": 5516000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 414000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "that the list of players in the system does not include any player whose name contains \"Yassine Mimet\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Yassine Mimet\"",
+                  "offset": 87
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.givenNoPlayerWithNameExists(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2721000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I query \"Yassine Mimet\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Yassine Mimet\"",
+                  "offset": 8
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.whenIQuery(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 130000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I am shown a prompt that indicates that no results were found",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByNameStepDefinitions.thenNoResultsFoundPrompt()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Query forward by name",
+    "description": "",
+    "id": "query-forward-by-name",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/query_forward_by_name.feature",
+    "tags": []
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-22T02:13:12.520Z",
+        "line": 5,
+        "name": "Sort Players by Descending Order of Assists",
+        "description": "",
+        "id": "sort-forwards-by-assists;sort-players-by-descending-order-of-assists",
+        "after": [
+          {
+            "result": {
+              "duration": 4595000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6655000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "there exists in the system players \"John Doe\" with 5 assists and \"Jane Smith\" with 4 assists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 35
+                },
+                {
+                  "val": "5",
+                  "offset": 51
+                },
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 65
+                },
+                {
+                  "val": "4",
+                  "offset": 83
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.GivenPlayerExists(java.lang.String,int,java.lang.String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4037000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I sort players by descending order of assists",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.whenISortPlayersByDescendingGoals()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 381000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am shown a descending assists list that has \"John Doe\" ranked higher than \"Jane Smith\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 76
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.thenIAmShownAListWithCorrectOrder3(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.553Z",
+        "line": 10,
+        "name": "Sort Players by Ascending Order of Assists",
+        "description": "",
+        "id": "sort-forwards-by-assists;sort-players-by-ascending-order-of-assists",
+        "after": [
+          {
+            "result": {
+              "duration": 6474000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4152000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "there exists in the system players \"John Doe\" with 5 assists and \"Jane Smith\" with 4 assists",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 35
+                },
+                {
+                  "val": "5",
+                  "offset": 51
+                },
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 65
+                },
+                {
+                  "val": "4",
+                  "offset": 83
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.GivenPlayerExists(java.lang.String,int,java.lang.String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5133000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I sort players by ascending order of assists",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.whenISortPlayersByAscendingGoals()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 452000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I am shown a ascending assists list that has \"Jane Smith\" ranked higher than \"John Doe\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Jane Smith\"",
+                  "offset": 45
+                },
+                {
+                  "val": "\"John Doe\"",
+                  "offset": 77
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.thenIAmShownAListWithCorrectOrder4(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-22T02:13:12.585Z",
+        "line": 15,
+        "name": "No players in the system",
+        "description": "",
+        "id": "sort-forwards-by-assists;no-players-in-the-system",
+        "after": [
+          {
+            "result": {
+              "duration": 4796000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11739000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "no player is in the system assists",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.noPlayerIsInTheSystem()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2491000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I query by ascending order of assists",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.iQueryByAscendingOrderOfGoals()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 152000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I am shown a prompt indicating no results for ascending assists were found",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.QueryForwardsByAssistsStepDefinitions.iAmShownAPromptIndicatingNoResultsWereFound()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Sort forwards by assists",
+    "description": "",
+    "id": "sort-forwards-by-assists",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/query_forwards_by_assists.feature",
     "tags": []
   }
 ]

@@ -13,6 +13,7 @@ public class ForwardResponseDto {
   private final int gamesPlayed;
 
   public ForwardResponseDto(
+      int id,
       String name,
       String team,
       EuropeanLeague europeanLeague,
@@ -68,6 +69,11 @@ public class ForwardResponseDto {
   public void setGoals(int goals) {
     this.goals = goals;
   }
+
+  public int getGamesPlayed() {
+    return this.gamesPlayed;
+  }
+
 
   public int getAssists() {
     return assists;
