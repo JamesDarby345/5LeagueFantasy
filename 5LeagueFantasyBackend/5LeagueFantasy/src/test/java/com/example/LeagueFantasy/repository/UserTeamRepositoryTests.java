@@ -55,13 +55,10 @@ public class UserTeamRepositoryTests {
         UserTeam userTeam = new UserTeam();
         String name = "Testing FC";
         int points = 33;
-        long millis = System.currentTimeMillis();
-        Date weekStartDate = new Date(millis);
         boolean isActive = true;
 
         userTeam.setName(name);
         userTeam.setPoints(points);
-        userTeam.setWeekStartDate(weekStartDate);
         userTeam.setActive(isActive);
         userTeam.setManager(fantasyManager);
 
@@ -74,7 +71,6 @@ public class UserTeamRepositoryTests {
         assertNotNull(userTeam);
         assertEquals(name, userTeam.getName());
         assertEquals(points, userTeam.getPoints());
-        assertEquals(weekStartDate.toLocalDate(), userTeam.getWeekStartDate().toLocalDate());
         assertEquals(isActive, userTeam.getActive());
         assertEquals(fantasyManager.getName(), userTeam.getManager().getName());
     }

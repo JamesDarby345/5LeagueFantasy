@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import java.sql.Date;
 
 @Entity
 public class UserTeam {
@@ -22,9 +21,6 @@ public class UserTeam {
   @Column(name = "points", nullable = false)
   private int points;
 
-  @Column(name = "weekStartDate", nullable = false)
-  private Date weekStartDate;
-
   @Column(name = "isActive", nullable = false)
   private Boolean isActive;
 
@@ -32,10 +28,9 @@ public class UserTeam {
   @JoinColumn(name = "manager", nullable = false)
   private FantasyManager fantasyManager;
 
-  public UserTeam(String name, int points, Date weekStartDate, Boolean isActive) {
+  public UserTeam(String name, int points, Boolean isActive) {
     this.name = name;
     this.points = points;
-    this.weekStartDate = weekStartDate;
     this.isActive = isActive;
   }
 
@@ -55,14 +50,6 @@ public class UserTeam {
 
   public void setPoints(int points) {
     this.points = points;
-  }
-
-  public Date getWeekStartDate() {
-    return weekStartDate;
-  }
-
-  public void setWeekStartDate(Date weekStartDate) {
-    this.weekStartDate = weekStartDate;
   }
 
   public Boolean getActive() {
