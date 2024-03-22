@@ -4,23 +4,23 @@ import com.example.LeagueFantasy.entity.FantasyManager;
 
 public class UserTeamResponseDto {
 
-    private final String fantasyManagerUsername;
+    private final int id;
     private final String name;
     private final int points;
     private final Boolean isActive;
     private final FantasyManager fantasyManager;
 
 
-    public UserTeamResponseDto(String fantasyManagerUsername, String name, int points, Boolean isActive, FantasyManager fantasyManager) {
-        this.fantasyManagerUsername = fantasyManagerUsername;
+    public UserTeamResponseDto(int id, String name, int points, Boolean isActive, FantasyManager fantasyManager) {
+        this.id = id;
         this.name = name;
         this.points = points;
         this.isActive = isActive;
         this.fantasyManager = fantasyManager;
     }
 
-    public String getfantasyManagerUsername() {
-        return this.fantasyManagerUsername;
+    public int getId() {
+        return this.id;
     }
 
     public String getName() {

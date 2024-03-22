@@ -8,18 +8,14 @@ public class UserTeamRequestDto {
     private String name;
 
     @NonNull
-    private int points;
-    
-    @NonNull
-    private Boolean isActive;
+    private boolean setAsActive;
 
     @NonNull
     private String fantasyManagerUsername;
 
-    public UserTeamRequestDto(String name, int points, Boolean isActive, String fantasyManagerUsername) {
+    public UserTeamRequestDto(String name, boolean setAsActive, String fantasyManagerUsername) {
         this.name = name;
-        this.points = points;
-        this.isActive = isActive;
+        this.setAsActive = setAsActive;
         this.fantasyManagerUsername = fantasyManagerUsername;
     }
 
@@ -31,27 +27,19 @@ public class UserTeamRequestDto {
         this.name = name;
     }
 
-    public int getPoints() {
-        return this.points;
+    public boolean getSetAsActive() {
+        return this.setAsActive;
     }
 
-    public void setPoints(int points) {
-        this.points = points;
+    public void setSetAsActive(boolean setAsActive) {
+        this.setAsActive = setAsActive;
     }
 
-    public Boolean getIsActive() {
-        return this.isActive;
-    }
-
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
-    }
-
-    public String getfantasyManagerUsername() {
+    public String getFantasyManagerUsername() {
         return this.fantasyManagerUsername;
     }
 
-    public void setfantasyManagerUsername(String fantasyManagerUsername) {
+    public void setFantasyManagerUsername(String fantasyManagerUsername) {
         this.fantasyManagerUsername = fantasyManagerUsername;
     }
 }

@@ -10,7 +10,7 @@ public interface UserTeamRepository extends CrudRepository<UserTeam, Integer> {
 
   UserTeam findById(int id);
 
-  List<UserTeam> findByName(String name);
+  UserTeam findByName(String name);
 
   List<UserTeam> findByFantasyManager(FantasyManager manager);
 

@@ -1,5 +1,9 @@
 package com.example.LeagueFantasy.entity;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,8 +29,10 @@ public class UserTeam {
   private Boolean isActive;
 
   @ManyToOne
+  @OnDelete(action = OnDeleteAction.CASCADE)
   @JoinColumn(name = "manager", nullable = false)
   private FantasyManager fantasyManager;
+
 
   public UserTeam(String name, int points, Boolean isActive) {
     this.name = name;

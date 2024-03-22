@@ -32,49 +32,49 @@ public class FantasyManagerController {
   @Autowired GoalkeeperRepository goalkeeperRepository;
   @Autowired private FantasyManagerService fantasyManagerService;
 
-  // @GetMapping("/")
-  // public ResponseEntity<String> loadPlayers() {
-  //   List<DataLoader.Root> roots = DataLoader.loadData();
-  //   for (DataLoader.Root root : roots) {
-  //     if (root == null) {
-  //       return ResponseEntity.status(503).body("Internal Server Error");
-  //     }
+  @GetMapping("/")
+  public ResponseEntity<String> loadPlayers() {
+    List<DataLoader.Root> roots = DataLoader.loadData();
+    for (DataLoader.Root root : roots) {
+      if (root == null) {
+        return ResponseEntity.status(503).body("Internal Server Error");
+      }
 
-  //     for (DataLoader.PlayerInfo playerInfo : root.response) {
-  //       for (DataLoader.Statistic stt : playerInfo.statistics) {
-  //         if (stt.games.position != null
-  //             && EuropeanLeague.fromString((stt.league.name)) != EuropeanLeague.UNKNOWN) {
-  //           if (stt.games.position.equals("Goalkeeper")) {
-  //             Goalkeeper entityPlayer =
-  //                 new Goalkeeper(
-  //                     playerInfo.player.name,
-  //                     stt.team.name,
-  //                     stt.games.position,
-  //                     stt.games.appearences,
-  //                     EuropeanLeague.fromString((stt.league.name)),
-  //                     stt.goals.total,
-  //                     stt.goals.saves,
-  //                     stt.goals.conceded,
-  //                     stt.games.appearences);
-  //             goalkeeperRepository.save(entityPlayer);
-  //           } else {
-  //             Forward entityPlayer =
-  //                 new Forward(
-  //                     playerInfo.player.name,
-  //                     stt.team.name,
-  //                     stt.games.position,
-  //                     stt.games.appearences,
-  //                     EuropeanLeague.fromString((stt.league.name)),
-  //                     stt.goals.total,
-  //                     stt.goals.assists);
-  //             forwardRepository.save(entityPlayer);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return ResponseEntity.status(200).body("All good");
-  // }
+      for (DataLoader.PlayerInfo playerInfo : root.response) {
+        for (DataLoader.Statistic stt : playerInfo.statistics) {
+          if (stt.games.position != null
+              && EuropeanLeague.fromString((stt.league.name)) != EuropeanLeague.UNKNOWN) {
+            if (stt.games.position.equals("Goalkeeper")) {
+              Goalkeeper entityPlayer =
+                  new Goalkeeper(
+                      playerInfo.player.name,
+                      stt.team.name,
+                      stt.games.position,
+                      stt.games.appearences,
+                      EuropeanLeague.fromString((stt.league.name)),
+                      stt.goals.total,
+                      stt.goals.saves,
+                      stt.goals.conceded,
+                      stt.games.appearences);
+              goalkeeperRepository.save(entityPlayer);
+            } else {
+              Forward entityPlayer =
+                  new Forward(
+                      playerInfo.player.name,
+                      stt.team.name,
+                      stt.games.position,
+                      stt.games.appearences,
+                      EuropeanLeague.fromString((stt.league.name)),
+                      stt.goals.total,
+                      stt.goals.assists);
+              forwardRepository.save(entityPlayer);
+            }
+          }
+        }
+      }
+    }
+    return ResponseEntity.status(200).body("All good");
+  }
 
   @PostMapping("/managers/newManager")
     public ResponseEntity<FantasyManagerResponseDto> createManager(@RequestBody FantasyManagerRequestDto fantasyManagerRequest) {
