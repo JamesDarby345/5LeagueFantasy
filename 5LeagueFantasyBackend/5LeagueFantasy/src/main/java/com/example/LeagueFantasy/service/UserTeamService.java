@@ -48,6 +48,8 @@ public class UserTeamService {
         }
 
         userTeam.setPoints(0);
+        userTeam.setNumberOfForwards(0);
+        userTeam.setNumberOfKeepers(0);
         userTeam.setManager(fantasyManager);
         
         return userTeamRepository.save(userTeam);

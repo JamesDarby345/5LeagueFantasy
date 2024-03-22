@@ -33,11 +33,19 @@ public class UserTeam {
   @JoinColumn(name = "manager", nullable = false)
   private FantasyManager fantasyManager;
 
+  @Column(name = "numberOfKeepers", nullable = false)
+  private int numberOfKeepers;
+
+  @Column(name = "numberOfForwards", nullable = false)
+  private int numberOfForwards;
+
 
   public UserTeam(String name, int points, Boolean isActive) {
     this.name = name;
     this.points = points;
     this.isActive = isActive;
+    this.numberOfForwards = 0;
+    this.numberOfKeepers = 0;
   }
 
   public UserTeam() {}
@@ -80,5 +88,49 @@ public class UserTeam {
 
   public void setManager(FantasyManager user) {
     this.fantasyManager = user;
+  }
+
+  public int getId() {
+    return this.id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public Boolean isIsActive() {
+    return this.isActive;
+  }
+
+  public Boolean getIsActive() {
+    return this.isActive;
+  }
+
+  public void setIsActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
+
+  public FantasyManager getFantasyManager() {
+    return this.fantasyManager;
+  }
+
+  public void setFantasyManager(FantasyManager fantasyManager) {
+    this.fantasyManager = fantasyManager;
+  }
+
+  public int getNumberOfKeepers() {
+    return this.numberOfKeepers;
+  }
+
+  public void setNumberOfKeepers(int numberOfKeepers) {
+    this.numberOfKeepers = numberOfKeepers;
+  }
+
+  public int getNumberOfForwards() {
+    return this.numberOfForwards;
+  }
+
+  public void setNumberOfForwards(int numberOfForwards) {
+    this.numberOfForwards = numberOfForwards;
   }
 }

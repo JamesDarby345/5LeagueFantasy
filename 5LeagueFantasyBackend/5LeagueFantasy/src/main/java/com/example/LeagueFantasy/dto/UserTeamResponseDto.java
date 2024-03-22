@@ -9,14 +9,18 @@ public class UserTeamResponseDto {
     private final int points;
     private final Boolean isActive;
     private final FantasyManager fantasyManager;
+    private final int numberOfKeepers;
+    private final int numberOfForwards;
 
 
-    public UserTeamResponseDto(int id, String name, int points, Boolean isActive, FantasyManager fantasyManager) {
+    public UserTeamResponseDto(int id, String name, int points, Boolean isActive, FantasyManager fantasyManager, int numberOfKeepers, int numberOfForwards) {
         this.id = id;
         this.name = name;
         this.points = points;
         this.isActive = isActive;
         this.fantasyManager = fantasyManager;
+        this.numberOfKeepers = numberOfKeepers;
+        this.numberOfForwards = numberOfForwards;
     }
 
     public int getId() {
@@ -37,5 +41,13 @@ public class UserTeamResponseDto {
 
     public FantasyManager getFantasyManager() {
         return this.fantasyManager;
+    }
+
+    public int getNumberOfKeepers() {
+        return this.numberOfKeepers;
+    }
+
+    public int getNumberOfForwards() {
+        return this.numberOfForwards;
     }
 }

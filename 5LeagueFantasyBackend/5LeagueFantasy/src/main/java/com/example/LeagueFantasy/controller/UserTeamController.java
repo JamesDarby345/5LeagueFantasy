@@ -39,7 +39,9 @@ public class UserTeamController {
             createdUserTeam.getName(),
             createdUserTeam.getPoints(), 
             createdUserTeam.getActive(), 
-            createdUserTeam.getManager());
+            createdUserTeam.getManager(),
+            createdUserTeam.getNumberOfKeepers(),
+            createdUserTeam.getNumberOfForwards());
 
         return new ResponseEntity<UserTeamResponseDto>(createdUserTeamResponse, HttpStatus.CREATED);
     }
@@ -57,7 +59,9 @@ public class UserTeamController {
                 userTeam.getName(),
                 userTeam.getPoints(),
                 userTeam.getActive(),
-                userTeam.getManager());
+                userTeam.getManager(),
+                userTeam.getNumberOfKeepers(),
+                userTeam.getNumberOfForwards());
 
                 userTeamsResponse.add(currentUserResponse);
         }

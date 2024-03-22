@@ -23,9 +23,9 @@ public class Goalkeeper extends Player {
   @Column(name = "position", nullable = false)
   private String position;
 
-  @OneToMany
-  @JoinColumn(name = "keeperToTeam")
-  private List<PlayerToTeam> keeperToTeam;
+  // @OneToMany
+  // @JoinColumn(name = "keeperToTeam")
+  // private List<PlayerToTeam> keeperToTeam;
 
   public Goalkeeper(
       String name,
@@ -89,11 +89,11 @@ public class Goalkeeper extends Player {
     this.cleanSheets = cleanSheets;
   }
 
-  public List<PlayerToTeam> getKeeperToTeam() {
-    return keeperToTeam;
-  }
+  // public List<PlayerToTeam> getKeeperToTeam() {
+  //   return keeperToTeam;
+  // }
 
-  public void setKeeperToTeam(List<PlayerToTeam> playersToTeam) {
-    this.keeperToTeam = playersToTeam;
-  }
+  // public void setKeeperToTeam(List<PlayerToTeam> playersToTeam) {
+  //   this.keeperToTeam = playersToTeam;
+  // }
 }
