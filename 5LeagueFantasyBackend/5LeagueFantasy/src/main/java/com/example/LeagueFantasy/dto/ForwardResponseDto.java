@@ -9,6 +9,7 @@ public class ForwardResponseDto {
   private String position;
   private int goals;
   private int assists;
+  private int id;
 
   private final int gamesPlayed;
 
@@ -21,6 +22,7 @@ public class ForwardResponseDto {
       int goals,
       int assists,
       int gamesPlayed) {
+    this.id = id;
     this.name = name;
     this.team = team;
     this.europeanLeague = europeanLeague;
@@ -82,4 +84,13 @@ public class ForwardResponseDto {
   public void setAssists(int assists) {
     this.assists = assists;
   }
+
+  public int getId() {
+    return this.id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
 }
