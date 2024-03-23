@@ -3,15 +3,15 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:28.005Z",
+        "start_timestamp": "2024-03-23T17:38:06.156Z",
         "line": 3,
-        "name": "Successfully add a forward to an existing user team",
+        "name": "Successfully add a forward to an existing user team (Normal Flow)",
         "description": "",
-        "id": "add-player-to-user-team;successfully-add-a-forward-to-an-existing-user-team",
+        "id": "add-player-to-user-team;successfully-add-a-forward-to-an-existing-user-team-(normal-flow)",
         "after": [
           {
             "result": {
-              "duration": 14404000,
+              "duration": 21665000,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 241030000,
+              "duration": 331879000,
               "status": "passed"
             },
             "line": 4,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 30717000,
+              "duration": 47119000,
               "status": "passed"
             },
             "line": 5,
@@ -64,7 +64,7 @@
           },
           {
             "result": {
-              "duration": 17810000,
+              "duration": 25701000,
               "status": "passed"
             },
             "line": 6,
@@ -77,15 +77,15 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:28.383Z",
+        "start_timestamp": "2024-03-23T17:38:06.693Z",
         "line": 8,
-        "name": "Successfully add a goalkeeper to an existing user team",
+        "name": "Successfully add a goalkeeper to an existing user team (Normal Flow)",
         "description": "",
-        "id": "add-player-to-user-team;successfully-add-a-goalkeeper-to-an-existing-user-team",
+        "id": "add-player-to-user-team;successfully-add-a-goalkeeper-to-an-existing-user-team-(normal-flow)",
         "after": [
           {
             "result": {
-              "duration": 8311000,
+              "duration": 10500000,
               "status": "passed"
             },
             "match": {
@@ -98,7 +98,7 @@
         "steps": [
           {
             "result": {
-              "duration": 15504000,
+              "duration": 30943000,
               "status": "passed"
             },
             "line": 9,
@@ -120,7 +120,7 @@
           },
           {
             "result": {
-              "duration": 14245000,
+              "duration": 18223000,
               "status": "passed"
             },
             "line": 10,
@@ -138,7 +138,7 @@
           },
           {
             "result": {
-              "duration": 27173000,
+              "duration": 20387000,
               "status": "passed"
             },
             "line": 11,
@@ -151,15 +151,15 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:28.479Z",
+        "start_timestamp": "2024-03-23T17:38:06.809Z",
         "line": 13,
-        "name": "Attempt to add a goalkeeper to a team already with one",
+        "name": "Attempt to add a goalkeeper to a team already with one (Alternate Flow)",
         "description": "",
-        "id": "add-player-to-user-team;attempt-to-add-a-goalkeeper-to-a-team-already-with-one",
+        "id": "add-player-to-user-team;attempt-to-add-a-goalkeeper-to-a-team-already-with-one-(alternate-flow)",
         "after": [
           {
             "result": {
-              "duration": 6288000,
+              "duration": 9122000,
               "status": "passed"
             },
             "match": {
@@ -172,7 +172,7 @@
         "steps": [
           {
             "result": {
-              "duration": 28755000,
+              "duration": 38821000,
               "status": "passed"
             },
             "line": 14,
@@ -194,7 +194,7 @@
           },
           {
             "result": {
-              "duration": 9815000,
+              "duration": 12982000,
               "status": "passed"
             },
             "line": 15,
@@ -206,13 +206,151 @@
           },
           {
             "result": {
-              "duration": 14037000,
+              "duration": 15598000,
               "status": "passed"
             },
             "line": 16,
             "name": "the attempt should not be successful and theres should only be 1 goalkeeper on the team",
             "match": {
               "location": "com.example.LeagueFantasy.step_definitions.AddPlayerToTeamStepDefinitions.then_the_attempt_should_not_be_successful_and_theres_should_only_be_1_goalkeeper_on_the_team()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-23T17:38:06.922Z",
+        "line": 18,
+        "name": "Attempt to add a forward to a team already with five  (Alternate Flow)",
+        "description": "",
+        "id": "add-player-to-user-team;attempt-to-add-a-forward-to-a-team-already-with-five--(alternate-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 8823000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 89408000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I have an existing user team with team name \"MyAwesomeTeam\" with 5 forwards",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"MyAwesomeTeam\"",
+                  "offset": 44
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.AddPlayerToTeamStepDefinitions.i_have_an_existing_user_team_with_team_name_with_5_forwards(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8451000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I add another forward to the user team",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.AddPlayerToTeamStepDefinitions.when_i_add_another_forward_to_the_user_team()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 15185000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the attempt should not be successful and there should still be 5 forwards on the team",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.AddPlayerToTeamStepDefinitions.then_the_attempt_should_not_be_successful_and_theres_should_only_be_5_forwards_on_the_team()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-23T17:38:07.075Z",
+        "line": 23,
+        "name": "Forward already exists on team (Error Flow)",
+        "description": "",
+        "id": "add-player-to-user-team;forward-already-exists-on-team-(error-flow)",
+        "after": [
+          {
+            "result": {
+              "duration": 10732000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.CreateLeagueStepDefinitions.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 18322000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I have an existing user team with team name \"MyAwesomeTeam\" with 1 forward named \"Sidney Crosby\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"MyAwesomeTeam\"",
+                  "offset": 44
+                },
+                {
+                  "val": "\"Sidney Crosby\"",
+                  "offset": 81
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.AddPlayerToTeamStepDefinitions.i_have_an_existing_user_team_with_team_name_with_1_forward(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10679000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I add a forward named \"Sidney Crosby\" to the user team already with that player",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sidney Crosby\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.example.LeagueFantasy.step_definitions.AddPlayerToTeamStepDefinitions.when_i_add_a_forward_named_to_the_user_team_already_with_that_player(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 7696000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "the attempt should not be successful and there should still be 1 forward on the team",
+            "match": {
+              "location": "com.example.LeagueFantasy.step_definitions.AddPlayerToTeamStepDefinitions.then_the_attempt_should_not_be_successful_and_theres_should_only_be_1_forward_on_the_team()"
             },
             "keyword": "Then "
           }
@@ -230,7 +368,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:28.565Z",
+        "start_timestamp": "2024-03-23T17:38:07.149Z",
         "line": 3,
         "name": "Successfully create a new account (Normal Flow)",
         "description": "",
@@ -238,7 +376,7 @@
         "after": [
           {
             "result": {
-              "duration": 7377000,
+              "duration": 7556000,
               "status": "passed"
             },
             "match": {
@@ -251,7 +389,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6843000,
+              "duration": 6831000,
               "status": "passed"
             },
             "line": 4,
@@ -269,7 +407,7 @@
           },
           {
             "result": {
-              "duration": 273000,
+              "duration": 250000,
               "status": "passed"
             },
             "line": 5,
@@ -287,7 +425,7 @@
           },
           {
             "result": {
-              "duration": 257000,
+              "duration": 165000,
               "status": "passed"
             },
             "line": 6,
@@ -305,7 +443,7 @@
           },
           {
             "result": {
-              "duration": 976000,
+              "duration": 137000,
               "status": "passed"
             },
             "line": 7,
@@ -323,7 +461,7 @@
           },
           {
             "result": {
-              "duration": 236000,
+              "duration": 154000,
               "status": "passed"
             },
             "line": 8,
@@ -341,7 +479,7 @@
           },
           {
             "result": {
-              "duration": 10466000,
+              "duration": 11080000,
               "status": "passed"
             },
             "line": 9,
@@ -353,7 +491,7 @@
           },
           {
             "result": {
-              "duration": 16591000,
+              "duration": 17579000,
               "status": "passed"
             },
             "line": 10,
@@ -372,7 +510,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:28.645Z",
+        "start_timestamp": "2024-03-23T17:38:07.224Z",
         "line": 12,
         "name": "Username already registered to an account (Alternate Flow)",
         "description": "",
@@ -380,7 +518,7 @@
         "after": [
           {
             "result": {
-              "duration": 14517000,
+              "duration": 8587000,
               "status": "passed"
             },
             "match": {
@@ -393,7 +531,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8829000,
+              "duration": 16881000,
               "status": "passed"
             },
             "line": 13,
@@ -411,7 +549,7 @@
           },
           {
             "result": {
-              "duration": 209000,
+              "duration": 296000,
               "status": "passed"
             },
             "line": 14,
@@ -429,7 +567,7 @@
           },
           {
             "result": {
-              "duration": 192000,
+              "duration": 281000,
               "status": "passed"
             },
             "line": 15,
@@ -447,7 +585,7 @@
           },
           {
             "result": {
-              "duration": 125000,
+              "duration": 275000,
               "status": "passed"
             },
             "line": 16,
@@ -465,7 +603,7 @@
           },
           {
             "result": {
-              "duration": 140000,
+              "duration": 205000,
               "status": "passed"
             },
             "line": 17,
@@ -483,7 +621,7 @@
           },
           {
             "result": {
-              "duration": 4925000,
+              "duration": 10321000,
               "status": "passed"
             },
             "line": 18,
@@ -495,7 +633,7 @@
           },
           {
             "result": {
-              "duration": 17909000,
+              "duration": 27983000,
               "status": "passed"
             },
             "line": 19,
@@ -514,7 +652,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:28.722Z",
+        "start_timestamp": "2024-03-23T17:38:07.325Z",
         "line": 21,
         "name": "Email already registered to an account (Alternate Flow)",
         "description": "",
@@ -522,7 +660,7 @@
         "after": [
           {
             "result": {
-              "duration": 6352000,
+              "duration": 9466000,
               "status": "passed"
             },
             "match": {
@@ -535,7 +673,7 @@
         "steps": [
           {
             "result": {
-              "duration": 14989000,
+              "duration": 11280000,
               "status": "passed"
             },
             "line": 22,
@@ -553,7 +691,7 @@
           },
           {
             "result": {
-              "duration": 286000,
+              "duration": 182000,
               "status": "passed"
             },
             "line": 23,
@@ -571,7 +709,7 @@
           },
           {
             "result": {
-              "duration": 127000,
+              "duration": 207000,
               "status": "passed"
             },
             "line": 24,
@@ -589,7 +727,7 @@
           },
           {
             "result": {
-              "duration": 162000,
+              "duration": 188000,
               "status": "passed"
             },
             "line": 25,
@@ -607,7 +745,7 @@
           },
           {
             "result": {
-              "duration": 203000,
+              "duration": 193000,
               "status": "passed"
             },
             "line": 26,
@@ -625,7 +763,7 @@
           },
           {
             "result": {
-              "duration": 2939000,
+              "duration": 4576000,
               "status": "passed"
             },
             "line": 27,
@@ -637,7 +775,7 @@
           },
           {
             "result": {
-              "duration": 14557000,
+              "duration": 21128000,
               "status": "passed"
             },
             "line": 28,
@@ -656,7 +794,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:28.785Z",
+        "start_timestamp": "2024-03-23T17:38:07.406Z",
         "line": 30,
         "name": "Provided password less than 8 characters (Error Flow)",
         "description": "",
@@ -664,7 +802,7 @@
         "after": [
           {
             "result": {
-              "duration": 4555000,
+              "duration": 6197000,
               "status": "passed"
             },
             "match": {
@@ -677,7 +815,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3176000,
+              "duration": 3771000,
               "status": "passed"
             },
             "line": 31,
@@ -695,7 +833,7 @@
           },
           {
             "result": {
-              "duration": 131000,
+              "duration": 228000,
               "status": "passed"
             },
             "line": 32,
@@ -713,7 +851,7 @@
           },
           {
             "result": {
-              "duration": 139000,
+              "duration": 259000,
               "status": "passed"
             },
             "line": 33,
@@ -731,7 +869,7 @@
           },
           {
             "result": {
-              "duration": 160000,
+              "duration": 226000,
               "status": "passed"
             },
             "line": 34,
@@ -749,7 +887,7 @@
           },
           {
             "result": {
-              "duration": 217000,
+              "duration": 322000,
               "status": "passed"
             },
             "line": 35,
@@ -767,7 +905,7 @@
           },
           {
             "result": {
-              "duration": 4127000,
+              "duration": 7429000,
               "status": "passed"
             },
             "line": 36,
@@ -779,7 +917,7 @@
           },
           {
             "result": {
-              "duration": 2986000,
+              "duration": 3735000,
               "status": "passed"
             },
             "line": 37,
@@ -809,7 +947,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:28.823Z",
+        "start_timestamp": "2024-03-23T17:38:07.457Z",
         "line": 6,
         "name": "The user successfully creates a new league",
         "description": "",
@@ -817,7 +955,7 @@
         "after": [
           {
             "result": {
-              "duration": 8945000,
+              "duration": 10999000,
               "status": "passed"
             },
             "match": {
@@ -830,7 +968,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3810000,
+              "duration": 4043000,
               "status": "passed"
             },
             "line": 7,
@@ -842,7 +980,7 @@
           },
           {
             "result": {
-              "duration": 151000,
+              "duration": 448000,
               "status": "passed"
             },
             "line": 8,
@@ -860,7 +998,7 @@
           },
           {
             "result": {
-              "duration": 8537000,
+              "duration": 19470000,
               "status": "passed"
             },
             "line": 9,
@@ -872,7 +1010,7 @@
           },
           {
             "result": {
-              "duration": 145000,
+              "duration": 322000,
               "status": "passed"
             },
             "line": 10,
@@ -891,7 +1029,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:28.863Z",
+        "start_timestamp": "2024-03-23T17:38:07.527Z",
         "line": 13,
         "name": "Attempting to create a league with a name that already exists",
         "description": "",
@@ -899,7 +1037,7 @@
         "after": [
           {
             "result": {
-              "duration": 8920000,
+              "duration": 14485000,
               "status": "passed"
             },
             "match": {
@@ -912,7 +1050,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2956000,
+              "duration": 5642000,
               "status": "passed"
             },
             "line": 14,
@@ -924,7 +1062,7 @@
           },
           {
             "result": {
-              "duration": 122000,
+              "duration": 320000,
               "status": "passed"
             },
             "line": 15,
@@ -942,7 +1080,7 @@
           },
           {
             "result": {
-              "duration": 3490000,
+              "duration": 7208000,
               "status": "passed"
             },
             "line": 16,
@@ -960,7 +1098,7 @@
           },
           {
             "result": {
-              "duration": 4867000,
+              "duration": 20236000,
               "status": "passed"
             },
             "line": 17,
@@ -972,7 +1110,7 @@
           },
           {
             "result": {
-              "duration": 212000,
+              "duration": 269000,
               "status": "passed"
             },
             "line": 18,
@@ -991,7 +1129,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:28.901Z",
+        "start_timestamp": "2024-03-23T17:38:07.620Z",
         "line": 21,
         "name": "Prevent a user from joining multiple leagues",
         "description": "",
@@ -999,7 +1137,7 @@
         "after": [
           {
             "result": {
-              "duration": 191141000,
+              "duration": 17211000,
               "status": "passed"
             },
             "match": {
@@ -1012,7 +1150,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8656000,
+              "duration": 31029000,
               "status": "passed"
             },
             "line": 22,
@@ -1034,7 +1172,7 @@
           },
           {
             "result": {
-              "duration": 6868000,
+              "duration": 8927000,
               "status": "passed"
             },
             "line": 23,
@@ -1056,7 +1194,7 @@
           },
           {
             "result": {
-              "duration": 132000,
+              "duration": 242000,
               "status": "passed"
             },
             "line": 24,
@@ -1090,7 +1228,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:29.136Z",
+        "start_timestamp": "2024-03-23T17:38:07.718Z",
         "line": 3,
         "name": "Successfully create a new user team (Normal Flow)",
         "description": "",
@@ -1098,7 +1236,7 @@
         "after": [
           {
             "result": {
-              "duration": 14337000,
+              "duration": 8116000,
               "status": "passed"
             },
             "match": {
@@ -1111,7 +1249,7 @@
         "steps": [
           {
             "result": {
-              "duration": 129604000,
+              "duration": 23588000,
               "status": "passed"
             },
             "line": 4,
@@ -1129,7 +1267,7 @@
           },
           {
             "result": {
-              "duration": 249000,
+              "duration": 214000,
               "status": "passed"
             },
             "line": 5,
@@ -1147,7 +1285,7 @@
           },
           {
             "result": {
-              "duration": 99000,
+              "duration": 121000,
               "status": "passed"
             },
             "line": 6,
@@ -1159,7 +1297,7 @@
           },
           {
             "result": {
-              "duration": 12846000,
+              "duration": 14209000,
               "status": "passed"
             },
             "line": 7,
@@ -1171,7 +1309,7 @@
           },
           {
             "result": {
-              "duration": 23653000,
+              "duration": 14880000,
               "status": "passed"
             },
             "line": 8,
@@ -1190,7 +1328,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:29.484Z",
+        "start_timestamp": "2024-03-23T17:38:07.808Z",
         "line": 10,
         "name": "Name of new user team is empty (Alternate Flow)",
         "description": "",
@@ -1198,7 +1336,7 @@
         "after": [
           {
             "result": {
-              "duration": 13603000,
+              "duration": 10039000,
               "status": "passed"
             },
             "match": {
@@ -1211,7 +1349,7 @@
         "steps": [
           {
             "result": {
-              "duration": 20272000,
+              "duration": 15396000,
               "status": "passed"
             },
             "line": 11,
@@ -1229,7 +1367,7 @@
           },
           {
             "result": {
-              "duration": 284000,
+              "duration": 161000,
               "status": "passed"
             },
             "line": 12,
@@ -1247,7 +1385,7 @@
           },
           {
             "result": {
-              "duration": 150000,
+              "duration": 103000,
               "status": "passed"
             },
             "line": 13,
@@ -1259,7 +1397,7 @@
           },
           {
             "result": {
-              "duration": 1159000,
+              "duration": 1239000,
               "status": "passed"
             },
             "line": 14,
@@ -1271,7 +1409,7 @@
           },
           {
             "result": {
-              "duration": 12554000,
+              "duration": 7726000,
               "status": "passed"
             },
             "line": 15,
@@ -1284,7 +1422,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:29.565Z",
+        "start_timestamp": "2024-03-23T17:38:07.875Z",
         "line": 17,
         "name": "Manager already has another team that must be set to inactive (Alternate Flow)",
         "description": "",
@@ -1292,7 +1430,7 @@
         "after": [
           {
             "result": {
-              "duration": 16253000,
+              "duration": 7131000,
               "status": "passed"
             },
             "match": {
@@ -1305,7 +1443,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8843000,
+              "duration": 9335000,
               "status": "passed"
             },
             "line": 18,
@@ -1323,7 +1461,7 @@
           },
           {
             "result": {
-              "duration": 53993000,
+              "duration": 22587000,
               "status": "passed"
             },
             "line": 19,
@@ -1341,7 +1479,7 @@
           },
           {
             "result": {
-              "duration": 256000,
+              "duration": 241000,
               "status": "passed"
             },
             "line": 20,
@@ -1359,7 +1497,7 @@
           },
           {
             "result": {
-              "duration": 262000,
+              "duration": 294000,
               "status": "passed"
             },
             "line": 21,
@@ -1371,7 +1509,7 @@
           },
           {
             "result": {
-              "duration": 14437000,
+              "duration": 9206000,
               "status": "passed"
             },
             "line": 22,
@@ -1383,7 +1521,7 @@
           },
           {
             "result": {
-              "duration": 36687000,
+              "duration": 25478000,
               "status": "passed"
             },
             "line": 23,
@@ -1402,7 +1540,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:29.724Z",
+        "start_timestamp": "2024-03-23T17:38:07.974Z",
         "line": 25,
         "name": "User requesting new user team does not exist (Error Flow)",
         "description": "",
@@ -1410,7 +1548,7 @@
         "after": [
           {
             "result": {
-              "duration": 8842000,
+              "duration": 8169000,
               "status": "passed"
             },
             "match": {
@@ -1423,7 +1561,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4324000,
+              "duration": 2148000,
               "status": "passed"
             },
             "line": 26,
@@ -1441,7 +1579,7 @@
           },
           {
             "result": {
-              "duration": 195000,
+              "duration": 189000,
               "status": "passed"
             },
             "line": 27,
@@ -1459,7 +1597,7 @@
           },
           {
             "result": {
-              "duration": 143000,
+              "duration": 89000,
               "status": "passed"
             },
             "line": 28,
@@ -1471,7 +1609,7 @@
           },
           {
             "result": {
-              "duration": 6256000,
+              "duration": 4346000,
               "status": "passed"
             },
             "line": 29,
@@ -1483,7 +1621,7 @@
           },
           {
             "result": {
-              "duration": 2659000,
+              "duration": 3130000,
               "status": "passed"
             },
             "line": 30,
@@ -1507,7 +1645,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:29.783Z",
+        "start_timestamp": "2024-03-23T17:38:08.012Z",
         "line": 3,
         "name": "Successful login (Normal Flow)",
         "description": "",
@@ -1515,7 +1653,7 @@
         "after": [
           {
             "result": {
-              "duration": 26627000,
+              "duration": 9840000,
               "status": "passed"
             },
             "match": {
@@ -1528,7 +1666,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8560000,
+              "duration": 5289000,
               "status": "passed"
             },
             "line": 4,
@@ -1550,7 +1688,7 @@
           },
           {
             "result": {
-              "duration": 270000,
+              "duration": 200000,
               "status": "passed"
             },
             "line": 5,
@@ -1568,7 +1706,7 @@
           },
           {
             "result": {
-              "duration": 768000,
+              "duration": 164000,
               "status": "passed"
             },
             "line": 6,
@@ -1586,7 +1724,7 @@
           },
           {
             "result": {
-              "duration": 4787000,
+              "duration": 3728000,
               "status": "passed"
             },
             "line": 7,
@@ -1598,7 +1736,7 @@
           },
           {
             "result": {
-              "duration": 154000,
+              "duration": 254000,
               "status": "passed"
             },
             "line": 8,
@@ -1611,7 +1749,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:29.884Z",
+        "start_timestamp": "2024-03-23T17:38:08.051Z",
         "line": 10,
         "name": "Unsuccessful login due to incorrect password (Alternate Flow)",
         "description": "",
@@ -1619,7 +1757,7 @@
         "after": [
           {
             "result": {
-              "duration": 7475000,
+              "duration": 8570000,
               "status": "passed"
             },
             "match": {
@@ -1632,7 +1770,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3231000,
+              "duration": 2988000,
               "status": "passed"
             },
             "line": 11,
@@ -1654,7 +1792,7 @@
           },
           {
             "result": {
-              "duration": 167000,
+              "duration": 212000,
               "status": "passed"
             },
             "line": 12,
@@ -1672,7 +1810,7 @@
           },
           {
             "result": {
-              "duration": 234000,
+              "duration": 158000,
               "status": "passed"
             },
             "line": 13,
@@ -1690,7 +1828,7 @@
           },
           {
             "result": {
-              "duration": 7214000,
+              "duration": 3508000,
               "status": "passed"
             },
             "line": 14,
@@ -1702,7 +1840,7 @@
           },
           {
             "result": {
-              "duration": 235000,
+              "duration": 130000,
               "status": "passed"
             },
             "line": 15,
@@ -1715,7 +1853,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:29.939Z",
+        "start_timestamp": "2024-03-23T17:38:08.086Z",
         "line": 17,
         "name": "Non-existing username unsuccessful login (Error Flow)",
         "description": "",
@@ -1723,7 +1861,7 @@
         "after": [
           {
             "result": {
-              "duration": 11225000,
+              "duration": 5283000,
               "status": "passed"
             },
             "match": {
@@ -1736,7 +1874,7 @@
         "steps": [
           {
             "result": {
-              "duration": 473000,
+              "duration": 374000,
               "status": "passed"
             },
             "line": 18,
@@ -1754,7 +1892,7 @@
           },
           {
             "result": {
-              "duration": 192000,
+              "duration": 101000,
               "status": "passed"
             },
             "line": 19,
@@ -1772,7 +1910,7 @@
           },
           {
             "result": {
-              "duration": 176000,
+              "duration": 202000,
               "status": "passed"
             },
             "line": 20,
@@ -1790,7 +1928,7 @@
           },
           {
             "result": {
-              "duration": 7345000,
+              "duration": 3080000,
               "status": "passed"
             },
             "line": 21,
@@ -1802,7 +1940,7 @@
           },
           {
             "result": {
-              "duration": 542000,
+              "duration": 431000,
               "status": "passed"
             },
             "line": 22,
@@ -1826,7 +1964,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:29.989Z",
+        "start_timestamp": "2024-03-23T17:38:08.113Z",
         "line": 9,
         "name": "Querying for a specific forward in the system",
         "description": "",
@@ -1834,7 +1972,7 @@
         "after": [
           {
             "result": {
-              "duration": 12042000,
+              "duration": 4799000,
               "status": "passed"
             },
             "match": {
@@ -1847,7 +1985,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8078000,
+              "duration": 4380000,
               "status": "passed"
             },
             "line": 3,
@@ -1865,7 +2003,7 @@
           },
           {
             "result": {
-              "duration": 16211000,
+              "duration": 3375000,
               "status": "passed"
             },
             "line": 4,
@@ -1877,7 +2015,7 @@
           },
           {
             "result": {
-              "duration": 2162000,
+              "duration": 1372000,
               "status": "passed"
             },
             "line": 5,
@@ -1896,7 +2034,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.056Z",
+        "start_timestamp": "2024-03-23T17:38:08.146Z",
         "line": 10,
         "name": "Querying for a specific forward in the system",
         "description": "",
@@ -1904,7 +2042,7 @@
         "after": [
           {
             "result": {
-              "duration": 7534000,
+              "duration": 5726000,
               "status": "passed"
             },
             "match": {
@@ -1917,7 +2055,7 @@
         "steps": [
           {
             "result": {
-              "duration": 13506000,
+              "duration": 2274000,
               "status": "passed"
             },
             "line": 3,
@@ -1935,7 +2073,7 @@
           },
           {
             "result": {
-              "duration": 3866000,
+              "duration": 4960000,
               "status": "passed"
             },
             "line": 4,
@@ -1947,7 +2085,7 @@
           },
           {
             "result": {
-              "duration": 322000,
+              "duration": 289000,
               "status": "passed"
             },
             "line": 5,
@@ -1966,7 +2104,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.096Z",
+        "start_timestamp": "2024-03-23T17:38:08.177Z",
         "line": 11,
         "name": "Querying for a specific forward in the system",
         "description": "",
@@ -1974,7 +2112,7 @@
         "after": [
           {
             "result": {
-              "duration": 4350000,
+              "duration": 6751000,
               "status": "passed"
             },
             "match": {
@@ -1987,7 +2125,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3841000,
+              "duration": 2241000,
               "status": "passed"
             },
             "line": 3,
@@ -2005,7 +2143,7 @@
           },
           {
             "result": {
-              "duration": 2598000,
+              "duration": 2745000,
               "status": "passed"
             },
             "line": 4,
@@ -2017,7 +2155,7 @@
           },
           {
             "result": {
-              "duration": 213000,
+              "duration": 183000,
               "status": "passed"
             },
             "line": 5,
@@ -2047,7 +2185,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:30.124Z",
+        "start_timestamp": "2024-03-23T17:38:08.207Z",
         "line": 7,
         "name": "Exact player position",
         "description": "",
@@ -2055,7 +2193,7 @@
         "after": [
           {
             "result": {
-              "duration": 6620000,
+              "duration": 5451000,
               "status": "passed"
             },
             "match": {
@@ -2068,7 +2206,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7977000,
+              "duration": 4708000,
               "status": "passed"
             },
             "line": 8,
@@ -2086,7 +2224,7 @@
           },
           {
             "result": {
-              "duration": 3119000,
+              "duration": 5099000,
               "status": "passed"
             },
             "line": 9,
@@ -2104,7 +2242,7 @@
           },
           {
             "result": {
-              "duration": 583000,
+              "duration": 681000,
               "status": "passed"
             },
             "line": 10,
@@ -2123,7 +2261,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.161Z",
+        "start_timestamp": "2024-03-23T17:38:08.243Z",
         "line": 12,
         "name": "No matches",
         "description": "",
@@ -2131,7 +2269,7 @@
         "after": [
           {
             "result": {
-              "duration": 7063000,
+              "duration": 4983000,
               "status": "passed"
             },
             "match": {
@@ -2144,7 +2282,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7148000,
+              "duration": 3919000,
               "status": "passed"
             },
             "line": 13,
@@ -2162,7 +2300,7 @@
           },
           {
             "result": {
-              "duration": 2291000,
+              "duration": 3843000,
               "status": "passed"
             },
             "line": 14,
@@ -2180,7 +2318,7 @@
           },
           {
             "result": {
-              "duration": 185000,
+              "duration": 242000,
               "status": "passed"
             },
             "line": 15,
@@ -2193,7 +2331,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.194Z",
+        "start_timestamp": "2024-03-23T17:38:08.274Z",
         "line": 17,
         "name": "Position not found",
         "description": "",
@@ -2201,7 +2339,7 @@
         "after": [
           {
             "result": {
-              "duration": 6769000,
+              "duration": 5448000,
               "status": "passed"
             },
             "match": {
@@ -2214,7 +2352,7 @@
         "steps": [
           {
             "result": {
-              "duration": 23582000,
+              "duration": 4746000,
               "status": "passed"
             },
             "line": 18,
@@ -2232,7 +2370,7 @@
           },
           {
             "result": {
-              "duration": 2607000,
+              "duration": 2237000,
               "status": "passed"
             },
             "line": 19,
@@ -2250,7 +2388,7 @@
           },
           {
             "result": {
-              "duration": 141000,
+              "duration": 101000,
               "status": "passed"
             },
             "line": 20,
@@ -2274,7 +2412,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:30.244Z",
+        "start_timestamp": "2024-03-23T17:38:08.305Z",
         "line": 14,
         "name": "Querying for a specific goalkeeper in the system",
         "description": "",
@@ -2282,7 +2420,7 @@
         "after": [
           {
             "result": {
-              "duration": 8976000,
+              "duration": 5505000,
               "status": "passed"
             },
             "match": {
@@ -2295,7 +2433,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7692000,
+              "duration": 3656000,
               "status": "passed"
             },
             "line": 8,
@@ -2313,7 +2451,7 @@
           },
           {
             "result": {
-              "duration": 3118000,
+              "duration": 2762000,
               "status": "passed"
             },
             "line": 9,
@@ -2331,7 +2469,7 @@
           },
           {
             "result": {
-              "duration": 152000,
+              "duration": 97000,
               "status": "passed"
             },
             "line": 10,
@@ -2344,7 +2482,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.287Z",
+        "start_timestamp": "2024-03-23T17:38:08.334Z",
         "line": 15,
         "name": "Querying for a specific goalkeeper in the system",
         "description": "",
@@ -2352,7 +2490,7 @@
         "after": [
           {
             "result": {
-              "duration": 4909000,
+              "duration": 4727000,
               "status": "passed"
             },
             "match": {
@@ -2365,7 +2503,7 @@
         "steps": [
           {
             "result": {
-              "duration": 13229000,
+              "duration": 3234000,
               "status": "passed"
             },
             "line": 8,
@@ -2383,7 +2521,7 @@
           },
           {
             "result": {
-              "duration": 3009000,
+              "duration": 2464000,
               "status": "passed"
             },
             "line": 9,
@@ -2401,7 +2539,7 @@
           },
           {
             "result": {
-              "duration": 89000,
+              "duration": 115000,
               "status": "passed"
             },
             "line": 10,
@@ -2414,7 +2552,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.329Z",
+        "start_timestamp": "2024-03-23T17:38:08.361Z",
         "line": 16,
         "name": "Querying for a specific goalkeeper in the system",
         "description": "",
@@ -2422,7 +2560,7 @@
         "after": [
           {
             "result": {
-              "duration": 9576000,
+              "duration": 4841000,
               "status": "passed"
             },
             "match": {
@@ -2435,7 +2573,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3505000,
+              "duration": 4375000,
               "status": "passed"
             },
             "line": 8,
@@ -2453,7 +2591,7 @@
           },
           {
             "result": {
-              "duration": 2931000,
+              "duration": 2721000,
               "status": "passed"
             },
             "line": 9,
@@ -2471,7 +2609,7 @@
           },
           {
             "result": {
-              "duration": 135000,
+              "duration": 205000,
               "status": "passed"
             },
             "line": 10,
@@ -2495,7 +2633,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:30.363Z",
+        "start_timestamp": "2024-03-23T17:38:08.392Z",
         "line": 2,
         "name": "Display all forwards in league",
         "description": "",
@@ -2503,7 +2641,7 @@
         "after": [
           {
             "result": {
-              "duration": 12145000,
+              "duration": 5593000,
               "status": "passed"
             },
             "match": {
@@ -2516,7 +2654,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7147000,
+              "duration": 4810000,
               "status": "passed"
             },
             "line": 3,
@@ -2534,7 +2672,7 @@
           },
           {
             "result": {
-              "duration": 5083000,
+              "duration": 5213000,
               "status": "passed"
             },
             "line": 4,
@@ -2552,7 +2690,7 @@
           },
           {
             "result": {
-              "duration": 1143000,
+              "duration": 1080000,
               "status": "passed"
             },
             "line": 5,
@@ -2582,7 +2720,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:30.411Z",
+        "start_timestamp": "2024-03-23T17:38:08.428Z",
         "line": 5,
         "name": "Sort Players by Descending Order of Goals",
         "description": "",
@@ -2590,7 +2728,7 @@
         "after": [
           {
             "result": {
-              "duration": 7917000,
+              "duration": 6137000,
               "status": "passed"
             },
             "match": {
@@ -2603,7 +2741,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8861000,
+              "duration": 4940000,
               "status": "passed"
             },
             "line": 6,
@@ -2633,7 +2771,7 @@
           },
           {
             "result": {
-              "duration": 9422000,
+              "duration": 8310000,
               "status": "passed"
             },
             "line": 7,
@@ -2645,7 +2783,7 @@
           },
           {
             "result": {
-              "duration": 4867000,
+              "duration": 4437000,
               "status": "passed"
             },
             "line": 8,
@@ -2668,7 +2806,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.461Z",
+        "start_timestamp": "2024-03-23T17:38:08.473Z",
         "line": 10,
         "name": "Sort Players By Ascending Order of Goals",
         "description": "",
@@ -2676,7 +2814,7 @@
         "after": [
           {
             "result": {
-              "duration": 6880000,
+              "duration": 6105000,
               "status": "passed"
             },
             "match": {
@@ -2689,7 +2827,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4692000,
+              "duration": 4879000,
               "status": "passed"
             },
             "line": 11,
@@ -2719,7 +2857,7 @@
           },
           {
             "result": {
-              "duration": 4804000,
+              "duration": 3646000,
               "status": "passed"
             },
             "line": 12,
@@ -2731,7 +2869,7 @@
           },
           {
             "result": {
-              "duration": 367000,
+              "duration": 385000,
               "status": "passed"
             },
             "line": 13,
@@ -2754,7 +2892,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.494Z",
+        "start_timestamp": "2024-03-23T17:38:08.503Z",
         "line": 15,
         "name": "No players in the system",
         "description": "",
@@ -2762,7 +2900,7 @@
         "after": [
           {
             "result": {
-              "duration": 7612000,
+              "duration": 6192000,
               "status": "passed"
             },
             "match": {
@@ -2775,7 +2913,7 @@
         "steps": [
           {
             "result": {
-              "duration": 15056000,
+              "duration": 16675000,
               "status": "passed"
             },
             "line": 16,
@@ -2787,7 +2925,7 @@
           },
           {
             "result": {
-              "duration": 2906000,
+              "duration": 1756000,
               "status": "passed"
             },
             "line": 17,
@@ -2799,7 +2937,7 @@
           },
           {
             "result": {
-              "duration": 200000,
+              "duration": 169000,
               "status": "passed"
             },
             "line": 18,
@@ -2823,7 +2961,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:30.536Z",
+        "start_timestamp": "2024-03-23T17:38:08.545Z",
         "line": 3,
         "name": "Exact player name",
         "description": "",
@@ -2831,7 +2969,7 @@
         "after": [
           {
             "result": {
-              "duration": 6315000,
+              "duration": 5569000,
               "status": "passed"
             },
             "match": {
@@ -2844,7 +2982,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2927000,
+              "duration": 2976000,
               "status": "passed"
             },
             "line": 4,
@@ -2862,7 +3000,7 @@
           },
           {
             "result": {
-              "duration": 6353000,
+              "duration": 4316000,
               "status": "passed"
             },
             "line": 5,
@@ -2880,7 +3018,7 @@
           },
           {
             "result": {
-              "duration": 932000,
+              "duration": 709000,
               "status": "passed"
             },
             "line": 6,
@@ -2899,7 +3037,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.572Z",
+        "start_timestamp": "2024-03-23T17:38:08.577Z",
         "line": 8,
         "name": "Partial match",
         "description": "",
@@ -2907,7 +3045,7 @@
         "after": [
           {
             "result": {
-              "duration": 4832000,
+              "duration": 4618000,
               "status": "passed"
             },
             "match": {
@@ -2920,7 +3058,7 @@
         "steps": [
           {
             "result": {
-              "duration": 17873000,
+              "duration": 4242000,
               "status": "passed"
             },
             "line": 9,
@@ -2942,7 +3080,7 @@
           },
           {
             "result": {
-              "duration": 4251000,
+              "duration": 3267000,
               "status": "passed"
             },
             "line": 10,
@@ -2960,7 +3098,7 @@
           },
           {
             "result": {
-              "duration": 907000,
+              "duration": 831000,
               "status": "passed"
             },
             "line": 11,
@@ -2983,7 +3121,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.614Z",
+        "start_timestamp": "2024-03-23T17:38:08.607Z",
         "line": 13,
         "name": "Player not found",
         "description": "",
@@ -2991,7 +3129,7 @@
         "after": [
           {
             "result": {
-              "duration": 4779000,
+              "duration": 4408000,
               "status": "passed"
             },
             "match": {
@@ -3004,7 +3142,7 @@
         "steps": [
           {
             "result": {
-              "duration": 438000,
+              "duration": 464000,
               "status": "passed"
             },
             "line": 14,
@@ -3022,7 +3160,7 @@
           },
           {
             "result": {
-              "duration": 3023000,
+              "duration": 3009000,
               "status": "passed"
             },
             "line": 15,
@@ -3040,7 +3178,7 @@
           },
           {
             "result": {
-              "duration": 166000,
+              "duration": 103000,
               "status": "passed"
             },
             "line": 16,
@@ -3064,7 +3202,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2024-03-22T20:50:30.637Z",
+        "start_timestamp": "2024-03-23T17:38:08.631Z",
         "line": 5,
         "name": "Sort Players by Descending Order of Assists",
         "description": "",
@@ -3072,7 +3210,7 @@
         "after": [
           {
             "result": {
-              "duration": 5318000,
+              "duration": 4861000,
               "status": "passed"
             },
             "match": {
@@ -3085,7 +3223,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6068000,
+              "duration": 6059000,
               "status": "passed"
             },
             "line": 6,
@@ -3115,7 +3253,7 @@
           },
           {
             "result": {
-              "duration": 4083000,
+              "duration": 2670000,
               "status": "passed"
             },
             "line": 7,
@@ -3127,7 +3265,7 @@
           },
           {
             "result": {
-              "duration": 646000,
+              "duration": 513000,
               "status": "passed"
             },
             "line": 8,
@@ -3150,7 +3288,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.671Z",
+        "start_timestamp": "2024-03-23T17:38:08.663Z",
         "line": 10,
         "name": "Sort Players by Ascending Order of Assists",
         "description": "",
@@ -3158,7 +3296,7 @@
         "after": [
           {
             "result": {
-              "duration": 12067000,
+              "duration": 4677000,
               "status": "passed"
             },
             "match": {
@@ -3171,7 +3309,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6015000,
+              "duration": 5474000,
               "status": "passed"
             },
             "line": 11,
@@ -3201,7 +3339,7 @@
           },
           {
             "result": {
-              "duration": 9394000,
+              "duration": 3453000,
               "status": "passed"
             },
             "line": 12,
@@ -3213,7 +3351,7 @@
           },
           {
             "result": {
-              "duration": 382000,
+              "duration": 320000,
               "status": "passed"
             },
             "line": 13,
@@ -3236,7 +3374,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-03-22T20:50:30.714Z",
+        "start_timestamp": "2024-03-23T17:38:08.693Z",
         "line": 15,
         "name": "No players in the system",
         "description": "",
@@ -3244,7 +3382,7 @@
         "after": [
           {
             "result": {
-              "duration": 6409000,
+              "duration": 4611000,
               "status": "passed"
             },
             "match": {
@@ -3257,7 +3395,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8526000,
+              "duration": 177914000,
               "status": "passed"
             },
             "line": 16,
@@ -3269,7 +3407,7 @@
           },
           {
             "result": {
-              "duration": 4798000,
+              "duration": 2212000,
               "status": "passed"
             },
             "line": 17,
@@ -3281,7 +3419,7 @@
           },
           {
             "result": {
-              "duration": 177000,
+              "duration": 121000,
               "status": "passed"
             },
             "line": 18,

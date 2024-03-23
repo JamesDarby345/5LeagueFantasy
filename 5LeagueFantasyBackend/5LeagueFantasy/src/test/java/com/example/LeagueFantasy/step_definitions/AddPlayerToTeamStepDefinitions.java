@@ -200,5 +200,115 @@ public class AddPlayerToTeamStepDefinitions {
         Assert.assertEquals(existingGoalkeeperTeam, keeper.getTeam());
         Assert.assertEquals(existingGoalkeeperPosition, keeper.getPosition());
     }
+
+    @Given("I have an existing user team with team name {string} with 5 forwards")
+    public void i_have_an_existing_user_team_with_team_name_with_5_forwards(String teamName) {
+
+        FantasyManager existingUser = new FantasyManager("username", "name", "email", "password");
+        fantasyManagerRepository.save(existingUser);
+
+        UserTeam userTeam = new UserTeam(teamName, 0, true);
+        userTeam.setFantasyManager(existingUser);
+        userTeam.setNumberOfForwards(0);
+        userTeam.setNumberOfKeepers(0);
+        userTeamRepository.save(userTeam);
+        
+        this.userTeamId = userTeamRepository.findByName(teamName).getId();
+
+        Forward forward1 = new Forward("F1", "ManCity", "Striker", 0, EuropeanLeague.Bundesliga, 0, 0);
+        forwardRepository.save(forward1);
+        Forward forward2 = new Forward("F2", "ManCity", "RW", 0, EuropeanLeague.Bundesliga, 0, 0);
+        forwardRepository.save(forward2);
+        Forward forward3 = new Forward("F3", "ManCity", "LW", 0, EuropeanLeague.Bundesliga, 0, 0);
+        forwardRepository.save(forward3);
+        Forward forward4 = new Forward("F4", "ManCity", "Mid", 0, EuropeanLeague.Bundesliga, 0, 0);
+        forwardRepository.save(forward4);
+        Forward forward5 = new Forward("F5", "ManCity", "Def", 0, EuropeanLeague.Bundesliga, 0, 0);
+        forwardRepository.save(forward5);
+
+        request = new PlayerToTeamRequestDto(this.userTeamId, forward1.getPlayerId(), -1);
+        ResponseEntity<PlayerToTeamResponseDto> p1 = playerToTeamController.addForwardToTeam(request);
+
+        request = new PlayerToTeamRequestDto(this.userTeamId, forward2.getPlayerId(), -1);
+        ResponseEntity<PlayerToTeamResponseDto> p2 = playerToTeamController.addForwardToTeam(request);
+
+        request = new PlayerToTeamRequestDto(this.userTeamId, forward3.getPlayerId(), -1);
+        ResponseEntity<PlayerToTeamResponseDto> p3 = playerToTeamController.addForwardToTeam(request);
+
+        request = new PlayerToTeamRequestDto(this.userTeamId, forward4.getPlayerId(), -1);
+        ResponseEntity<PlayerToTeamResponseDto> p4 = playerToTeamController.addForwardToTeam(request);
+
+        request = new PlayerToTeamRequestDto(this.userTeamId, forward5.getPlayerId(), -1);
+        ResponseEntity<PlayerToTeamResponseDto> p5 = playerToTeamController.addForwardToTeam(request);
+
+        List<ForwardResponseDto> forwards = playerToTeamController.getForwardsByTeam(this.userTeamId).getBody();
+
+        Assert.assertEquals(forwards.size(), 5);
+        Assert.assertEquals(forwards.get(0).getName(), "F1");
+        Assert.assertEquals(forwards.get(1).getName(), "F2");
+        Assert.assertEquals(forwards.get(2).getName(), "F3");
+        Assert.assertEquals(forwards.get(3).getName(), "F4");
+        Assert.assertEquals(forwards.get(4).getName(), "F5");
+        Assert.assertNotNull(p1);
+        Assert.assertNotNull(p2);
+        Assert.assertNotNull(p3);
+        Assert.assertNotNull(p4);
+        Assert.assertNotNull(p5);
+    }
+
+    @When("I add another forward to the user team")
+    public void when_i_add_another_forward_to_the_user_team() {
+
+        Forward forward = new Forward("F6", "ManCity", "Striker", 0, EuropeanLeague.Bundesliga, 0, 0);
+        forwardRepository.save(forward);
+        this.forwardId = forwardRepository.findByNameContainingIgnoreCase("F6").get(0).getPlayerId();
+        this.goalkeeperId = -1;
+
+        request = new PlayerToTeamRequestDto(this.userTeamId, this.forwardId, this.goalkeeperId);
+
+        FiveLeagueFantasyException fiveLeagueFantasyException = Assert.assertThrows(FiveLeagueFantasyException.class, 
+            () -> addedPlayerToTeamResponse = playerToTeamController.addForwardToTeam(request)
+        ); 
+        Assert.assertSame(fiveLeagueFantasyException.getStatus(), HttpStatus.BAD_REQUEST);
+        Assert.assertEquals("User team already has 5 forwards", fiveLeagueFantasyException.getMessage());
+    }
     
+    @Then("the attempt should not be successful and there should still be 5 forwards on the team")
+    public void then_the_attempt_should_not_be_successful_and_theres_should_only_be_5_forwards_on_the_team() {
+        List<ForwardResponseDto> forwards = playerToTeamController.getForwardsByTeam(this.userTeamId).getBody();
+
+        Assert.assertTrue(forwards.size() == 5);
+        Assert.assertEquals(forwards.get(0).getName(), "F1");
+        Assert.assertEquals(forwards.get(1).getName(), "F2");
+        Assert.assertEquals(forwards.get(2).getName(), "F3");
+        Assert.assertEquals(forwards.get(3).getName(), "F4");
+        Assert.assertEquals(forwards.get(4).getName(), "F5");
+    }
+
+
+    @When("I add a forward named {string} to the user team already with that player")
+    public void when_i_add_a_forward_named_to_the_user_team_already_with_that_player(String newForwardName) {
+
+        this.forwardId = forwardRepository.findByNameContainingIgnoreCase(newForwardName).get(0).getPlayerId();
+        this.goalkeeperId = -1;
+
+        request = new PlayerToTeamRequestDto(this.userTeamId, this.forwardId, this.goalkeeperId);
+        FiveLeagueFantasyException exception = Assert.assertThrows(
+            FiveLeagueFantasyException.class, 
+            () -> playerToTeamController.addForwardToTeam(request)
+        ); 
+
+        Assert.assertEquals("Player already added to team", exception.getMessage());
+        Assert.assertEquals(HttpStatus.BAD_REQUEST, exception.getStatus());
+    }
+
+    @Then("the attempt should not be successful and there should still be 1 forward on the team")
+    public void then_the_attempt_should_not_be_successful_and_theres_should_only_be_1_forward_on_the_team() {
+        List<ForwardResponseDto> forwards = playerToTeamController.getForwardsByTeam(this.userTeamId).getBody();
+
+        Assert.assertTrue(forwards.size() == 1);
+        Assert.assertEquals(forwards.get(0).getName(), this.existingForwardName);
+        Assert.assertEquals(forwards.get(0).getTeam(), this.existingForwardTeam);
+        Assert.assertEquals(forwards.get(0).getPosition(), this.existingForwardPosition);
+    }
 }
