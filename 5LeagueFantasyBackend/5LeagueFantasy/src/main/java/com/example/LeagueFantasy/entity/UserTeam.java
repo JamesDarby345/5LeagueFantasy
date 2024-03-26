@@ -1,5 +1,10 @@
 package com.example.LeagueFantasy.entity;
 
+import java.sql.Date;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -35,7 +40,10 @@ public class UserTeam {
 
   @Column(name = "numberOfKeepers", nullable = false)
   private int numberOfKeepers;
-
+  
+  @Column(name = "weekStartDate", nullable = false)
+  private Date weekStartDate;
+  
   @Column(name = "numberOfForwards", nullable = false)
   private int numberOfForwards;
 
@@ -44,6 +52,8 @@ public class UserTeam {
     this.name = name;
     this.points = points;
     this.isActive = isActive;
+    LocalDate startOfThisWeek = LocalDate.now().with(TemporalAdjusters.previous(DayOfWeek.MONDAY));
+    this.weekStartDate = Date.valueOf(startOfThisWeek);
     this.numberOfForwards = 0;
     this.numberOfKeepers = 0;
   }
@@ -96,6 +106,14 @@ public class UserTeam {
 
   public void setId(int id) {
     this.id = id;
+  }
+  
+  public Date getWeekStartDate() {
+	 return this.weekStartDate;
+  }
+  
+  public void setWeekStartDate(Date weekStartDate) {
+	 this.weekStartDate = weekStartDate;
   }
 
   public Boolean isIsActive() {

@@ -1,5 +1,9 @@
 package com.example.LeagueFantasy.service;
 
+import java.sql.Date;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +55,8 @@ public class UserTeamService {
         userTeam.setNumberOfForwards(0);
         userTeam.setNumberOfKeepers(0);
         userTeam.setManager(fantasyManager);
-        
+        LocalDate startOfThisWeek = LocalDate.now().with(TemporalAdjusters.previous(DayOfWeek.MONDAY));
+        userTeam.setWeekStartDate(Date.valueOf(startOfThisWeek));
         return userTeamRepository.save(userTeam);
     }
 

@@ -1,5 +1,8 @@
 package com.example.LeagueFantasy.entity;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -29,7 +32,11 @@ public class PlayerToTeam {
   @JoinColumn(name = "goalkeeper", nullable = true)
   private Goalkeeper goalkeeper;
 
+  @JoinColumn(name = "dateAdded", nullable = false)
+  private Date dateAdded;
+  
   public PlayerToTeam() {
+	  dateAdded = Date.valueOf(LocalDate.now());
   }
 
   public int getId() {
