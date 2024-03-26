@@ -126,7 +126,8 @@ function dataToPlayerConverter(data, playerType) {
         assists: data.assists,
         cleanSheets: data?.cleanSheets || 0,
         europeanLeague: data.europeanLeague,
-        playerType: playerType
+        playerType: playerType,
+        id: data.id
     }
 }
 

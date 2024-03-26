@@ -1,8 +1,14 @@
 import React from "react";
 import { PlayerTypes } from "./PlayerQueryAPI";
-
+import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 function PlayerCard(props) {
     let player = props.props;
+    const navigate = useNavigate();
+    const addPlayerToTeam = () => {
+        navigate("/add_to_team", {state: player})
+    }
+
     return (
         <>
         <div className="playerCard">
@@ -45,6 +51,11 @@ function PlayerCard(props) {
                 }
                 
             </div>
+            <div>
+                <MDBBtn floating about="" onClick={addPlayerToTeam}>
+                    <MDBIcon icon="user-plus"/>
+                </MDBBtn>
+            </div>
         </div>
         <style>
             {`
@@ -57,7 +68,7 @@ function PlayerCard(props) {
                 border-radius: 10px;
                 box-shadow: 0 3px 5px rgb(0,0,0,0.3);
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr 0.3fr;
                 justify-items: start;
                 align-items: center;
                 background-color: rgb(256, 256, 256);

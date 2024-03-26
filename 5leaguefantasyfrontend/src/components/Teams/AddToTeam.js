@@ -2,10 +2,12 @@ import React from "react";
 import NaviagtionBar from "../NavigationBar";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBBtn } from "mdb-react-ui-kit";
+import { useLocation } from "react-router-dom";
+import { MDBContainer, MDBCard, MDBCardBody, MDBBtn, MDBIcon } from "mdb-react-ui-kit";
 import * as apis from './TeamManagementAPI';
 import PageableList from "../Reusable/PageableList";
-function ManageTeams() {
+
+function AddToTeam(props) {
 
 	const [formData, setFormData] = useState(() => {
 		const storedData = localStorage.getItem("userData");
@@ -20,22 +22,6 @@ function ManageTeams() {
 		}
 	}, [formData, navigate]);
 
-	const [teamName, setTeamName] = useState("");
-
-	const handleTeamNameChange = (e) => {
-		setTeamName(e.target.value);
-	}
-
-	const handleTeamCreate = async () => {
-		const data = await apis.createTeamWithName(teamName, formData.username, true);
-		if (!data.ok) {
-			alert(data.message)
-		} else {
-			alert(`Successfully created team ${teamName}`)
-		}
-		fetchTeamsList();
-	}
-
 	useEffect(() => {
 		fetchTeamsList();
 	}, []);
@@ -46,6 +32,17 @@ function ManageTeams() {
 		setTeamsList(data?.sort((a,b) => a.name.localeCompare(b.name)));
 	}
 
+    const [playerData, setPlayerData] = useState(useLocation().state)
+
+	const addPlayerToTeam = async (teamID, teamName) => {
+		const data = await apis.addPlayerToTeam(playerData.id, playerData.playerType, teamID);
+		if (!data.ok) {
+			alert(data.message);
+		} else {
+			alert(`Successfully added ${playerData.name} to ${teamName}!`)
+			navigate('/manage_teams')
+		}
+	}
 	const itemsFromTeamsList = () => {
 
 		const arr = [];
@@ -57,6 +54,9 @@ function ManageTeams() {
 					<div>{teamsList[i].numberOfForwards} Forwards</div>
 					<div>{teamsList[i].numberOfKeepers} Keepers</div>
 					<div>{teamsList[i].points} Points</div>
+					<MDBBtn floating onClick={() => addPlayerToTeam(teamsList[i].id, teamsList[i].name)}>
+                    	<MDBIcon icon="user-plus"/>
+                	</MDBBtn>
 				</div>
 			)
 		}
@@ -68,22 +68,7 @@ function ManageTeams() {
 				<MDBContainer className="Container TeamsPage">
 					<MDBCard>
 						<MDBCardBody>
-							<h1>Manage Teams</h1>
-						</MDBCardBody>
-					</MDBCard>
-					<MDBCard>
-						<MDBCardBody>
-							<h2>Create a team</h2>
-							<MDBRow>
-								<MDBCol className="col-md-11">
-									<form>
-										<input type="text" className="form-control" id="teamNameEntry" placeholder="Input name here" value={teamName} onChange={handleTeamNameChange}></input>
-									</form>
-								</MDBCol>
-								<MDBCol className="col-md-1">
-									<MDBBtn type="button" onClick={handleTeamCreate}>Create</MDBBtn>
-								</MDBCol>
-							</MDBRow>
+							<h1>Add {playerData.name} to a team</h1>
 						</MDBCardBody>
 					</MDBCard>
 					<MDBCard>
@@ -115,7 +100,7 @@ function ManageTeams() {
 											border-radius: 10px;
 											box-shadow: 0 3px 5px rgb(0,0,0,0.3);
 											display: grid;
-											grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+											grid-template-columns: 2fr 1fr 1fr 1fr 1fr 0.3fr;
 											justify-items: start;
 											align-items: center;
 											background-color: rgb(256, 256, 256);
@@ -131,4 +116,4 @@ function ManageTeams() {
 	);
 }
 
-export default ManageTeams;
+export default AddToTeam;
