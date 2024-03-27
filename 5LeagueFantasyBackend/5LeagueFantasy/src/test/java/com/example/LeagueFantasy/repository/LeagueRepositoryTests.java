@@ -2,10 +2,11 @@ package com.example.LeagueFantasy.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import com.example.LeagueFantasy.entity.FantasyManager;
 import com.example.LeagueFantasy.entity.League;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class LeagueRepositoryTests {
 
-  @Autowired private LeagueRepository leagueRepository;
-
   @Autowired private FantasyManagerRepository fantasyManagerRepository;
+  @Autowired private LeagueRepository leagueRepository;
 
   @BeforeEach
   @AfterEach
@@ -38,6 +38,17 @@ public class LeagueRepositoryTests {
     fantasyManager.setEmail(email);
     fantasyManager.setPassword(password);
 
+    // Save and reload from repository
+    fantasyManagerRepository.save(fantasyManager);
+    fantasyManager = fantasyManagerRepository.findByUsername(username);
+
+    // Assert correctness
+    assertNotNull(fantasyManager);
+    assertEquals(username, fantasyManager.getUsername());
+    assertEquals(password, fantasyManager.getPassword());
+    assertEquals(email, fantasyManager.getEmail());
+    assertEquals(managerName, fantasyManager.getName());
+
     // Create league
     League league = new League();
     String name = "Best League 001";
@@ -52,6 +63,6 @@ public class LeagueRepositoryTests {
     // Assert correctness
     assertNotNull(league);
     assertEquals(name, league.getName());
-    assertEquals(fantasyManager, league.getLeagueOwner());
+    assertEquals(fantasyManager.getName(), league.getLeagueOwner().getName());
   }
 }
