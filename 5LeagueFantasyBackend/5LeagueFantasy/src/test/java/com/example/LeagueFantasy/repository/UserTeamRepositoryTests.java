@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.sql.Date;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
@@ -56,11 +59,14 @@ public class UserTeamRepositoryTests {
         String name = "Testing FC";
         int points = 33;
         boolean isActive = true;
+        LocalDate startOfThisWeek = LocalDate.now().with(TemporalAdjusters.previous(DayOfWeek.MONDAY));
+        Date weekStartDate = Date.valueOf(startOfThisWeek);
 
         userTeam.setName(name);
         userTeam.setPoints(points);
         userTeam.setActive(isActive);
         userTeam.setManager(fantasyManager);
+        userTeam.setWeekStartDate(weekStartDate);
 
         // Save to repository and get ID
         userTeamRepository.save(userTeam);
@@ -72,6 +78,7 @@ public class UserTeamRepositoryTests {
         assertEquals(name, userTeam.getName());
         assertEquals(points, userTeam.getPoints());
         assertEquals(isActive, userTeam.getActive());
+        assertEquals(weekStartDate, userTeam.getWeekStartDate());
         assertEquals(fantasyManager.getName(), userTeam.getManager().getName());
     }
 }
