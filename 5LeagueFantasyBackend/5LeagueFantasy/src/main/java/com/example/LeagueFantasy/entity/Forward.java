@@ -17,9 +17,9 @@ public class Forward extends Player {
   @Column(name = "position", nullable = false)
   private String position;
 
-  @OneToMany
-  @JoinColumn(name = "forwardToTeam")
-  private List<PlayerToTeam> forwardToTeam;
+  // @OneToMany
+  // @JoinColumn(name = "forwardToTeam")
+  // private List<PlayerToTeam> forwardToTeam;
 
   public Forward(
       String name,
@@ -63,11 +63,11 @@ public class Forward extends Player {
     this.position = position;
   }
 
-  public List<PlayerToTeam> getForwardToTeam() {
-    return forwardToTeam;
-  }
+  // public List<PlayerToTeam> getForwardToTeam() {
+  //   return forwardToTeam;
+  // }
 
-  public void setForwardToTeam(List<PlayerToTeam> playersToTeam) {
-    this.forwardToTeam = playersToTeam;
-  }
+  // public void setForwardToTeam(List<PlayerToTeam> playersToTeam) {
+  //   this.forwardToTeam = playersToTeam;
+  // }
 }

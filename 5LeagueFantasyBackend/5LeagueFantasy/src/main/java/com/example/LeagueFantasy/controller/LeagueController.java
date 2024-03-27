@@ -30,7 +30,7 @@ public class LeagueController {
       public ResponseEntity<?> createLeague(@RequestBody LeagueRequestDto request) {
             try {
                   Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                  String username = authentication.getName(); // Get username from authentication
+                  String username = (authentication != null) ? authentication.getName() : "anonymous"; // Fallback to "anonymous" or similar
                   LeagueResponseDto response = leagueService.createLeague(request, username);
                   return new ResponseEntity<>(response, HttpStatus.CREATED);
             } catch (FiveLeagueFantasyException e) {

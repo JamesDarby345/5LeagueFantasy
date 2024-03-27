@@ -29,6 +29,7 @@ public class KeeperController {
     for (Goalkeeper keeper : retrievedKeepers) {
       KeepersResponseDto currentKeeperResponse =
           new KeepersResponseDto(
+            keeper.getPlayerId(),
               keeper.getName(),
               keeper.getTeam(),
               keeper.getEuropeanLeague(),

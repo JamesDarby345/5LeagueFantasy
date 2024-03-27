@@ -115,6 +115,7 @@ public class ForwardController {
             List<ForwardResponseDto> retrievedForwardsResponse) {
         for (Forward forward : retrievedForwards) {
             ForwardResponseDto currentForwardResponse = new ForwardResponseDto(
+                    forward.getPlayerId(),
                     forward.getName(),
                     forward.getTeam(),
                     forward.getEuropeanLeague(),

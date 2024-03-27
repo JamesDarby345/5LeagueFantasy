@@ -11,8 +11,10 @@ public class KeepersResponseDto {
   private int assists;
   private int saves;
   private int cleanSheets;
+  private int id;
 
   public KeepersResponseDto(
+      int id,
       String name,
       String team,
       EuropeanLeague europeanLeague,
@@ -22,6 +24,7 @@ public class KeepersResponseDto {
       int assists,
       int saves,
       int cleanSheets) {
+    this.id = id;
     this.name = name;
     this.team = team;
     this.europeanLeague = europeanLeague;
@@ -95,4 +98,13 @@ public class KeepersResponseDto {
   public void setCleanSheets(int cleanSheets) {
     this.cleanSheets = cleanSheets;
   }
+
+  public int getId() {
+    return this.id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
 }

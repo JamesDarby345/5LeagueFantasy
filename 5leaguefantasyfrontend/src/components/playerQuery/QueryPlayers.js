@@ -164,7 +164,7 @@ function QueryPlayers() {
     if (page < getTotalPageCount()) {
       return Math.min(playersData.length, PAGE_SIZE);
     } else {
-      return playersData.length.toString().slice(-1);
+      return playersData.length % PAGE_SIZE || PAGE_SIZE;
     }
   }
 

@@ -77,33 +77,25 @@ public class FantasyManagerController {
   }
 
   @PostMapping("/managers/newManager")
-  public ResponseEntity<FantasyManagerResponseDto> createManager(
-      @RequestBody FantasyManagerRequestDto fantasyManagerRequest) {
-
-    FantasyManager userToCreate =
-        new FantasyManager(
-            fantasyManagerRequest.getUsername(),
-            fantasyManagerRequest.getName(),
-            fantasyManagerRequest.getEmail(),
-            fantasyManagerRequest.getPassword());
-
-    try {
-      FantasyManager createdUser = fantasyManagerService.createFantasyManager(userToCreate);
-      FantasyManagerResponseDto createdUserResponse =
-              new FantasyManagerResponseDto(
-                      createdUser.getUsername(),
-                      createdUser.getName(),
-                      createdUser.getEmail(),
-                      createdUser.getPassword(),
-                      createdUser.getLeague());
-
-      return new ResponseEntity<>(createdUserResponse, HttpStatus.CREATED);
-      }
-    catch (FiveLeagueFantasyException exception) {
-      exception.printStackTrace();
-      return new ResponseEntity <> (null, HttpStatus.BAD_REQUEST);
+    public ResponseEntity<FantasyManagerResponseDto> createManager(@RequestBody FantasyManagerRequestDto fantasyManagerRequest) {
+        
+        FantasyManager userToCreate = new FantasyManager(
+            fantasyManagerRequest.getUsername(), 
+            fantasyManagerRequest.getName(), 
+            fantasyManagerRequest.getEmail(), 
+            fantasyManagerRequest.getPassword()
+        );
+        FantasyManager createdUser= fantasyManagerService.createFantasyManager(userToCreate);
+        FantasyManagerResponseDto createdUserResponse = new FantasyManagerResponseDto(
+            createdUser.getUsername(),
+            createdUser.getName(),
+            createdUser.getEmail(),
+            createdUser.getPassword(),
+            createdUser.getLeague()
+        );
+        return new ResponseEntity<FantasyManagerResponseDto>(createdUserResponse, HttpStatus.CREATED);
     }
-  }
+
 
   @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/managers/login/{username}/{password}")
