@@ -18,4 +18,9 @@ public interface GoalkeeperRepository extends CrudRepository<Goalkeeper, Integer
   List<Goalkeeper> findAll();
 
   List<Goalkeeper> findByPosition(String position);
+
+  List<Goalkeeper> findByNameContainingIgnoreCase(String name);
+
+  List<Goalkeeper> findByCleanSheets(int cleanSheets);
+
 }

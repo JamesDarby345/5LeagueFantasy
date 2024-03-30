@@ -1,6 +1,8 @@
 package com.example.LeagueFantasy.controller;
 
+import com.example.LeagueFantasy.dto.ForwardResponseDto;
 import com.example.LeagueFantasy.dto.KeepersResponseDto;
+import com.example.LeagueFantasy.entity.Forward;
 import com.example.LeagueFantasy.entity.Goalkeeper;
 import com.example.LeagueFantasy.service.KeeperService;
 import java.util.ArrayList;
@@ -17,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class KeeperController {
 
-  @Autowired private KeeperService keeperService;
+  @Autowired
+  private KeeperService keeperService;
 
   @GetMapping("/players/{position}")
   public ResponseEntity<List<KeepersResponseDto>> getByPositionKeeper(
@@ -27,21 +30,86 @@ public class KeeperController {
     List<KeepersResponseDto> retrievedKeepersResponse = new ArrayList<KeepersResponseDto>();
 
     for (Goalkeeper keeper : retrievedKeepers) {
-      KeepersResponseDto currentKeeperResponse =
-          new KeepersResponseDto(
-            keeper.getPlayerId(),
-              keeper.getName(),
-              keeper.getTeam(),
-              keeper.getEuropeanLeague(),
-              keeper.getPosition(),
-              keeper.getGamesPlayed(),
-              keeper.getGoals(),
-              keeper.getAssists(),
-              keeper.getSaves(),
-              keeper.getCleanSheets());
+      KeepersResponseDto currentKeeperResponse = new KeepersResponseDto(
+          keeper.getPlayerId(),
+          keeper.getName(),
+          keeper.getTeam(),
+          keeper.getEuropeanLeague(),
+          keeper.getPosition(),
+          keeper.getGamesPlayed(),
+          keeper.getGoals(),
+          keeper.getAssists(),
+          keeper.getSaves(),
+          keeper.getCleanSheets());
       retrievedKeepersResponse.add(currentKeeperResponse);
     }
 
     return new ResponseEntity<>(retrievedKeepersResponse, HttpStatus.OK);
   }
+
+  @GetMapping("/keeprs/name/{name}")
+  public ResponseEntity<List<KeepersResponseDto>> getKeeperByName(@PathVariable String name) {
+
+    List<Goalkeeper> retrievedKeepers = keeperService.getKeeperByName(name);
+    List<KeepersResponseDto> retrievedKeepersResponse = new ArrayList<KeepersResponseDto>();
+    for (Goalkeeper keeper : retrievedKeepers) {
+      KeepersResponseDto currentKeeperResponse = new KeepersResponseDto(
+          keeper.getPlayerId(),
+          keeper.getName(),
+          keeper.getTeam(),
+          keeper.getEuropeanLeague(),
+          keeper.getPosition(),
+          keeper.getGamesPlayed(),
+          keeper.getGoals(),
+          keeper.getAssists(),
+          keeper.getSaves(),
+          keeper.getCleanSheets());
+      retrievedKeepersResponse.add(currentKeeperResponse);
+    }
+    return new ResponseEntity<>(retrievedKeepersResponse, HttpStatus.OK);
+  }
+
+  @GetMapping("/keeprs/cleansheets/{cleansheets}")
+  public ResponseEntity<List<KeepersResponseDto>> getKeeperByCleanSheet(@PathVariable Integer cleanSheets) {
+
+    List<Goalkeeper> retrievedKeepers = keeperService.getKeeperByCleanSheet(cleanSheets);
+    List<KeepersResponseDto> retrievedKeepersResponse = new ArrayList<KeepersResponseDto>();
+    for (Goalkeeper keeper : retrievedKeepers) {
+      KeepersResponseDto currentKeeperResponse = new KeepersResponseDto(
+          keeper.getPlayerId(),
+          keeper.getName(),
+          keeper.getTeam(),
+          keeper.getEuropeanLeague(),
+          keeper.getPosition(),
+          keeper.getGamesPlayed(),
+          keeper.getGoals(),
+          keeper.getAssists(),
+          keeper.getSaves(),
+          keeper.getCleanSheets());
+      retrievedKeepersResponse.add(currentKeeperResponse);
+    }
+    return new ResponseEntity<>(retrievedKeepersResponse, HttpStatus.OK);
+  }
+
+  @GetMapping("/keepers/all")
+  public ResponseEntity<List<KeepersResponseDto>> getAllKeepers() {
+    List<Goalkeeper> retrievedKeepers = keeperService.getAllKeepers();
+    List<KeepersResponseDto> retrievedKeepersResponse = new ArrayList<KeepersResponseDto>();
+    for (Goalkeeper keeper : retrievedKeepers) {
+      KeepersResponseDto currentKeeperResponse = new KeepersResponseDto(
+          keeper.getPlayerId(),
+          keeper.getName(),
+          keeper.getTeam(),
+          keeper.getEuropeanLeague(),
+          keeper.getPosition(),
+          keeper.getGamesPlayed(),
+          keeper.getGoals(),
+          keeper.getAssists(),
+          keeper.getSaves(),
+          keeper.getCleanSheets());
+      retrievedKeepersResponse.add(currentKeeperResponse);
+    }
+    return new ResponseEntity<>(retrievedKeepersResponse, HttpStatus.OK);
+  }
+
 }
