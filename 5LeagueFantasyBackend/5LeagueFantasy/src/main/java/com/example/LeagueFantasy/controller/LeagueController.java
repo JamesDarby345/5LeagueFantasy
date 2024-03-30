@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +29,9 @@ public class LeagueController {
       public ResponseEntity<?> createLeague(@RequestBody LeagueRequestDto request) {
             try {
                   Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                  String username = (authentication != null) ? authentication.getName() : "anonymous"; // Fallback to "anonymous" or similar
+                  String username = (authentication != null) ? authentication.getName() : "anonymous"; // Fallback to
+                                                                                                       // "anonymous" or
+                                                                                                       // similar
                   LeagueResponseDto response = leagueService.createLeague(request, username);
                   return new ResponseEntity<>(response, HttpStatus.CREATED);
             } catch (FiveLeagueFantasyException e) {
@@ -38,11 +39,9 @@ public class LeagueController {
                   errorResponse.put("error", e.getMessage());
                   errorResponse.put("status", HttpStatus.BAD_REQUEST);
                   return ResponseEntity
-                          .status(HttpStatus.BAD_REQUEST)
-                          .body(errorResponse);
+                              .status(HttpStatus.BAD_REQUEST)
+                              .body(errorResponse);
             }
       }
-
-
 
 }
