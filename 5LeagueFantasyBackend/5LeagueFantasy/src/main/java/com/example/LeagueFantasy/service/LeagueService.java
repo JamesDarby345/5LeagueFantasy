@@ -67,8 +67,10 @@ public class LeagueService {
 
 
       @Transactional
-      public League getLeagueByName(String name) {
-            return leagueRepository.findByName(name);
+      public List<League> getLeagueByName(String name) {
+            if (name == null || name.isEmpty())
+                  throw new FiveLeagueFantasyException("Name can't be null.", HttpStatus.BAD_REQUEST);
+            return leagueRepository.findByNameContainingIgnoreCase(name);
       }
 
       @Transactional

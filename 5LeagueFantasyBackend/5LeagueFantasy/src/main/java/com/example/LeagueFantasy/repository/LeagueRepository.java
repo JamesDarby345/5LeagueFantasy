@@ -9,7 +9,7 @@ public interface LeagueRepository extends CrudRepository<League, Integer> {
 
   League findById(int id);
 
-  League findByName(String name);
+  List<League> findByNameContainingIgnoreCase(String name);
 
   List<League> findByLeagueOwner(FantasyManager leagueOwner);
 
