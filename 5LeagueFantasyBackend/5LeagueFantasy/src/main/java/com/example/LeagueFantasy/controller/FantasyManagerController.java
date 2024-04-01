@@ -270,4 +270,20 @@ public class FantasyManagerController {
 
     return new ResponseEntity<FantasyManagerResponseDto>(updatedUserResponse, HttpStatus.OK);
   }
+
+  @PutMapping("/managers/password/{username}/{leagueName}")
+  public ResponseEntity<FantasyManagerResponseDto> updateManagerLeague(@PathVariable String username, @PathVariable String leagueName){
+    FantasyManager userToUpdate =
+            fantasyManagerService.updateFantasyManagerLeague(username, leagueName);
+
+    FantasyManagerResponseDto updatedUserResponse =
+            new FantasyManagerResponseDto(
+                    userToUpdate.getUsername(),
+                    userToUpdate.getName(),
+                    userToUpdate.getEmail(),
+                    userToUpdate.getPassword(),
+                    userToUpdate.getLeague());
+
+    return new ResponseEntity<FantasyManagerResponseDto>(updatedUserResponse, HttpStatus.OK);
+  }
 }

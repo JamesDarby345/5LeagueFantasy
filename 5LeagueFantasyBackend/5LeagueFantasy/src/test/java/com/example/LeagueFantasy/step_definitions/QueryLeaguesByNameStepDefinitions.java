@@ -4,7 +4,6 @@ import com.example.LeagueFantasy.controller.LeagueController;
 import com.example.LeagueFantasy.dto.LeagueRequestDto;
 import com.example.LeagueFantasy.dto.LeagueResponseDto;
 import com.example.LeagueFantasy.entity.FantasyManager;
-import com.example.LeagueFantasy.entity.League;
 import com.example.LeagueFantasy.repository.FantasyManagerRepository;
 import com.example.LeagueFantasy.repository.LeagueRepository;
 import io.cucumber.java.en.And;
@@ -25,9 +24,6 @@ import java.util.List;
 public class QueryLeaguesByNameStepDefinitions {
     @Autowired
     private LeagueController leagueController;
-
-    @Autowired
-    private LeagueRepository leagueRepository;
 
     @Autowired
     private FantasyManagerRepository fantasyManagerRepository;
