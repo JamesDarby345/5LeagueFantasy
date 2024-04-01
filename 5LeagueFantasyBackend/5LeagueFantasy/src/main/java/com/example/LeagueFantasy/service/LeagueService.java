@@ -60,8 +60,7 @@ public class LeagueService {
             return new LeagueResponseDto(
                     league.getId(),
                     league.getName(),
-                    fantasyManager.getUsername(), // Assuming the getUsername method exists
-                    "League created successfully."
+                    fantasyManager.getUsername()// Assuming the getUsername method exists
             );
       }
 
