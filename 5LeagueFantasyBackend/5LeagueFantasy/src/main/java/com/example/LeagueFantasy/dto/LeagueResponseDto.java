@@ -4,13 +4,11 @@ public class LeagueResponseDto {
       private int id;
       private String name;
       private String leagueOwnerUsername;
-      private String message;
 
-      public LeagueResponseDto(int id, String name, String leagueOwnerUsername, String message) {
+      public LeagueResponseDto(int id, String name, String leagueOwnerUsername) {
             this.id = id;
             this.name = name;
             this.leagueOwnerUsername = leagueOwnerUsername;
-            this.message = message;
       }
 
       // Getters and Setters
@@ -38,7 +36,4 @@ public class LeagueResponseDto {
             this.leagueOwnerUsername = leagueOwnerUsername;
       }
 
-      public String getMessage() {
-            return message;
-      }
 }
