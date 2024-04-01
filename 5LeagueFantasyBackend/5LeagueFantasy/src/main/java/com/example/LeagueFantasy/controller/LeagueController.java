@@ -53,14 +53,13 @@ public class LeagueController {
             return getListResponseEntity(retrievedLeagues, retrievedLeaguesResponse);
       }
 
-      private ResponseEntity<List<ForwardResponseDto>> getListResponseEntity(List<League> retrievedLeagues,
+      private ResponseEntity<List<LeagueResponseDto>> getListResponseEntity(List<League> retrievedLeagues,
                                                                              List<LeagueResponseDto> retrievedLeaguesResponse) {
             for (League league : retrievedLeagues) {
                   LeagueResponseDto currentLeagueResponse = new LeagueResponseDto(
                           league.getId(),
                           league.getName(),
-                          league.getLeagueOwner().getName(),
-                          league.get);
+                          league.getLeagueOwner().getName());
                   retrievedLeaguesResponse.add(currentLeagueResponse);
             }
 
