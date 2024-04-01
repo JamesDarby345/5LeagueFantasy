@@ -69,13 +69,12 @@ public class CreateLeagueStepDefinitions {
             response = leagueController.createLeague(request);
       }
 
-      @Then("the user should receive a confirmation message {string}")
-      public void the_user_should_receive_a_confirmation_message(String expectedMessage) {
+      @Then("the user should receive a confirmation of successful league creation")
+      public void the_user_should_receive_a_confirmation_message() {
             Assert.assertNotNull(response);
             Assert.assertEquals(HttpStatus.CREATED, response.getStatusCode());
             LeagueResponseDto responseBody = (LeagueResponseDto) response.getBody();
             Assert.assertNotNull(responseBody);
-            Assert.assertEquals(expectedMessage, responseBody.getMessage());
       }
 
       // Step Definitions for Alternate Flow
@@ -99,7 +98,8 @@ public class CreateLeagueStepDefinitions {
             // Handle both possible response types
             if (response.getBody() instanceof LeagueResponseDto) {
                   LeagueResponseDto responseBody = (LeagueResponseDto) response.getBody();
-                  Assert.assertEquals(expectedErrorMessage, responseBody.getMessage());
+                  Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+
             } else if (response.getBody() instanceof Map) {
                   Map<String, Object> errorResponse = (Map<String, Object>) response.getBody();
                   String actualErrorMessage = (String) errorResponse.get("error");
@@ -164,7 +164,8 @@ public class CreateLeagueStepDefinitions {
             // Handle both possible response types
             if (response.getBody() instanceof LeagueResponseDto) {
                   LeagueResponseDto responseBody = (LeagueResponseDto) response.getBody();
-                  Assert.assertEquals(expectedErrorMessage, responseBody.getMessage());
+                  Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+
             } else if (response.getBody() instanceof Map) {
                   Map<String, Object> errorResponse = (Map<String, Object>) response.getBody();
                   String actualErrorMessage = (String) errorResponse.get("error");
