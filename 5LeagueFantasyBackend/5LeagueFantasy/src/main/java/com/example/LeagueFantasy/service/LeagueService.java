@@ -60,15 +60,16 @@ public class LeagueService {
             return new LeagueResponseDto(
                     league.getId(),
                     league.getName(),
-                    fantasyManager.getUsername(), // Assuming the getUsername method exists
-                    "League created successfully."
+                    fantasyManager.getUsername()// Assuming the getUsername method exists
             );
       }
 
 
       @Transactional
-      public League getLeagueByName(String name) {
-            return leagueRepository.findByName(name);
+      public List<League> getLeagueByName(String name) {
+            if (name == null || name.isEmpty())
+                  throw new FiveLeagueFantasyException("Name can't be null.", HttpStatus.BAD_REQUEST);
+            return leagueRepository.findByNameContainingIgnoreCase(name);
       }
 
       @Transactional

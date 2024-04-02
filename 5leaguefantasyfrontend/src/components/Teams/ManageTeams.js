@@ -16,7 +16,7 @@ function ManageTeams() {
 
 	useEffect(() => {
 		if (!formData) {
-			navigate('/');
+			navigate('/login');
 		}
 	}, [formData, navigate]);
 

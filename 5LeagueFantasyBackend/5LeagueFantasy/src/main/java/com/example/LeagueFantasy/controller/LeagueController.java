@@ -1,7 +1,9 @@
 package com.example.LeagueFantasy.controller;
 
+import com.example.LeagueFantasy.dto.ForwardResponseDto;
 import com.example.LeagueFantasy.dto.LeagueRequestDto;
 import com.example.LeagueFantasy.dto.LeagueResponseDto;
+import com.example.LeagueFantasy.entity.Forward;
 import com.example.LeagueFantasy.entity.League;
 import com.example.LeagueFantasy.exception.FiveLeagueFantasyException;
 import com.example.LeagueFantasy.service.LeagueService;
@@ -44,4 +46,28 @@ public class LeagueController {
             }
       }
 
+<<<<<<< HEAD
+=======
+      @GetMapping("/{name}")
+      public ResponseEntity<List<LeagueResponseDto>> getLeagueByName(@PathVariable String name){
+            List<League> retrievedLeagues = leagueService.getLeagueByName(name);
+            List<LeagueResponseDto> retrievedLeaguesResponse = new ArrayList<LeagueResponseDto>();
+
+            return getListResponseEntity(retrievedLeagues, retrievedLeaguesResponse);
+      }
+
+      private ResponseEntity<List<LeagueResponseDto>> getListResponseEntity(List<League> retrievedLeagues,
+                                                                             List<LeagueResponseDto> retrievedLeaguesResponse) {
+            for (League league : retrievedLeagues) {
+                  LeagueResponseDto currentLeagueResponse = new LeagueResponseDto(
+                          league.getId(),
+                          league.getName(),
+                          league.getLeagueOwner().getName());
+                  retrievedLeaguesResponse.add(currentLeagueResponse);
+            }
+
+            return new ResponseEntity<>(retrievedLeaguesResponse, HttpStatus.OK);
+      }
+
+>>>>>>> 4bc56d752c05fc08ff066726e6d7b07f7e275709
 }

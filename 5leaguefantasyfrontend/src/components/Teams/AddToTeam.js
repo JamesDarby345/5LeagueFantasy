@@ -18,7 +18,7 @@ function AddToTeam(props) {
 
 	useEffect(() => {
 		if (!formData) {
-			navigate('/');
+			navigate('/login');
 		}
 	}, [formData, navigate]);
 

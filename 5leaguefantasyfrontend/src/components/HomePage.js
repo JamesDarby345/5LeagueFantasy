@@ -19,7 +19,7 @@ function HomePage() {
             // Simulate throwing a 401 unauthorized error
             setError('Unauthorized access. Default data cannot be used.');
             // Optionally, redirect the user to a login page or show an error message
-            navigate('/'); // Change '/login' to your actual login route
+            navigate('/login'); // Change '/login' to your actual login route
         }
     }, [formData, navigate]);
   return (

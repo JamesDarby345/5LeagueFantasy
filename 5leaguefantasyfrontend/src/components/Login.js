@@ -30,7 +30,7 @@ function Login() {
     // You can add more default settings here
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'http://localhost:3000'
+      //s'Access-Control-Allow-Origin': 'http://localhost:3000'
       // Include other headers as needed, like Authorization for JWT
     },
   });
