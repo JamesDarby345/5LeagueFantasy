@@ -9,6 +9,7 @@ import LeagueInfo from './components/league/LeagueInfo';
 import CreateLeague from './components/league/CreateLeague';
 import ManageTeams from './components/Teams/ManageTeams';
 import AddToTeam from './components/Teams/AddToTeam';
+import JoinLeague from './components/league/JoinLeague';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/new_account" element = {<CreateAccount />}></Route>
         <Route path="/league" element = {<LeagueInfo />}></Route>
         <Route path="/new_league" element = {<CreateLeague />}></Route>
+        <Route path="/join_league" element = {<JoinLeague />}></Route>
         <Route path="/manage_teams" element = {<ManageTeams />}></Route>
         <Route path="/add_to_team" element = {<AddToTeam />}></Route>
       </Routes>
