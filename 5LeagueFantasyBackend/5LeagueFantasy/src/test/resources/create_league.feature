@@ -7,7 +7,7 @@ Feature: Create a new league
     Given the user is authenticated and on the Create League page
     When the user enters "Summer Championship" as the league name
     And the user submits the league creation form
-    Then the user should receive a confirmation message "League created successfully."
+    Then the user should receive a confirmation of successful league creation
 
   # Alternate Flow: League creation with a name that already exists
   Scenario: Attempting to create a league with a name that already exists

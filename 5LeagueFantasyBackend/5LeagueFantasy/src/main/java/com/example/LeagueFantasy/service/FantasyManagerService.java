@@ -1,6 +1,7 @@
 package com.example.LeagueFantasy.service;
 
 import com.example.LeagueFantasy.entity.FantasyManager;
+import com.example.LeagueFantasy.entity.League;
 import com.example.LeagueFantasy.exception.FiveLeagueFantasyException;
 import com.example.LeagueFantasy.repository.FantasyManagerRepository;
 import com.example.LeagueFantasy.repository.LeagueRepository;
@@ -153,6 +154,25 @@ public class FantasyManagerService {
     }
 
     fantasyManagerToUpdate.setPassword(newPassword);
+    return fantasyManagerRepository.save(fantasyManagerToUpdate);
+  }
+
+  @Transactional
+  public FantasyManager updateFantasyManagerLeague(String username, String leagueName){
+    FantasyManager fantasyManagerToUpdate = fantasyManagerRepository.findByUsername(username);
+
+    if (fantasyManagerToUpdate == null) {
+      throw new FiveLeagueFantasyException(
+              "Fantasy Manager with username " + username + " does not exist.", HttpStatus.NOT_FOUND);
+    }
+
+    League league = leagueRepository.findByName(leagueName);
+    if (league == null) {
+      throw new FiveLeagueFantasyException(
+              "League with name " + leagueName + " does not exist.", HttpStatus.NOT_FOUND);
+    }
+
+    fantasyManagerToUpdate.setLeague(league);
     return fantasyManagerRepository.save(fantasyManagerToUpdate);
   }
 }
